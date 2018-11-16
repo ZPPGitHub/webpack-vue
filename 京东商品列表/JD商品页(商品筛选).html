@@ -1,0 +1,626 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset = "UTF-8">
+<title>JD商品页(筛选部分)</title>
+<style>
+*{margin:0;padding:0}
+body{font:12px/150% tahoma,arial,Microsoft YaHei,Hiragino Sans GB,"\5b8b\4f53",sans-serif;color:#666;
+-webkit-font-smoothing:antialiased}
+ul{list-style:none}
+a{text-decoration:none;color:#666}
+.midden{width:1210px;margin:0 auto;}
+.clr{display:block;overflow:hidden;clear:both;height:0;line-height:0;font-size:0}
+.path{position:relative;margin-bottom:10px;height:24px;line-height:24px}
+.path .main-arrow{font-family:simsun;font-style:normal}
+.large-curr{display:inline-block;width:20px;height:20px;vertical-align:top;transition:transform .2s ease-in-out;background:url("imges/imgssss/图片10.png") no-repeat -25px -18px}
+.main-nav-item{float:left;margin-right:8px;cursor:pointer}
+.one-leve .main-link{font-size:18px;font-weight:700}
+.main-link,.large{float:left;margin-right:5px}
+.large{height:22px;padding:0 4px 0 8px;border:1px solid #ddd;line-height:22px;vertical-align:top}
+.currty{display:inline-block;vertical-align:top}
+.large-none{position:absolute;width:350px;padding:10px 0 10px 8px;top:23px;background:#fff;
+border:1px solid #ddd}
+.large-none li{float:left;width:65px;height:24px;overflow:hidden;line-height:24px;margin-right:5px;
+text-overflow:ellipsis;white-space:nowrap}
+.KT-screen{border-top:1px solid #DDD;background:#FFF;margin-bottom:10px}
+.KT-screen a:hover{color:#e4393c}
+.KT-screen .sq:hover .large-curr,.KT-screen .dx:hover{border-color:#e4393c}
+.KT-path{border-bottom:1px solid #DDD;background:#F1F1F1;height:34px;line-height:34px;overflow:hidden}
+.KT-path h3{float:left;padding-left:10px}
+.KT-path h3 span{color:#c81623}
+.se-ext{float:left;padding-left:20px}
+.KT-brand{position:relative;line-height:34px;border-bottom:1px dashed #eee}
+.KT-screen .entender{margin-top:-1px;border:2px solid #edd28b;background:#fffdee}
+.brand-left{float:left;width:100px;padding-left:10px}
+.brand-center{margin-left:110px;padding-right:130px;padding-left:10px;overflow:hidden}
+.entender .brand-center{margin-left:108px;background:#fff}
+.sl-a{float:left;padding-top:6px;margin-bottom:10px;overflow:hidden}
+.sl-a li{float:left;height:20px;line-height:20px;border:1px solid #fff;cursor:default;padding:0 7px;
+text-align:center;color:#005aa0}
+.entender .curr{border-color:#e4393c;color:#e4393c}
+.v-fixed{padding-top:10px;margin-bottom:10px;height:99px;overflow:hidden}
+.entender .sl-b .v-fixed{overflow-y:auto;overflow-x:hidden;height:196px;padding-top:1px;}
+.v-fixed li{float:left;width:116px;height:48px;padding:0;border:1px solid #DDD;margin:-1px -1px 0 0;
+background:#FFF;text-align:center}
+.v-fixed li a{display:block;border:1px solid #fff;height:46px;width:114px;overflow:hidden;
+text-overflow:ellipsis;white-space:nowrap;color:#005aa0;line-height:48px}
+.v-fixed img{padding:5px 6px;vertical-align:top;border:0}
+.v-fixed li:hover img{display:none}
+.v-fixed li:hover a{border-color:#e4393c;color:#e4393c}
+.v-fixed li:hover{position:relative;border-color:#e4393c;box-shadow:2px 2px 3px rgba(0,0,0,.12)}
+.v-fixed .fixed-gl{position:relative;border-color:#e4393c;box-shadow:2px 2px 3px rgba(0,0,0,.12)}
+.v-fixed .fixed-gl a{border-color:#e4393c;}
+.fixed-i{display:block;position:absolute;right:-1px;bottom:-1px;width:10px;height:10px;
+background:url("imges/write_ok.gif") -1px -1px}
+.sl-c{overflow:hidden}
+.sl-key{float:left;margin-right:5px}
+.sl-ckey{float:left;height:34px;margin-bottom:10px;overflow:hidden;padding-top:4px}
+.sl-ckey li{float:left;margin-bottom:4px;height:26px;line-height:26px;margin-right:10px;}
+.sl-ckey li a{display:inline-block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+position:relative;padding-left:18px}
+.v-faxe li a i,.sl-ckey li a i{display:inline-block;width:12px;height:12px;border:1px solid #ccc;
+position:absolute;left:0;top:6px;background:url("imges/write_ok.gif") no-repeat 99px 99px;
+background-color:#fff}
+.v-faxe .xzk-a a i,.sl-ckey li a i{background-position:-1px 0px;border-color:#e4393c}
+.sl-d{text-align:center;padding-top:5px;padding-bottom:5px}
+.sl-d .disabled{background:#fff;cursor:default;color:#ccc;border:1px solid #ddd;padding:4px 13px 5px;
+opacity:.2}
+.btnl{display:inline-block;height:14px;line-height:14px;border-radius:2px;cursor:pointer;border:0;
+color:#fff;padding:5px 15px 6px;}
+.boton-qd,.btn-qd{background:#E74649}
+.boton-qx,.btn-qx{background:#f7f7f7;color:#666}
+.brand-right{position:absolute;top:6px;right:8px;width:120px;height:auto;line-height:22px;
+overflow:hidden}
+.sq{float:left;margin-right:20px;width:50px;height:22px;background:#fff;color:#333;position:relative;
+visibility:visible}
+.sq i{position:absolute;top:0;right:0;border:1px #DDD solid}
+.dx{float:left;height:20px;line-height:20px;border:1px solid #ddd;padding:0 3px 0 18px;
+position:relative;background:#F8F8F8;color:#333}
+.dx i{position:absolute;display:block;left:3px;top:0;width:13px;height:20px;font-size:17px;color:#999;
+font-style:normal}
+.sl-aa{overflow:hidden;padding-top:4px}
+.sl-aa a:hover i{border-color:#e4393c}
+.s-icon .sl-aa ul{height:36px}
+.s-icon .brand-left,.s-icon{line-height:40px}
+.sl-aa ul{float:left;overflow:hidden;position:relative;height:30px}
+.s-icon .sl-aa ul li{height:32px;line-height:32px}
+.sl-aa ul li{float:left;margin-right:16px;height:26px;line-height:26px;margin-bottom:4px}
+.KT-screen .s-icon ul li{margin-right:30px;}
+.KT-screen .s-icon .sl-aa a{position:relative;padding-right:36px;}
+.KT-screen .s-idex ul a{float:left;white-space:nowrap}
+.s-idex ul li{margin-right:50px;}
+.sl-aa img{position:absolute;right:0;top:50%;width:30px;height:30px;margin-top:-15px;border:0}
+.v-faxe{margin-top:-1px;border:2px #edd28b solid;background:#fffdee}
+.v-faxe li a{position:relative;padding-left:18px}
+.s-more{text-align:center;position:relative;top:-1px;border-top:1px solid #ddd;transition:border-color .15s ease-in-out}
+.s-more span{position:relative;display:inline-block;margin-top:-1px;height:28px;line-height:28px;
+padding:0 40px 0 20px;border-width:1px;border-style:solid;border-color:#fff #DDD #ddd;background:#fff;
+cursor:pointer;color:#333;transition:border-color .15s ease-in-out}
+.s-more span i{position:absolute;right:16px;top:4px;display:inline-block;width:20px;height:20px;
+font-size:25px}
+.s-more:hover{border-color:#e4393c;}
+.s-more:hover span{border-color:#fff #e4393c #e4393c;color:#e4393c}
+</style>
+</head>
+<body>
+<div class = "midden">
+	<div class = "path">
+		<div class = "main-nav-item one-leve">
+			<a class = "main-link" href = "">家用电器</a>
+			<i class = "main-arrow">></i>
+		</div>
+		<div class = "main-nav-item">
+			<div class = "large">
+				<span class = "currty">大 家 电</span>
+				<i class = "large-curr"></i>
+			</div>
+			<div class = "large-none" style = "display:none">
+				<ul>
+					<li><a href = "">厨卫大电</a></li>
+					<li><a href = "">大 家 电</a></li>
+					<li><a href = "">厨房小电</a></li>
+					<li><a href = "">生活电器</a></li>
+					<li><a href = "">个护健康</a></li>
+					<li><a href = "">商用电器</a></li>
+					<li><a href = "">家电服务</a></li>
+				</ul>
+			</div>
+			<i class = "main-arrow">></i>
+		</div>
+		<div class = "main-nav-item">
+			<div class = "large">
+				<span class = "currty">空调</span>
+				<i class = "large-curr"></i>
+			</div>
+			<div class = "large-none" style = "display:none">
+				<ul>
+					<li><a href = "">平板电视</a></li>
+					<li><a href = "">空调</a></li>
+					<li><a href = "">中央空调</a></li>
+					<li><a href = "">冰箱</a></li>
+					<li><a href = "">洗衣机</a></li>
+					<li><a href = "">家庭影院</a></li>
+					<li><a href = "">DVD/电视盒子</a></li>
+					<li><a href = "">迷你音响</a></li>
+					<li><a href = "">冷柜/冰吧</a></li>
+					<li><a href = "">家电配件</a></li>
+					<li><a href = "">功放</a></li>
+					<li><a href = "">回音壁/Soundbar</a></li>
+					<li><a href = "">Hi-Fi专区</a></li>
+					<li><a href = "">电视盒子</a></li>
+					<li><a href = "">酒柜</a></li>
+					<li><a href = "">移动空调</a></li>
+					<li><a href = "">KTV音响</a></li>
+					<li><a href = "">烘干机</a></li>
+				</ul>
+			</div>
+			<i class = "main-arrow">></i>
+		</div>
+	</div>
+</div>
+<div class = "midden">
+	<div class = "KT-screen">
+		<div class = "KT-path">
+			<h3><span>空调</span> 商品筛选</h3>
+			<div class = "se-ext">共 <span>10315</span>个商品</div>
+		</div>
+		<div class = "KT-brand cassted">
+			<div class = "brand-left">品牌:</div>
+			<div class = "brand-center">
+				<ul class = "sl-a" style = "display:none">
+					<li data-initial = "0" class = "curr">所有品牌</li>
+					<li data-initial = "a">A</li>
+					<li data-initial = "b">B</li>
+					<li data-initial = "c">C</li>
+					<li data-initial = "d">D</li>
+					<li data-initial = "e">E</li>
+					<li data-initial = "f">F</li>
+					<li data-initial = "g">G</li>
+					<li data-initial = "h">H</li>
+					<li data-initial = "i">I</li>
+					<li data-initial = "j">J</li>
+					<li data-initial = "k">K</li>
+					<li data-initial = "l">L</li>
+					<li data-initial = "m">M</li>
+					<li data-initial = "n">N</li>
+					<li data-initial = "o">O</li>
+					<li data-initial = "p" style = "display:none">P</li>
+					<li data-initial = "q">Q</li>
+					<li data-initial = "r">R</li>
+					<li data-initial = "s">S</li>
+					<li data-initial = "t">T</li>
+					<li data-initial = "u">U</li>
+					<li data-initial = "v" style = "display:none">V</li>
+					<li data-initial = "w">W</li>
+					<li data-initial = "x">X</li>
+					<li data-initial = "y">Y</li>
+					<li data-initial = "z">Z</li>
+					<li data-initial = "other" style = "display:none">其他</li>
+				</ul>
+				<div class = "clr"></div>
+				<div class = "sl-b">
+					<ul class = "v-fixed">
+						<li data-initial = "g">
+							<a title = "格力(GREE)" href = "">
+								<i></i>
+								<img width = "102" height = "36" src = "imges/jd.png"/>
+								<span>格力(GREE)</span>
+							</a>
+						</li>
+						<li data-initial = "m">
+							<a title = "美的(Midea)" href = "">
+								<i></i>
+								<img width = "102" height = "36" src = "imges/360.png"/>
+								<span>美的(Midea)</span>
+							</a>
+						</li>
+						<li data-initial = "a">
+							<a title = "奥克斯(AUX)" href = "">
+								<i></i>
+								<img width = "102" height = "36" src = "imges/360game.png"/>
+								<span>奥克斯(AUX)</span>
+							</a>
+						</li>
+						<li data-initial = "h">
+							<a title = "海尔(Haier)" href = "">
+								<i></i>
+								<img width = "102" height = "36" src = "imges/fenghuan.png"/>
+								<span>海尔(Haier)</span>
+							</a>
+						</li>
+						<li data-initial = "t">
+							<a title = "TCL" href = "">
+								<i></i>
+								<img width = "102" height = "36" src = "imges/renren.png"/>
+								<span>TCL</span>
+							</a>
+						</li>
+						<li data-initial = "z">
+							<a title = "志高(CHIGO)" href = "">
+								<i></i>
+								<img width = "102" height = "36" src = "imges/souhu.png"/>
+								<span>志高(CHIGO)</span>
+							</a>
+						</li>
+						<li data-initial = "h">
+							<a title = "海信(Hisense)" href = "">
+								<i></i>
+								<img width = "102" height = "36" src = "imges/taobao.png"/>
+								<span>海信(Hisense)</span>
+							</a>
+						</li>
+						<li data-initial = "s">
+							<a title = "三菱电机(Mitsubishi Electric)" href = "">
+								<i></i>
+								<img width = "102" height = "36" src = "imges/wangyi.png"/>
+								<span>三菱电机(Mitsubishi Electric)</span>
+							</a>
+						</li>
+						<li data-initial = "k">
+							<a title = "科龙(KELON)" href = "">
+								<i></i>
+								<img width = "102" height = "36" src = "imges/xinlan.png"/>
+								<span>科龙(KELON)</span>
+							</a>
+						</li>
+						<li data-initial = "c">
+							<a title = "长虹(CHANGHONG)" href = "">
+								<i></i>
+								<img width = "102" height = "36" src = "imges/youku.png"/>
+								<span>长虹(CHANGHONG)</span>
+							</a>
+						</li>
+						<li data-initial = "y">
+							<a title = "扬子" href = "">
+								<i></i>
+								<img width = "102" height = "36" src = "imges/360.png"/>
+								<span>扬子</span>
+							</a>
+						</li>
+						<li data-initial = "s">
+							<a title = "松下(Panasonic)" href = "">
+								<i></i>
+								<img width = "102" height = "36" src = "imges/youku.png"/>
+								<span>松下(Panasonic)</span>
+							</a>
+						</li>
+						<li data-initial = "f">
+							<a title = "富士通(Fujitsu)" href = "">
+								<i></i>
+								<img width = "102" height = "36" src = "imges/xinlan.png"/>
+								<span>富士通(Fujitsu)</span>
+							</a>
+						</li>
+						<li data-initial = "d">
+							<a title = "大金(DAIKIN)" href = "">
+								<i></i>
+								<img width = "102" height = "36" src = "imges/wangyi.png"/>
+								<span>大金(DAIKIN)</span>
+							</a>
+						</li>
+						</li>
+						<li data-initial = "g">
+							<a title = "格兰仕(Galanz)" href = "">
+								<i></i>
+								<img width = "102" height = "36" src = "imges/taobao.png"/>
+								<span>格兰仕(Galanz)</span>
+							</a>
+						</li>
+						<li data-initial = "t">
+							<a title = "统帅(Leader)" href = "">
+								<i></i>
+								<img width = "102" height = "36" src = "imges/souhu.png"/>
+								<span>统帅(Leader)</span>
+							</a>
+						</li>
+						<li data-initial = "k">
+							<a title = "康佳(KONKA)" href = "">
+								<i></i>
+								<img width = "102" height = "36" src = "imges/renren.png"/>
+								<span>康佳(KONKA)</span>
+							</a>
+						</li>
+						<li data-initial = "c">
+							<a title = "创维(Skyworth)" href = "">
+								<i></i>
+								<img width = "102" height = "36" src = "imges/fenghuan.png"/>
+								<span>创维(Skyworth)</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class = "sl-c" style = "display:none">
+					<span class = "sl-key">已选条件 : </span>
+					<ul class = "sl-ckey"></ul>
+				</div>
+				<div class = "sl-d" style = "display:none">
+					<a class = "btnl btn-qd disabled" href = "javascript:;">确定</a>
+					<a class = "btnl btn-qx" href = "javascript:;">取消</a>
+				</div>
+			</div>
+			<div class = "brand-right">
+				<a href = "javascript:" class = "sq">更多<i class = "large-curr"></i></a>
+				<a href = "javascript:" class = "dx"><i>+</i>多选</a>
+			</div>
+		</div>
+		<div class = "KT-brand s-idex s-icon">
+			<div class = "brand-left">空调类别:</div>
+			<div class = "brand-center">
+				<div class = "sl-aa">
+					<ul class = "j-list">
+						<li><a href = ""><i></i>壁挂式空调<img src = "imges/5abb78b1N22484026.jpg"/></a></li>
+						<li><a href = ""><i></i>立柜式空调<img src = "imges/5abb78b5Nad2a2aec.jpg"/></a></li>
+						<li><a href = ""><i></i>移动空调<img src = "imges/5abb78baN3da315c4.jpg"/></a></li>
+					</ul>
+				</div>
+				<div class = "sl-d sl-dc" style = "display:none">
+					<a class = "btnl boton-qd disabled" href = "javascript:;">确定</a>
+					<a class = "btnl boton-qx" href = "javascript:;">取消</a>
+				</div>
+			</div>
+			<div class = "brand-right">
+				<a style = "visibility:hidden" href = "javascript:" class = "sq gd">更多<i class = "large-curr"></i></a>
+				<a style = "visibility:hidden" href = "javascript:" class = "dx gb"><i>+</i>多选</a>
+			</div>
+		</div>
+		<div class = "KT-brand s-idex s-icon">
+			<div class = "brand-left">适用场景:</div>
+			<div class = "brand-center">
+				<div class = "sl-aa">
+					<ul class = "j-list">
+						<li><a href = ""><i></i>客厅<img src = "imges/5ac1d55fN817208b2.jpg"/></a></li>
+						<li><a href = ""><i></i>主卧<img src = "imges/5ac1d568N0e8394aa.jpg"/></a></li>
+						<li><a href = ""><i></i>次卧<img src = "imges/5ac1d56bN8f768429.jpg"/></a></li>
+						<li><a href = ""><i></i>书房/儿童房<img src = "imges/5ac1d574N73c0a68c.jpg"/></a></li>
+					</ul>
+				</div>
+				<div class = "sl-d sl-dc" style = "display:none">
+					<a class = "btnl boton-qd disabled" href = "javascript:;">确定</a>
+					<a class = "btnl boton-qx" href = "javascript:;">取消</a>
+				</div>
+			</div>
+			<div class = "brand-right">
+				<a style = "visibility:hidden" href = "javascript:" class = "sq gd">更多<i class = "large-curr"></i></a>
+				<a style = "visibility:hidden" href = "javascript:" class = "dx gb"><i>+</i>多选</a>
+			</div>
+		</div>
+		<div class = "KT-brand s-idex">
+			<div class = "brand-left">商品匹数:</div>
+			<div class = "brand-center">
+				<div class = "sl-aa">
+					<ul class = "j-list">
+						<li><a href = ""><i></i>1匹</a></li>
+						<li><a href = ""><i></i>1.5匹</a></li>
+						<li><a href = ""><i></i>2匹</a></li>
+						<li><a href = ""><i></i>2.5匹</a></li>
+						<li><a href = ""><i></i>3匹</a></li>
+						<li><a href = ""><i></i>5匹及以上</a></li>
+					</ul>
+				</div>
+				<div class = "sl-d sl-dc" style = "display:none">
+					<a class = "btnl boton-qd disabled" href = "javascript:;">确定</a>
+					<a class = "btnl boton-qx" href = "javascript:;">取消</a>
+				</div>
+			</div>
+			<div class = "brand-right">
+				<a style = "visibility:hidden" href = "javascript:" class = "sq gd">更多<i class = "large-curr"></i></a>
+				<a href = "javascript:" class = "dx gb"><i>+</i>多选</a>
+			</div>
+		</div>
+		<div class = "KT-brand s-idex hiden" style = "display:none">
+			<div class = "brand-left">品牌类型:</div>
+			<div class = "brand-center">
+				<div class = "sl-aa">
+					<ul class = "j-list">
+						<li><a href = ""><i></i>合资品牌</a></li>
+						<li><a href = ""><i></i>国产品牌</a></li>
+					</ul>
+				</div>
+				<div class = "sl-d sl-dc" style = "display:none">
+					<a class = "btnl boton-qd disabled" href = "javascript:;">确定</a>
+					<a class = "btnl boton-qx" href = "javascript:;">取消</a>
+				</div>
+			</div>
+			<div class = "brand-right">
+				<a style = "visibility:hidden" href = "javascript:" class = "sq gd">更多<i class = "large-curr"></i></a>
+				<a style = "visibility:hidden" href = "javascript:" class = "dx gb"><i>+</i>多选</a>
+			</div>
+		</div>
+		<div class = "KT-brand s-idex hiden" style = "display:none">
+			<div class = "brand-left">价格:</div>
+			<div class = "brand-center">
+				<div class = "sl-aa">
+					<ul class = "j-list">
+						<li><a href = ""><i></i>0-2000</a></li>
+						<li><a href = ""><i></i>2001-2999</a></li>
+						<li><a href = ""><i></i>3000-3999</a></li>
+						<li><a href = ""><i></i>4000-4999</a></li>
+						<li><a href = ""><i></i>5000-5999</a></li>
+						<li><a href = ""><i></i>6000-7999</a></li>
+						<li><a href = ""><i></i>8000-9999</a></li>
+						<li><a href = ""><i></i>10000-11999</a></li>
+						<li><a href = ""><i></i>12000以上</a></li>
+					</ul>
+				</div>
+				<div class = "sl-d sl-dc" style = "display:none">
+					<a class = "btnl boton-qd disabled" href = "javascript:;">确定</a>
+					<a class = "btnl boton-qx" href = "javascript:;">取消</a>
+				</div>
+			</div>
+			<div class = "brand-right">
+				<a href = "javascript:" class = "sq gd">更多<i class = "large-curr"></i></a>
+				<a href = "javascript:" class = "dx gb"><i>+</i>多选</a>
+			</div>
+		</div>
+		<div class = "KT-brand s-idex hiden" style = "display:none">
+			<div class = "brand-left">能效等级:</div>
+			<div class = "brand-center">
+				<div class = "sl-aa">
+					<ul class = "j-list">
+						<li><a href = ""><i></i>1级</a></li>
+						<li><a href = ""><i></i>2级</a></li>
+						<li><a href = ""><i></i>3级</a></li>
+						<li><a href = ""><i></i>其它</a></li>
+					</ul>
+				</div>
+				<div class = "sl-d sl-dc" style = "display:none">
+					<a class = "btnl boton-qd disabled" href = "javascript:;">确定</a>
+					<a class = "btnl boton-qx" href = "javascript:;">取消</a>
+				</div>
+			</div>
+			<div class = "brand-right">
+				<a style = "visibility:hidden" href = "javascript:" class = "sq gd">更多<i class = "large-curr"></i></a>
+				<a style = "visibility:hidden" href = "javascript:" class = "dx gb"><i>+</i>多选</a>
+			</div>
+		</div>
+		<div class = "KT-brand s-idex hiden" style = "display:none">
+			<div class = "brand-left">产品特色:</div>
+			<div class = "brand-center">
+				<div class = "sl-aa">
+					<ul class = "j-list">
+						<li><a href = ""><i></i>圆柱式空调</a></li>
+						<li><a href = ""><i></i>全直流变频</a></li>
+						<li><a href = ""><i></i>静音空调</a></li>
+						<li><a href = ""><i></i>远程控制</a></li>
+						<li><a href = ""><i></i>可移动</a></li>
+						<li><a href = ""><i></i>柔风技术</a></li>
+						<li><a href = ""><i></i>无风感</a></li>
+						<li><a href = ""><i></i>防直吹</a></li>
+						<li><a href = ""><i></i>自动清洁</a></li>
+						<li><a href = ""><i></i>易拆洗</a></li>
+					</ul>
+				</div>
+				<div class = "sl-d sl-dc" style = "display:none">
+					<a class = "btnl boton-qd disabled" href = "javascript:;">确定</a>
+					<a class = "btnl boton-qx" href = "javascript:;">取消</a>
+				</div>
+			</div>
+			<div class = "brand-right">
+				<a style = "visibility:hidden" href = "javascript:" class = "sq gd">更多<i class = "large-curr"></i></a>
+				<a href = "javascript:" class = "dx gb"><i>+</i>多选</a>
+			</div>
+		</div>
+		<div class = "KT-brand s-idex hiden" style = "display:none">
+			<div class = "brand-left">变频/定频:</div>
+			<div class = "brand-center">
+				<div class = "sl-aa">
+					<ul class = "j-list">
+						<li><a href = ""><i></i>变频</a></li>
+						<li><a href = ""><i></i>定频</a></li>
+					</ul>
+				</div>
+				<div class = "sl-d sl-dc" style = "display:none">
+					<a class = "btnl boton-qd disabled" href = "javascript:;">确定</a>
+					<a class = "btnl boton-qx" href = "javascript:;">取消</a>
+				</div>
+			</div>
+			<div class = "brand-right">
+				<a style = "visibility:hidden" href = "javascript:" class = "sq gd">更多<i class = "large-curr"></i></a>
+				<a style = "visibility:hidden" href = "javascript:" class = "dx gb"><i>+</i>多选</a>
+			</div>
+		</div>
+		<div class = "KT-brand s-idex hiden" style = "display:none">
+			<div class = "brand-left">使用面积:</div>
+			<div class = "brand-center">
+				<div class = "sl-aa">
+					<ul class = "j-list">
+						<li><a href = ""><i></i>10m²以下</a></li>
+						<li><a href = ""><i></i>10-15m²以下</a></li>
+						<li><a href = ""><i></i>15-20m²以下</a></li>
+						<li><a href = ""><i></i>20-30m²以下</a></li>
+						<li><a href = ""><i></i>30-40m²以下</a></li>
+						<li><a href = ""><i></i>40m²以下</a></li>
+					</ul>
+				</div>
+				<div class = "sl-d sl-dc" style = "display:none">
+					<a class = "btnl boton-qd disabled" href = "javascript:;">确定</a>
+					<a class = "btnl boton-qx" href = "javascript:;">取消</a>
+				</div>
+			</div>
+			<div class = "brand-right">
+				<a style = "visibility:hidden" href = "javascript:" class = "sq gd">更多<i class = "large-curr"></i></a>
+				<a href = "javascript:" class = "dx gb"><i>+</i>多选</a>
+			</div>
+		</div>
+		<div class = "KT-brand s-idex hiden" style = "display:none">
+			<div class = "brand-left">冷暖类型:</div>
+			<div class = "brand-center">
+				<div class = "sl-aa">
+					<ul class = "j-list">
+						<li><a href = ""><i></i>冷暖空调</a></li>
+						<li><a href = ""><i></i>单冷空调</a></li>
+					</ul>
+				</div>
+				<div class = "sl-d sl-dc" style = "display:none">
+					<a class = "btnl boton-qd disabled" href = "javascript:;">确定</a>
+					<a class = "btnl boton-qx" href = "javascript:;">取消</a>
+				</div>
+			</div>
+			<div class = "brand-right">
+				<a style = "visibility:hidden" href = "javascript:" class = "sq gd">更多<i class = "large-curr"></i></a>
+				<a style = "visibility:hidden" href = "javascript:" class = "dx gb"><i>+</i>多选</a>
+			</div>
+		</div>
+		<div class = "KT-brand s-idex hiden" style = "display:none">
+			<div class = "brand-left">大家说:</div>
+			<div class = "brand-center">
+				<div class = "sl-aa">
+					<ul class = "j-list">
+						<li><a href = ""><i></i>制冷效果好</a></li>
+						<li><a href = ""><i></i>服务很好</a></li>
+						<li><a href = ""><i></i>制冷速度快</a></li>
+						<li><a href = ""><i></i>声音小</a></li>
+						<li><a href = ""><i></i>外机噪音小</a></li>
+						<li><a href = ""><i></i>制冷制热快</a></li>
+						<li><a href = ""><i></i>机器漂亮</a></li>
+						<li><a href = ""><i></i>变频省电</a></li>
+						<li><a href = ""><i></i>空调质量好</a></li>
+						<li><a href = ""><i></i>志高的空调</a></li>
+						<li><a href = ""><i></i>制热效果好</a></li>
+						<li><a href = ""><i></i>制冷比较快</a></li>
+						<li><a href = ""><i></i>送货快</a></li>
+						<li><a href = ""><i></i>安装速度</a></li>
+						<li><a href = ""><i></i>一般</a></li>
+					</ul>
+				</div>
+				<div class = "sl-d sl-dc" style = "display:none">
+					<a class = "btnl boton-qd disabled" href = "javascript:;">确定</a>
+					<a class = "btnl boton-qx" href = "javascript:;">取消</a>
+				</div>
+			</div>
+			<div class = "brand-right">
+				<a href = "javascript:" class = "sq gd">更多<i class = "large-curr"></i></a>
+				<a href = "javascript:" class = "dx gb"><i>+</i>多选</a>
+			</div>
+		</div>
+		<div class = "KT-brand s-idex hiden" style = "display:none">
+			<div class = "brand-left">选购指数:</div>
+			<div class = "brand-center">
+				<div class = "sl-aa">
+					<ul class = "j-list">
+						<li><a href = ""><i></i>10.0-9.0</a></li>
+						<li><a href = ""><i></i>8.9-8.0</a></li>
+						<li><a href = ""><i></i>7.9-7.0</a></li>
+						<li><a href = ""><i></i>6.9-6.0</a></li>
+						<li><a href = ""><i></i>5.9-4.0</a></li>
+						<li><a href = ""><i></i>3.9-0</a></li>
+					</ul>
+				</div>
+				<div class = "sl-d sl-dc" style = "display:none">
+					<a class = "btnl boton-qd disabled" href = "javascript:;">确定</a>
+					<a class = "btnl boton-qx" href = "javascript:;">取消</a>
+				</div>
+			</div>
+			<div class = "brand-right">
+				<a style = "visibility:hidden" href = "javascript:" class = "sq gd">更多<i class = "large-curr"></i></a>
+				<a href = "javascript:" class = "dx gb"><i>+</i>多选</a>
+			</div>
+		</div>
+		<div class = "s-more">
+			<span class = "sp-wrap">更多选项(价格、能效、产品特色 等)<i class = "large-curr"></i></span>
+		</div>
+	</div>
+</div>
+</body>
+</html>

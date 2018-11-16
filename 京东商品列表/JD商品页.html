@@ -1,0 +1,2526 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset = "UTF-8">
+<title>JD商品页</title>
+<link type = "text/css" rel = "stylesheet" href = "font/iconfont.css"/>
+<style>
+*{margin:0;padding:0}
+body{font:12px/150% Microsoft YaHei,"\5b8b\4f53";color:#666}
+ul{list-style:none}
+a{text-decoration:none;color:#666}
+em,i{font-style:normal}
+p{color:#666}
+header{position:relative}
+#head{height:30px;background:#e3e4e5;}
+.head-cen{width:1215px;margin:0 auto;position:relative;line-height:30px;}
+.hotsale,.hotsales,.hotsales li{display:flex}
+.home{position:absolute;left:0;}
+.JD-home,.region,.area i,.area p,.navs-JD li,.tu a,.yu li,.prompt i,.prompt p,.ata ul,.ata .separat,.ata ul li{float:left;}
+.home .icon{font-size:20px;}
+.region{float:left;width:77px;margin-left:5px;}
+.region:hover{background:#fff;cursor:default;}
+.area .icon{text-indent:10px}
+.regions,.MY-jd,.purchase,.customer,.siteNavi,.inpone-jd{position:absolute;border:1px solid #cbcdcf;
+border-top:none;padding:5px 0;z-index:50;background:#fff}
+.regions,.MY-jd,.purchase,.customer,.siteNavi,.inpone-jd,.shopping-my{display:none}
+.regions{width:308px;position:absolute;left:79px;}
+.city{height:215px;}
+.city li{float:left;width:60px;text-align:center}
+.city li a{padding:5px 8px;}
+.city a:hover{background:#cbcdcf;color:#ff0000}
+.city li .city-li{background:#ff0000;color:#fff}
+.Sites{margin:0px 20px;border-top:1px dashed #737373}
+.Sites p{margin-top:10px}
+.Sites ul{height:65px;margin:5px 0}
+.Sites li{float:left;width:134px;height:26px;}
+.Sites li i{display:inline-block;width:14px;height:14px;vertical-align:sub;margin-right:10px}
+.Sites li:nth-child(1) i{background:url("imges/截图000.png") no-repeat 0px -1px}
+.Sites li:nth-child(2) i{background:url("imges/截图01.png") no-repeat 0px -1px}
+.Sites li:nth-child(3) i{background:url("imges/截图02.png") no-repeat 0px -1px}
+.Sites li:nth-child(4) i{background:url("imges/截图03.png") no-repeat 0px -1px}
+.navs{position:absolute;right:0;top:0}
+.colorse{color:#ff0000}
+.separator{width:1px;height:12px;background:#737373;margin-top:9px;overflow:hidden}
+.navse{margin:0 2px}
+.my-JD{position:relative;;padding:0 8px;cursor:default}
+.JD-navse{width:52px;padding-right:22px}
+.bjck:hover{background:#fff}
+.colors:hover{color:#ff0000}
+.navse .icon{vertical-align:sub;cursor:default;position:absolute;right:2px;top:0px}
+.MY-jd{width:278px;left:220px;}
+.MY-jd ul:first-of-type{height:85px;padding-bottom:5px;border-bottom:1px dashed #cbcdcf}
+.MY-jd li,.purchase li,.customer li{float:left;text-indent:15px}
+.Sites a:hover,.MY-jd a:hover,.purchase a:hover,.customer a:hover,.siteNavi a:hover,.dd-inner a:hover,.ata a:hover,.describe p:nth-child(1) a:hover,.hot-news ul a:hover,.large-none li a:hover,.yu a:hover{color:#ff0000}
+.MY-jd li{width:125px}
+.purchase{width:153px;right:173px;}
+.customer{width:168px;right:157px;}
+.customer li{width:75px;}
+.customer h4,.siteNavi h3{text-indent:15px;color:#2f2f2f}
+.client{height:155px;border-bottom:1px dashed #cbcdcf}
+.siteNavi{width:1208px;line-height:23px;left:-500px}
+.siteNavi ul,.siteNavi li{float:left}
+.siteNavi li{width:90px;text-indent:15px}
+.SN-topis,.SN-channel{border-right:1px solid #cbcdcf;margin:10px 0}
+.SN-topis{width:369px;}
+.SN-channel{width:279px;}
+.SN-life{width:279px;margin:10px 0}
+.SN-choice{width:278px;border-left:1px solid #cbcdcf;margin:10px 0}
+.inpone-jd{width:190px;right:0;background:#cbcdcf;padding:0}
+.san{display:inline-block;width:0;height:0;border-left:5px solid transparent;position:absolute;
+border-right:5px solid transparent;border-bottom:5px solid #fff;top:-5px;right:30px}
+.SJ-JD li img{position:absolute;left:5px;top:14px;width:70px;height:70px;border:1px solid #cbcdcf;padding:2px}
+.SJ-JD li{position:relative;border-bottom:1px solid #cbcdcf;background:#fff;
+line-height:17px;padding:15px 5px}
+.SJ-JD .SJ{margin:0 10px 0 86px;min-height:70px}
+.SJ h4 a{font-size:12px;line-height:17px;}
+.SJ-JD p{margin:3px 0;line-height:14px;color:#F10214}
+.tu a{display:inline-block;width:25px;margin-top:5px}
+.tu a:nth-child(2){color:#bbd34d}
+#logo-search{position:relative;width:1210px;margin:0 auto}
+.logo{position:relative;z-index:12;float:left;width:276px;height:50px;margin:15px 0 22px}
+.logo a{display:block;margin-top:2px;width:134px;height:42px;background-size:134px 42px;
+background:url("imges/jdlogo-201708-@1x.png") no-repeat}
+.search{position:absolute;left:445px;top:27px}
+.kuang{width:532px;height:38px;border:2px #ff0000 solid;}
+.kuang .text{width:440px;height:24px;line-height:24px;border:0px;outline:0;padding:7px 6px}
+.kuang .button{width:80px;height:38px;border:0px;outline:0;position:absolute;right:2px;
+background:#ff0000;color:#fff;font-size:16px;cursor:pointer}
+.yu{height:20px;line-height:20px;overflow:hidden}
+.yu li{margin-right:10px}
+.lisi{width:534px;position:relative;top:-30px;border:1px solid #ccc;background:#fff;
+overflow:hidden;z-index:45}
+.lisi li{padding:1px 6px;line-height:22px;cursor:pointer;overflow:hidden}
+.lisi-item{float:left;width:190px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+.lisi-count{overflow:hidden;text-align:right;}
+.lisi li:hover{background:rgba(255,223,198)}
+.search-lisi{float:left;color:#005aa0;width:190px;}
+.search-count{float:right;color:#aaa}
+.search-count a{color:#005aa0}
+.shopping{height:36px;position:relative;float:right;text-align:center;margin-top:27px;right:195px;
+line-height:36px;z-index:11}
+.gwc{width:91px;height:40px;position:absolute;border:1px solid #DFDFDF;background:#F9F9F9;padding:0 28px 0 20px;}
+.gwc-list{box-shadow:0 0 5px rgba(0,0,0,.2);background:#fff;border:1px solid #ddd;}
+.shopping a{color:#ff0000}
+.shopping .icon{font-size:30px;vertical-align:middle}
+.shopping span{display:inline-block;width:14px;height:15px;border-radius:7px;background:#cc0000;
+letter-spacing:-1px;position:absolute;top:7px;left:105px;padding:1px;line-height:14px;color:#fff}
+.spacer{position:absolute;right:0;top:-7px;width:139px;height:12px;background:#fff}
+.shopping-my{width:308px;position:absolute;top:42px;left:-169px;background:#fff;border:1px solid #ddd;
+box-shadow:0 0 5px rgba(0,0,0,.2)}
+.prompt{padding:10px 15px;padding-left:30px;height:49px;line-height:49px;color:#999}
+.prompt .icon{width:56px;height:49px;font-size:65px;}
+#classify{padding-top:10px;margin-bottom:15px;margin-top:92px;height:33px;border-bottom:2px solid #f30213}
+.w{width:1210px;margin:0 auto;}
+.dorpdown{position:absolute;width:190px;line-height:33px;background:#f30213;z-index:45}
+.dorpdown .dt{padding:0 10px;font-size:14px;position:relative;bottom:0;}
+.dorpdown .dt a{display:block;height:33px;background:#f30213;color:#fff;text-align:center}
+.dd{background:#fff;box-shadow:-1px 3px 12px -1px rgba(0,0,0,.3);margin-top:2px;}
+.dd-inner{padding:10px 0 11px;}
+.dd-inner li{height:27px}
+.dd-inner li h3{height:28px;padding:0 16px;line-height:28px;font-size:12px;font-weight:400;}
+.dd-inner li a{color:#333;padding:0 4px}
+.dd-list{background:rgba(39,2,2,.1)}
+.dd-layer{width:1020px;position:absolute;left:190px;top:35px;min-height:478px;border:1px solid #f7f7f7;background:#f7f7f7;box-shadow:2px 0 5px -1px rgba(0,0,0,.3);display:none}
+.dd-layer li{display:none}
+.dd-layer h1{position:absolute;left:50%;top:50%}
+.ata{padding-left:190px;float:left;position:relative}
+.ata a{float:left;height:33px;padding:0 22px;text-align:center;font-size:14px;color:#333;
+line-height:33px;font-weight:700}
+.separat{width:1px;height:14px;background:#eee;margin:10px 0;overflow:hidden}
+section{position:relative;width:1210px;margin:0 auto}
+article{height:152px;margin-bottom:15px;background:#f1f1f1}
+.hotsale-left,.hotsale-right{position:absolute;display:inline-block;width:30px;height:60px;text-align:center;background:url("imges/截图00.png") no-repeat -34px -15px;font-size:14px;line-height:18px;
+padding:20px 10px 0px 5px;color:#f60}
+.hotsale-left{left:20px}
+.hotsales{padding-left:80px;}
+.hotsales li{width:264px;height:100px;overflow:hidden;padding:11px;background:#fff;margin-right:13px;
+margin-top:15px}
+.dtt{width:100px;height:100px;margin-right:10px}
+.describe{width:154px}
+.describe p:nth-child(1){height:40px;line-height:20px;overflow:hidden;padding-top:5px;
+word-break:break-all}
+.describe p:nth-child(2){height:20px;line-height:20px;overflow:hidden;padding-top:5px;font-weight:700;
+color:#e4393c;font-size:14px}
+.btns{display:inline-block;height:14px;line-height:14px;border-radius:2px;background:#f7f7f7;
+margin-top:3px;padding:4px 13px 5px;border:1px solid #ddd}
+.hot-news{position:absolute;top:0;right:0;width:175px;height:152px;padding-left:50px}
+.hotsale-right{left:0px}
+.hot-news ul{height:135px;overflow:hidden;padding-top:15px;padding-right:10px}
+.hot-news ul li{width:165px;height:22px;overflow:hidden;line-height:22px;margin-bottom:5px;
+text-overflow:ellipsis;white-space:nowrap}
+aside .aside-open{right:270px}
+.aside-right{position:fixed;top:0;right:0;height:100%;z-index:9999;border-right:6px solid #7a6e6e;transition:right .3s ease-in-out}
+.jbm-gwc{width:270px;height:100%;position:absolute;background:#eceaea;left:6px;z-index:2;}
+.shopping-head{position:relative;height:40px;line-height:40px;font-size:16px}
+.shopping-head a{display:inline-block;height:40px;color:rgba(98,80,80)}
+.shopping-head a i{font-size:20px;margin-left:10px;margin-right:4px}
+.shopping-head span{display:inline-block;width:12px;height:12px;position:absolute;right:8px;top:16px;
+cursor:pointer;background:url("imges/无.png") no-repeat -14px -9px;transition:transform .2s ease-in-out}
+.shopping-head span:hover{transform:rotateZ(360deg)}
+.shopping-center{position:relative;width:100%;overflow-x:hidden;overflow-y:auto}
+.shopping-DL{padding:6px 5px;border:1px solid #edd28b;background:#fff;text-align:center}
+.shopping-DL span{display:inline-block;line-height:20px;color:#333}
+.shopping-DL a{display:inline-block;height:20px;line-height:20px;padding:0 5px;margin-left:5px;
+color:#fff;background:#c81623}
+.shopping-main{width:270px;position:absolute;left:0;top:50%;text-align:center;margin-top:-60px}
+.i-shopping{display:inline-block;width:113px;height:35px;background:url("imges/jdm-toolbar-face.png") no-repeat}
+.shopping-empty{line-height:20px}
+.shopping-empty a{color:#c81623}
+.shopping-foot{width:100%;height:50px;position:absolute;bottom:0;}
+.shopping-sum{height:40px;padding:5px 110px 5px 5px;position:relative;line-height:20px}
+.shopping-sum strong{color:#c81623;font-family:verdana}
+.shopping-account{position:absolute;top:7px;right:5px;width:110px;height:35px;text-align:center;
+color:#fff;font:16px/35px 微软雅黑;background:rgb(200,22,35)}
+.jbm-top{width:35px;position:absolute;top:50%;margin-top:-61px;left:-29px}
+.jbm-top li,.jbm-bottom li{position:relative;width:35px;height:35px;margin-bottom:1px;cursor:pointer;
+border-radius:3px 0 0 3px;background:#7a6e6e}
+.dica .J-trigger .iconfont-color{background:#c81623;z-index:5}
+.tab-tip{position:absolute;top:8px;right:10px;width:6px;height:6px;background:#c81623;border-radius:6px;z-index:3}
+.J-trigger .iconfont{position:absolute;width:34px;height:35px;z-index:2;color:#fff;font-size:20px;
+text-align:center;line-height:35px;background:rgba(122,110,110);margin-left:1px}
+.tab-text{display:inline-block;width:62px;height:35px;line-height:35px;color:#fff;text-align:center;z-index:1;position:absolute;left:35px;top:0;background:rgba(122,110,110);font-style:normal;
+border-radius:3px 0 0 3px;transition:left 0.3s ease-in-out 0.1s;}
+.tab-hover{left:-60px;background:#c81623;}
+.tab-sub{position:absolute;z-index:3;right:2px;top:-5px;height:11px;padding:1px 2px;text-align:center;
+border:1px solid#b61d1d;overflow:hidden;color:#fff;min-width:11px;border-radius:10px;display:none;
+background:#b61d1d;}
+.tabs-tip{position:absolute;top:0;right:35px;height:35px;line-height:35px;white-space:nowrap;
+border-radius:5px;background:#c81623;color:#fff;padding:0 10px;padding-left:30px;display:none}
+.tabs-tip span:nth-child(1){width:15px;height:15px;position:absolute;top:10px;left:10px;
+font-size:13px;background:url("imges/无标题.png") no-repeat -7px -10px}
+.jbm-bottom{position:absolute;bottom:-1px;left:-29px}
+.tabs-tip b{width:0;height:0;border:transparent 6px dashed;border-left:6px solid #c81623;
+position:absolute;right:-12px;top:12px;z-index:20;}
+#main{position:relative}
+.path{margin-bottom:10px;height:24px}
+.main-nav-item{float:left;font-family:microsoft yahei;position:relative;height:24px;cursor:pointer;}
+.one-leve{height:25px}
+.main-link{font-size:18px;font-weight:700}
+.large,.main-air{display:inline-block;height:22px;padding:0 4px 0 8px;border:1px solid #ddd;
+line-height:22px;vertical-align:sub;position:relative;}
+.main-nav-item .large-hover{border-color:#e4393c;border-bottom-color:#fff;z-index:6}
+.main-nav-item .largeNone-hover{border-color:#e4393c;z-index:3}
+.currty{display:inline-block;vertical-align:top}
+.large-curr{display:inline-block;width:20px;height:20px;margin-left:-3px;font-size:25px;transition:transform .2s ease-in-out}
+.large-none{position:absolute;width:350px;padding:10px 0 10px 8px;left:0;top:23px;
+border:1px solid #ddd;background:#fff}
+.large-none li{float:left;width:65px;height:24px;overflow:hidden;line-height:24px;margin-right:5px;
+text-overflow:ellipsis;white-space:nowrap}
+.KT-screen{border-top:1px solid #DDD;background:#FFF;margin-bottom:10px}
+.KT-path{border-bottom:1px solid #DDD;background:#F1F1F1;height:34px;line-height:34px;overflow:hidden}
+ .KT-screen .entend{margin-top:-1px;border:2px solid #AAA;background:#f9f9f9;}
+.KT-path h3{float:left;padding-left:10px}
+.KT-path h3 span{color:#c81623}
+.KT-path .se-ext{float:left;padding-left:20px}
+.KT-brand{position:relative;line-height:34px;border-bottom:1px dashed #eee}
+.KT-screen .entender{border:2px solid #edd28b;background:#fffdee}
+.brand-left{float:left;width:100px;padding-left:10px}
+.brand-center{margin-left:110px;padding-right:130px;padding-left:10px;overflow:hidden;background:#fff}
+.sl-a{float:left;padding-top:6px;margin-bottom:10px}
+.sl-a li{float:left;height:20px;line-height:20px;border:1px solid #fff;padding:0 3px;
+cursor:default;padding:0 7px;text-align:center;color:#005aa0}
+.v-fixed{padding-top:10px;margin-bottom:10px;height:99px;overflow:hidden}
+.sl-b .v-fixe{overflow-y:auto;overflow-x:hidden;height:196px;padding-top:1px;}
+.sl-a .curr{border-color:#e4393c;color:#e4393c}
+.sl-b{display:block;clear:both}
+.v-fixed li{float:left;width:116px;height:48px;padding:0;border:1px solid #DDD;margin:-1px -1px 0 0;
+background:#FFF;text-align:center}
+.v-fixed li a{display:block;border:1px solid #fff;height:46px;width:114px;
+overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#005aa0;line-height:48px}
+.v-fixed img{padding:5px 6px;vertical-align:top}
+.v-fixed li:hover img{display:none}
+.v-fixed li:hover a{border-color:#e4393c;color:#e4393c}
+.v-fixed li:hover{position:relative;border-color:#e4393c;box-shadow:2px 2px 3px rgba(0,0,0,.12)}
+.v-fixed .fixed-gl{position:relative;border-color:#e4393c;box-shadow:2px 2px 3px rgba(0,0,0,.12)}
+.fixed-i{display:block;position:absolute;right:-1px;bottom:-1px;width:10px;height:10px;
+background:url("imges/write_ok.gif") 0px -1px}
+.sl-c{overflow:hidden}
+.sl-key{float:left;margin-right:5px}
+.sl-ckey{float:left;height:34px;margin-bottom:10px;overflow:hidden;padding-top:4px}
+.sl-ckey li{float:left;margin-bottom:4px;height:26px;line-height:26px;margin-right:10px;}
+.sl-ckey li a{display:inline-block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+position:relative;padding-left:18px}
+.v-faxe li a i,.sl-ckey li a i{display:inline-block;width:12px;height:12px;border:1px solid #ccc;
+position:absolute;left:0;top:6px;background:url("imges/write_ok.gif") no-repeat 99px 99px;
+background-color:#fff}
+.v-faxe .xzk-a a i,.sl-ckey li a i{background-position:-1px 0px;border-color:#e4393c}
+.sl-d{text-align:center;padding-top:5px;padding-bottom:5px}
+.sl-d .disabled{background:#fff;cursor:default;color:#ccc;border:1px solid #ddd;padding:4px 13px 5px;
+opacity:.2}
+.btnl{display:inline-block;height:14px;line-height:14px;border-radius:2px;cursor:pointer;border:0;
+color:#fff;padding:5px 15px 6px;}
+.boton-qd,.btn-qd{background:#E74649}
+.boton-qx,.btn-qx{background:#f7f7f7;color:#666}
+.brand-right{position:absolute;top:6px;right:8px;width:120px;line-height:22px;overflow:hidden}
+.sq{float:left;margin-right:20px;width:50px;height:22px;background:#fff;color:#333;position:relative;
+visibility:visible}
+.sq:hover,.dx:hover{color:#e4393c;border-color:#e4393c}
+.sq:hover i{border-color:#e4393c}
+.sq i{position:absolute;top:0;right:0;display:block;width:20px;height:20px;border:1px #DDD solid;
+font-size:25px;}
+.dx{float:left;height:20px;line-height:20px;border:1px solid #ddd;padding:0 3px 0 18px;
+position:relative;background:#F8F8F8;color:#333}
+.dx i{position:absolute;display:block;left:3px;top:0;width:13px;height:20px;font-size:20px;}
+.sl-aa{overflow:hidden;padding-top:4px}
+.f-feature li:hover a,.sl-aa a:hover{color:#e4393c}
+.sl-aa a:hover i{border-color:#e4393c}
+.s-icon .sl-aa ul{height:36px}
+.s-icon .brand-left,.s-icon{line-height:40px}
+.sl-aa ul{float:left;overflow:hidden;position:relative;height:30px}
+.s-icon .sl-aa ul li{height:32px;line-height:32px}
+.sl-aa ul li{float:left;margin-right:16px;height:26px;line-height:26px;margin-bottom:4px}
+.KT-screen .s-icon ul li{margin-right:30px;}
+.KT-screen .s-icon .sl-aa a{position:relative;padding-right:36px;}
+.KT-screen .s-idex ul a{float:left;white-space:nowrap}
+.s-idex ul li{margin-right:50px;}
+.sl-aa img{position:absolute;right:0;top:50%;width:30px;height:30px;margin-top:-15px}
+.v-faxe{margin-top:-1px;border:2px #edd28b solid;background:#fffdee}
+.v-faxe li a{position:relative;padding-left:18px}
+.s-more{text-align:center;position:relative;top:-1px;border-top:1px solid #ddd;transition:border-color .15s ease-in-out}
+.s-more span{position:relative;display:inline-block;margin-top:-1px;height:28px;line-height:28px;
+padding:0 40px 0 20px;border-width:1px;border-style:solid;border-color:#fff #DDD #ddd;background:#fff;
+cursor:pointer;color:#333;transition:border-color .15s ease-in-out}
+.s-more span i{position:absolute;right:16px;top:4px;display:inline-block;width:20px;height:20px;
+font-size:25px}
+.f-feature li:hover i,.s-more:hover{border-color:#e4393c;}
+.s-more:hover span{border-color:#fff #e4393c #e4393c;color:#e4393c}
+#main-center{margin-bottom:10px;float:left;width:100%}
+.side-left{position:relative;width:210px;float:left;}
+.side-bar{background:#fff}
+.tarde-sele{display:none;border:1px solid #ddd;margin-bottom:10px;position:relative}
+.tarde-top{line-height:36px;padding-left:10px;margin-bottom:10px;overflow:hidden}
+.tarde-top h3{font-size:14px}
+.tarde-top span{position:absolute;right:10px;top:10px;width:24px;height:12px;overflow:hidden;
+background:url("imges/截图0120.png") no-repeat -1px -2px;opacity:0.2}
+.p-img,.p-name,.p-price,.p-review,.tarde-con{overflow:hidden}
+.tarde-con li{padding:0 9px;margin-bottom:20px}
+.p-img{width:100%;padding:0;margin-bottom:10px;text-align:center;position:relative}
+.p-name{height:36px;line-height:18px;margin-bottom:10px;overflow:hidden;display:block;
+word-break:break-all;word-wrap:break-word}
+.p-price{height:16px;line-height:16px;margin-bottom:4px;overflow:hidden}
+.p-price strong{float:left;margin-right:6px;color:#e4393c;font-weight:700;font-size:14px;
+font-family:verdana}
+.p-price span{float:left;height:16px;line-height:16px;padding:0 3px;margin-right:3px;overflow:hidden;
+color:#fff;background:#e23a3a;cursor:default;border-radius:2px}
+.p-review a{color:#005aa0}
+.side-right{margin-left:220px;padding-bottom:30px}
+.filter-m{position:relative;z-index:4;border-top:1px #DDD solid;margin-bottom:5px}
+.f-line{padding:6px 8px;border-bottom:1px solid #E7E3E7;background:#F9F9F9;}
+.f-lin{height:25px;background:#F1F1F1}
+.clearfic{height:26px}
+.f-sort{float:left;margin-right:24px}
+.f-sort a{float:left;padding:0 10px;height:23px;border:1px #CCC solid;line-height:23px;color:#333;
+margin-right:-1px;background:#FFF}
+.f-sort a:hover{border-color:#e4393c;position:relative;z-index:2;color:#e4393c}
+.filter-m .f-sort .curr{border-color:#e4393c;color:#fff;position:relative;z-index:2;
+background:#e4393c}
+.f-pager{float:right}
+.f-texts{line-height:23px;margin-right:10px;font-family:verdana}
+.f-texts b,.f-texts em,.f-texts i{font-weight:400;font-style:normal}
+.f-texts b{font-weight:700;color:#e4393c}
+.f-prev,.f-next{display:inline-block;width:46px;height:23px;border:1px #DDD solid;background:#fff;
+line-height:23px;text-align:center;font-size:16px;color:#AAA;font-family:"\5b8b\4f53"}
+.disabl{padding:0;background:#F1F1F1;color:#CCC;cursor:default;margin-right:-4px}
+.f-store{float:left;padding-left:5px}
+.f-store p{float:left;line-height:25px;margin-right:5px;color:#999}
+.f_stoped{float:left;position:relative;z-index:3;height:26px;margin-right:10px}
+.ul-area{float:left;position:relative;top:0;height:23px;background:#fff;border:1px solid #CECBCE;
+padding:0 24px 0 4px;line-height:23px;overflow:hidden}
+.ui-area-hover .ul-area{z-index:1;height:25px;border-bottom:0}
+.ul-area i,.ui-wrap-tp a i{display:block;position:absolute;top:0px;right:8px;width:17px;height:17px;
+background:url("imges/截图0d0.png") no-repeat 1px 5px}
+.f-feature{float:left;position:relative;width:auto;height:25px;overflow:hidden}
+.f-feature li{float:left;height:25px;line-height:25px}
+.f-feature li a{position:relative;display:inline-block;padding-left:18px;color:#333;padding-right:5px}
+.f-feature li i{display:inline-block;width:12px;height:12px;border:1px solid #ccc;position:absolute;
+left:0;top:6px;background:url(imges/write_ok.gif) no-repeat 99px 99px;background-color:#fff;}
+.f-feature .secked i{background-position:-1px 0px;border-color:#e4393c;}
+.ui-wrap{position:absolute;left:0;top:25px;float:left;border:1px #CECBCE solid;width:460px;
+padding:12px 12px 15px;background:#fff;box-shadow:0 0 5px #ddd}
+.ui-wrap-s a:hover{color:#e4393c}
+.ui-wrap-tp{width:423px;cursor:default;height:25px;border-bottom:2px #e4393c solid;overflow:visible}
+.ui-wrap-tp a{position:relative;float:left;height:23px;line-height:23px;padding:0 25px 1px 6px;
+margin-right:4px;border:1px #ddd solid;border-bottom:0;color:#005AA0;text-align:center;
+cursor:pointer;overflow:hidden;max-width:36px}
+.ui-wrap-tp .ui-wrap-xz{height:25px;background-color:#fff;border:2px #e4393c solid;border-bottom:0;
+padding:0 25px 0 6px;line-height:22px}
+.ui-wrap-s ul{padding-top:10px;overflow:hidden;width:100%;margin-bottom:-5px}
+.ui-wrap-s ul li{float:left;width:80px;padding:0 16px 1px 0;line-height:18px}
+.ui-wrap-s li a{float:left;padding:2px 4px 2px 0;color:#005aa0}
+.ui-wrap-s .ui-wrap-hs a{color:#e4393c}
+.clear-float{display:block;overflow:hidden;clear:both;height:0;line-height:0;font-size:0;
+visibility:hidden}
+.page-content{margin-bottom:20px;height:auto;position:relative;float:left}
+.sp-content{width:1000px;margin-right:-10px;height:auto;float:left}
+
+.sp-cont{width:240px;height:466px;float:left;position:relative;margin-top:10px;margin-right:10px;}
+.sp-cont .sp-conted{padding-top:12px;padding-bottom:12px}
+.sp-conted{width:220px;position:absolute;left:0;top:0;background:#fff;border:1px #fff solid;
+padding:38px 9px 10px;transition:border-color .1s ease}
+.sp-conted:hover{border-color:#e9e9e9;box-shadow:0 0 2px 2px #f8f8f8}
+.sp-img{height:220px;padding:0;position:relative;overflow:hidden;margin-bottom:5px}
+.sp-img a{display:block;position:relative;overflow:hidden}
+.sp-scroll{position:relative;padding:0;margin-bottom:10px;}
+.sp-min{height:29px;overflow:hidden}
+.sp-item{float:left;width:34px;height:29px;text-align:left}
+.sp-item a{cursor:default;display:inline-block;border:1px #ddd solid;padding:1px;height:25px}
+.sp-item:hover a{border-color:#e4393c;border-width:2px;padding:0;}
+.sp-item a.curr{padding:0;border-width:2px;border-color:#e4393c}
+.sp-price{position:relative;line-height:22px;height:22px;overflow:hidden;width:100%;margin:0 0 8px}
+.sp_price{float:left;margin-right:10px;color:#e4393c;font-size:20px;font-weight:400;
+font-family:Verdana}
+.sp_price em{font-size:16px}
+.sp-name{height:40px;margin-bottom:8px;overflow:hidden;word-break:break-all;word-wrap:break-word}
+.sp-name em{display:block;height:20px;line-height:20px;overflow:hidden;transition:height .08s ease}
+.sp-names{display:block;width:228px;height:19px;margin-top:1px;margin-right:-8px;overflow:hidden}
+.sp-names .attr{float:left;height:19px;line-height:19px;padding:0 4px;margin-right:7px;
+background:#f4f4f4;color:#999;font-weight:400}
+.sp-commit{width:100%;height:18px;margin-top:-3px;margin-bottom:9px;overflow:hidden}
+.buy-score{float:right;padding-right:11px;color:#a7a7a7}
+.sp-commit strong{color:#a7a7a7;font-weight:400}
+.buy-score em{margin-left:5px;color:#646fb0;font-family:verdana;font-weight:700}
+.sp-commit strong a{color:#646fb0;font-family:verdana;font-weight:700}
+.sp-focus{position:absolute;left:172px;top:236px;visibility:hidden;opacity:0;transition:top .3s ease,opacity .1s ease .1s}
+.p-focus{position:relative;display:inline-block;height:25px;line-height:25px;color:#fff;border:medium none;background:rgba(0,0,0,.7);padding:0 8px 0 25px}
+.p-focus i{position:absolute;display:block;left:4px;top:3px;width:18px;height:18px;
+background:url("imges/截图1200.png") no-repeat 9999px 9999px;transition:transform .2s ease-in-out}
+.sp-shop{line-height:18px;height:18px;overflow:hidden;margin-top:-3px;margin-bottom:9px}
+.sp-shop span{display:inline-block;position:relative;height:18px}
+.sp-shop span a{color:#999}
+.sp-shop span em{position:absolute;right:-21px;top:1px;display:block;cursor:pointer;width:16px;
+height:16px;background:url("imges/截图102.png") no-repeat -3px -3px}
+.sp-icons{overflow:hidden;height:16px;margin-bottom:12px}
+.sp-icons-icon{float:left;padding:0 3px;margin-right:3px;overflow:hidden;text-align:center;
+font-style:normal;font-family:"Helvetica Neue","Hiragino Sans GB",SimSun;serif;cursor:default;
+border-radius:2px}
+.sp-icons-1{height:16px;line-height:16px;background:#e23a3a;color:#FFF;}
+.sp-icons-2{height:14px;line-height:14px;border:1px solid #e23a3a;color:#e23a3a}
+.page-break{margin-bottom:10px;height:38px;float:right}
+.p-page{float:right}
+.pa-page{float:left}
+.pa-page li{float:left}
+.pa-page a{color:#333;border:1px #ddd solid;background-color:#f7f7f7;background-repeat:repeat-x}
+.pn-prev a i{font-style:normal;font-size:16px;padding:0 5px;font-family:"\5b8b\4f53";color:#aaa}
+.pa-page a,.pn-prev span{float:left;height:36px;line-height:36px;padding:0 14px;font-size:14px;
+margin-right:5px;}
+.pn-prev span{color:#ccc}
+.page-break .pa-page .disableds{background:#fff;cursor:default}
+.page-break .pa-page .disableds i,.page-break .pa-page .disableds em{color:#ccc}
+.page-break .pa-page .currss{border:0;padding:1px 15px;background:0 0;color:#e4393c;cursor:default}
+.p-jump{float:left;margin-left:20px}
+.p-jump input{float:left;width:30px;height:30px;margin:0 3px;line-height:30px;font-size:14px;
+text-align:center;border:1px #CCC solid;padding:3px}
+.p-jump em{float:left;line-height:38px;font-size:14px}
+.p-jump .btntn{float:left;height:27px;margin-left:10px;font-size:14px;line-height:27px;cursor:pointer;
+border-radius:2px;background:#F7F7F7;text-align:center;border:1px #DDD solid;padding:4px 13px 5px;
+color:#666;background-color:#f7f7f7;}
+</style>
+</head>
+<body>
+<header>
+	<div id = "head">
+		<div class = "head-cen">
+			<div class = "home">
+				<p class = "JD-home">
+					<i class = "icon iconfont">&#xe654;</i>&nbsp;
+					<a href = "">京东首页</a>
+				</p>
+				<div class = "region BJS bjck">
+					<div class = "area">
+						<i class = "icon iconfont">&#xe70b;</i>&nbsp;
+						<p><span class = "area-dq" title = "北京">北京</span></p>
+					</div>
+					<div class = "regions pall">
+						<ul class = "city">
+							<li><a class = "city-li" href = "javascript:void(0)">北京</a></li>
+							<li><a href = "javascript:void(0)">上海</a></li>
+							<li><a href = "javascript:void(0)">天津</a></li>
+							<li><a href = "javascript:void(0)">重庆</a></li>
+							<li><a href = "javascript:void(0)">河北</a></li>
+							<li><a href = "javascript:void(0)">山西</a></li>
+							<li><a href = "javascript:void(0)">河南</a></li>
+							<li><a href = "javascript:void(0)">辽宁</a></li>
+							<li><a href = "javascript:void(0)">吉林</a></li>
+							<li><a href = "javascript:void(0)">黑龙江</a></li>
+							<li><a href = "javascript:void(0)">内蒙古</a></li>
+							<li><a href = "javascript:void(0)">江苏</a></li>
+							<li><a href = "javascript:void(0)">山东</a></li>
+							<li><a href = "javascript:void(0)">安徽</a></li>
+							<li><a href = "javascript:void(0)">浙江</a></li>
+							<li><a href = "javascript:void(0)">福建</a></li>
+							<li><a href = "javascript:void(0)">湖北</a></li>
+							<li><a href = "javascript:void(0)">湖南</a></li>
+							<li><a href = "javascript:void(0)">广东</a></li>
+							<li><a href = "javascript:void(0)">广西</a></li>
+							<li><a href = "javascript:void(0)">江西</a></li>
+							<li><a href = "javascript:void(0)">四川</a></li>
+							<li><a href = "javascript:void(0)">海南</a></li>
+							<li><a href = "javascript:void(0)">贵州</a></li>
+							<li><a href = "javascript:void(0)">云南</a></li>
+							<li><a href = "javascript:void(0)">西藏</a></li>
+							<li><a href = "javascript:void(0)">陕西</a></li>
+							<li><a href = "javascript:void(0)">甘肃</a></li>
+							<li><a href = "javascript:void(0)">青海</a></li>
+							<li><a href = "javascript:void(0)">宁夏</a></li>
+							<li><a href = "javascript:void(0)">新疆</a></li>
+							<li><a href = "javascript:void(0)">港澳</a></li>
+							<li><a href = "javascript:void(0)">台湾</a></li>
+							<li><a href = "javascript:void(0)">钓鱼岛</a></li>
+							<li><a href = "javascript:void(0)">海外</a></li>
+						</ul>
+						<div class = "Sites">
+							<p>Available Sites</p>
+							<ul>
+								<li><a href = ""><i></i>Global Site</a></li>
+								<li><a href = ""><i></i>Cant Poccnn</a></li>
+								<li><a href = ""><i></i>Situs Indonesia</a></li>
+								<li><a href = ""><i></i>Sitio de Espana</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class = "navs">
+				<ul class = "navs-JD">
+					<li class = "navse">
+						<div class = "my-JD">
+							<a href = "">你好,&nbsp;&nbsp;请登录</a>&nbsp;&nbsp;&nbsp;<a class = "colorse" href = "">免费注册</a>
+						</div>
+					</li>
+					<li class = "separator"></li>
+					<li class = "navse">
+						<div class = "my-JD">
+							<a class = "colors" href = "">我的订单</a>
+						</div>
+					</li>
+					<li class = "separator"></li>
+					<li class = "navse BJS bjck">
+						<div class = "my-JD JD-navse">
+							<a class = "colors" href = "">我的京东</a>&nbsp;<i class = "icon iconfont">&#xe61f;</i>
+						</div>
+						<div class = "MY-jd pall">
+							<ul>
+								<li><a href = "">待处理订单</a></li>
+								<li><a href = "">消息</a></li>
+								<li><a href = "">返修退换货</a></li>
+								<li><a href = "">我的问答</a></li>
+								<li><a href = "">降价商品</a></li>
+								<li><a href = "">我的关注</a></li>
+							</ul>
+							<ul>
+								<li><a href = "">我的京豆</a></li>
+								<li><a href = "">我的优惠券</a></li>
+								<li><a href = "">我的白条</a></li>
+								<li><a href = "">我的理财</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class = "separator"></li>
+					<li class = "navse">
+						<div class = "my-JD">
+							<a class = "colors bjck" href = "">京东会员</a>
+						</div>
+					</li>
+					<li class = "separator"></li>
+					<li class = "navse BJS bjck">
+						<div class = "my-JD JD-navse">
+							<a class = "colors" href = "">企业采购</a>&nbsp;<i class = "icon iconfont">&#xe61f;</i>
+						</div>
+						<div class = "purchase pall">
+							<ul>
+								<li><a href = "">企业购</a></li>
+								<li><a href = "">商用场景馆</a></li>
+								<li><a href = "">工业品</a></li>
+								<li><a href = "">礼品卡</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class = "separator"></li>
+					<li class = "navse BJS bjck">
+						<div class = "my-JD JD-navse">
+							<p>客户服务</p><i class = "icon iconfont">&#xe61f;</i>
+						</div>
+						<div class = "customer pall">
+							<ul class = "client">
+								<h4>客户</h4>
+								<li><a href ="">帮助中心</a></li>
+								<li><a href ="">售后服务</a></li>
+								<li><a href ="">在线客服</a></li>
+								<li><a href ="">意见建议</a></li>
+								<li><a href ="">电话客服</a></li>
+								<li><a href ="">客服邮箱</a></li>
+								<li><a href ="">金融咨询</a></li>
+								<li><a href ="">全球售客服</a></li>
+							</ul>
+							<ul class = "tenant">
+								<h4>商户</h4>
+								<li><a href ="">合作招商</a></li>
+								<li><a href ="">学习中心</a></li>
+								<li><a href ="">商家后台</a></li>
+								<li><a href ="">京麦工作台</a></li>
+								<li><a href ="">商家帮助</a></li>
+								<li><a href ="">规则平台</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class = "separator"></li>
+					<li class = "navse BJS bjck">
+						<div class = "my-JD JD-navse">
+							<p>网站导航</p><i class = "icon iconfont">&#xe61f;</i>
+						</div>
+						<div class = "siteNavi pall">
+							<ul class = "SN-topis">
+								<h3>特色主题</h3>
+								<li><a href = "">京东试用</a></li>
+								<li><a href = "">京东金融</a></li>
+								<li><a href = "">全球售</a></li>
+								<li><a href = "">国际站</a></li>
+								<li><a href = "">京东会员</a></li>
+								<li><a href = "">京东预售</a></li>
+								<li><a href = "">买什么</a></li>
+								<li><a href = "">俄语站</a></li>
+								<li><a href = "">装机大师</a></li>
+								<li><a href = "">0元测评</a></li>
+								<li><a href = "">定期送</a></li>
+								<li><a href = "">港澳售</a></li>
+								<li><a href = "">优惠券</a></li>
+								<li><a href = "">秒杀</a></li>
+								<li><a href = "">闪购</a></li>
+								<li><a href = "">印尼站</a></li>
+								<li><a href = "">京东金融科技</a></li>
+								<li><a href = "">In货推荐</a></li>
+								<li><a href = "">陪伴计划</a></li>
+								<li><a href = "">出海招商</a></li>
+							</ul>
+							<ul class = "SN-channel">
+								<h3>行业频道</h3>
+								<li><a href = "">手机</a></li>
+								<li><a href = "">智能数码</a></li>
+								<li><a href = "">玩3C</a></li>
+								<li><a href = "">电脑办公</a></li>
+								<li><a href = "">家用电器</a></li>
+								<li><a href = "">京东智能</a></li>
+								<li><a href = "">服装城</a></li>
+								<li><a href = "">京东生鲜</a></li>
+								<li><a href = "">家装城</a></li>
+								<li><a href = "">母婴</a></li>
+								<li><a href = "">食品</a></li>
+								<li><a href = "">农资频道</a></li>
+								<li><a href = "">整车</a></li>
+								<li><a href = "">图书</a></li>
+								<li><a href = "">京东元器件</a></li>
+							</ul>
+							<ul class = "SN-life">
+								<h3>生活服务</h3>
+								<li><a href = "">京东众筹</a></li>
+								<li><a href = "">白条</a></li>
+								<li><a href = "">京东金融APP</a></li>
+								<li><a href = "">京东小金库</a></li>
+								<li><a href = "">理财</a></li>
+								<li><a href = "">智能家电</a></li>
+								<li><a href = "">话费</a></li>
+								<li><a href = "">水电煤</a></li>
+								<li><a href = "">彩票</a></li>
+								<li><a href = "">旅行</a></li>
+								<li><a href = "">机票酒店</a></li>
+								<li><a href = "">电影票</a></li>
+								<li><a href = "">京东到家</a></li>
+								<li><a href = "">游戏</a></li>
+							</ul>
+							<ul class = "SN-choice">
+								<h3>更多精选</h3>
+								<li><a href = "">合作招商</a></li>
+								<li><a href = "">京东通信</a></li>
+								<li><a href = "">京东E卡</a></li>
+								<li><a href = "">企业采购</a></li>
+								<li><a href = "">服务市场</a></li>
+								<li><a href = "">办公生活馆</a></li>
+								<li><a href = "">乡村招募</a></li>
+								<li><a href = "">校园加盟</a></li>
+								<li><a href = "">京友邦</a></li>
+								<li><a href = "">京东社区</a></li>
+								<li><a href = "">游戏社区</a></li>
+								<li><a href = "">知识产权维权</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class = "separator"></li>
+					<li class = "navse navse-list BJS">
+						<div class = "my-JD">
+							<a class = "colors" href = "">手机京东</a>
+						</div>
+						<div class = "inpone-jd pall">
+							<span class = "san"></span>
+							<ul class = "SJ-JD">
+								<li>
+									<img src = "imges/SJJD.png"/>
+									<div class = "SJ">
+										<h4><a href = "">手机京东</a></h4>
+										<p>新人专享大礼包</p>
+										<div class = "tu">
+											<a href = ""><i class = "ico iconfont">&#xe610;</i></a>
+											<a href = ""><i class = "ico iconfont">&#xe68d;</i></a>
+											<a href = ""><i class = "ico iconfont">&#xe701;</i></a>
+										</div>
+									</div>
+								</li>
+								<li>
+									<img src = "imges/JDWX.jpg"/>
+									<div class = "SJ">
+										<h4><a href = "">关注京东微信</a></h4>
+										<p>微信扫一扫关注新粉最高180元惊喜礼包</p>
+									</div>
+								</li>
+								<li>
+									<img src = "imges/JDJR.jpg"/>
+									<div class = "SJ">
+										<h4><a href = "">京东金融客户端</a></h4>
+										<p>新人专享大礼包</p>
+										<div class = "tu">
+											<a href = ""><i class = "ico iconfont">&#xe610;</i></a>
+											<a href = ""><i class = "ico iconfont">&#xe68d;</i></a>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id = "logo-search">
+		<div class = "logo"><a href = "#"><!--<img src = "imges/jdlogo-201708-@1x.png">--></a></div>
+		<div class= "search">
+			<div class = "kuang">
+				<input type = "text" class = "text" placeholder = "只修不换" >
+				<button onclick = "console.log(123456)" class = "button">搜索</button>
+			</div>
+			<ul class = "yu">
+				<li><a href = "">24H极速装</a></li>
+				<li><a href = "">节能空调</a></li>
+				<li><a href = "">0元安装</a></li>
+				<li><a href = "">智能空调</a></li>
+				<li><a href = "">中央空调</a></li>
+			</ul>
+			<ul class = "lisi" style = "display:none">
+				<!--<li>
+					<div class = "lisi-item"></div>
+					<div class = "lisi-count">搜索历史</div>
+				</li>-->
+			</ul>
+		</div>
+		<div class = "shopping">
+			<div class = "gwc">
+				<a href = "">我的购物车<i class = "icon iconfont">&#xe655;</i><span>0</span></a>
+			</div>
+			<div class = "shopping-my">
+				<div class = "spacer"></div>
+				<div class = "prompt">
+					<i class = "icon iconfont">&#xe655;</i>
+					<p>购物车中还没有商品,赶紧选购吧!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id = "classify">
+		<div class = "w">
+			<div class = "dorpdown BJS">
+				<div class = "dt">
+					<a href = "">全部商品分类</a>
+				</div>
+				<div class = "dd pall" style = "display:none">
+					<div class = "dd-inner">
+						<ul>
+							<li class = ""><h3><a href = "">家用电器</a></h3></li>
+							<li><h3><a href = "">手机</a>/<a href = "">运营商</a>/<a href = "">数码</a></h3></li>
+							<li><h3><a href = "">电脑</a>/<a href = "">办公</a></h3></li>
+							<li><h3><a href = "">家居</a>/<a href = "">家具</a>/<a href = "">家装</a>/<a href = "">厨具</a></h3></li>
+							<li><h3><a href = "">男装</a>/<a href = "">女装</a>/<a href = "">童装</a>/<a href = "">内衣</a></h3></li>
+							<li><h3><a href = "">美妆</a>/<a href = "">个护清洁</a>/<a href = "">宠物</a></h3></li>
+							<li><h3><a href = "">女鞋</a>/<a href = "">箱包</a>/<a href = "">钟表</a>/<a href = "">珠宝</a></h3></li>
+							<li><h3><a href = "">男鞋</a>/<a href = "">运动</a>/<a href = "">户外</a></h3></li>
+							<li><h3><a href = "">房产</a>/<a href = "">汽车</a>/<a href = "">汽车用品</a></h3></li>
+							<li><h3><a href = "">母婴</a>/<a href = "">玩具乐器</a></h3></li>
+							<li><h3><a href = "">食品</a>/<a href = "">酒类</a>/<a href = "">生鲜</a>/<a href = "">特产</a></h3></li>
+							<li><h3><a href = "">艺术</a>/<a href = "">礼品鲜花</a>/<a href = "">农资绿植</a></h3></li>
+							<li><h3><a href = "">医药保健</a>/<a href = "">计生情趣</a></h3></li>
+							<li><h3><a href = "">图书</a>/<a href = "">音像</a>/<a href = "">电子书</a></h3></li>
+							<li><h3><a href = "">机票</a>/<a href = "">酒店</a>/<a href = "">旅游</a>/<a href = "">生活</a></h3></li>
+							<li><h3><a href = "">理财</a>/<a href = "">众筹</a>/<a href = "">白条</a>/<a href = "">保险</a></h3></li>
+							<li><h3><a href = "">安装</a>/<a href = "">维修</a>/<a href = "">清洗保养</a></h3></li>
+						</ul>
+					</div>
+					<div class = "dd-layer">
+						<ul>
+							<li><h1>对应第一栏</h1></li>
+							<li><h1>对应第二栏</h1></li>
+							<li><h1>对应第三栏</h1></li>
+							<li><h1>对应第四栏</h1></li>
+							<li><h1>对应第五栏</h1></li>
+							<li><h1>对应第六栏</h1></li>
+							<li><h1>对应第七栏</h1></li>
+							<li><h1>对应第八栏</h1></li>
+							<li><h1>对应第九栏</h1></li>
+							<li><h1>对应第十栏</h1></li>
+							<li><h1>对应第十一栏</h1></li>
+							<li><h1>对应第十二栏</h1></li>
+							<li><h1>对应第十三栏</h1></li>
+							<li><h1>对应第十四栏</h1></li>
+							<li><h1>对应第十五栏</h1></li>
+							<li><h1>对应第十六栏</h1></li>
+							<li><h1>对应第十七栏</h1></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class = "ata">
+				<ul>
+					<li><a href = "">服装城</a></li>
+					<li><a href = "">美妆馆</a></li>
+					<li><a href = "">超市</a></li>
+					<li><a href = "">生鲜</a></li>
+				</ul>
+				<div class = "separat"></div>
+				<ul>
+					<li><a href = "">全球购</a></li>
+					<li><a href = "">闪购</a></li>
+					<li><a href = "">拍卖</a></li>
+				</ul>
+				<div class = "separat"></div>
+				<ul>
+					<li><a href = "">金融</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+<aside>
+	<div class = "aside-right">
+		<div class = "jbm-gwc">
+			<h3 class = "shopping-head">
+				<a href = "">
+					<i class = "iconfont">&#xe628;</i>
+					<em>购物车</em>
+				</a>
+				<span class = "close"></span>
+			</h3>
+			<div class = "shopping-center">
+				<div class = "shopping-DL">
+					<span>还没有登录 , 登录后商品将被保存</span>
+					<a href = "">登录</a>
+				</div>
+				<div class = "shopping-main">
+					<i class = "i-shopping"></i>
+					<div class = "shopping-empty">
+						<p>购物车空空的 , 赶快去挑选心仪的商品吧~</p>
+						<a href = "">去首页看看</a>
+					</div>
+				</div>
+				<div class = "shopping-have"></div>
+			</div>
+			<div class = "shopping-foot">
+				<div class = "shopping-sum">
+					<p><strong> 0 </strong>件商品</p>
+					<p>共计 : <strong>¥0.00</strong></p>
+				</div>
+				<a class = "shopping-account" href = "">去购物车结算</a>
+			</div>
+		</div>
+		<ul class = "jbm-top dica">
+			<li class = "J-trigger" style = "display:none">
+				<i class="iconfont  dic">&#xe654;</i>
+				<em class = "tab-text">购物助手</em>
+				<span class = "tab-sub">0</span>
+			</li>
+			<li class = "J-trigger">
+				<i class = "tab-tip"></i>
+				<i class="iconfont dic">&#xe606;</i>
+				<em class = "tab-text">京东会员</em>
+				<span class = "tab-sub">0</span>
+			</li>
+			<li class = "J-trigger">
+				<i class="iconfont dic">&#xe628;</i>
+				<em class = "tab-text">购物车</em>
+				<span class = "tab-sub">0</span>
+				<div class = "tabs-tip">
+					<span></span>
+					<span>成功加入购物车!</span>
+					<b></b>
+				</div>
+			</li>
+			<li class = "J-trigger">
+				<i class="iconfont dic">&#xe630;</i>
+				<em class = "tab-text">我的关注</em>
+				<span class = "tab-sub">0</span>
+				<div class = "tabs-tip">
+					<span></span>
+					<span>成功加入收藏夹!</span>
+					<b></b>
+				</div>
+			</li>
+			<li class = "J-trigger">
+				<a href = "">
+					<i class="iconfont dic">&#xe62f;</i>
+					<em class = "tab-text">我的消息</em>
+					<span class = "tab-sub">0</span>
+				</a>
+			</li>
+			<li class = "J-trigger">
+				<i class="iconfont dic">&#xe642;</i>
+				<em class = "tab-text">咨询JIMI</em>
+				<span class = "tab-sub">0</span>
+			</li>
+		</ul>
+		<ul class = "jbm-bottom dica">
+			<li class = "J-trigger">
+				<i class="iconfont dic">&#xe61e;</i>
+				<em class = "tab-text">顶部</em>
+			</li>
+			<li class = "J-trigger">
+				<a href = "">
+					<i class="iconfont dic">&#xe649;</i>
+					<em class = "tab-text">反馈</em>
+				</a>
+			</li>
+		</ul>
+	</div>
+</aside>
+<script>
+	var oregion = document.querySelector(".region")
+	var oregions = document.querySelector(".regions")
+	var oa = oregions.querySelectorAll("a")
+	var areaDq = document.querySelector(".area-dq")
+	var oBJS = document.querySelectorAll(".BJS")
+	var opall = document.querySelectorAll(".pall")
+
+	var MYJd = document.querySelector(".MY-jd")
+	var opurchase = document.querySelector(".purchase")
+	var ocustomer = document.querySelector(".customer")
+	var ositeNavi = document.querySelector(".siteNavi")
+	var inponeJd = document.querySelector(".inpone-jd")
+	var navseList = document.querySelector(".navse-list")
+
+	var oshopping = document.querySelector(".shopping")
+	var shoppingMy = document.querySelector(".shopping-my")
+	var ogwc = document.querySelector(".gwc")
+	var odorpdown = document.querySelector(".dorpdown")
+	var odd = document.querySelector(".dd")
+	var odt = document.querySelector(".dt")
+	var ddInner = document.querySelector(".dd-inner")
+	var ddLayer = document.querySelector(".dd-layer")
+	var DDIi = ddInner.querySelectorAll("li")
+	var DDLi = ddLayer.querySelectorAll("li")
+	var okuang = document.querySelector(".kuang")
+	var otext = document.querySelector(".text")
+	var olisi = document.querySelector(".lisi")
+	var osearch = document.querySelector(".search")
+
+	var shoppingCenter = document.querySelector(".shopping-center")
+	var shoppingHead = document.querySelector(".shopping-head")
+	var shoppingFoot = document.querySelector(".shopping-foot")
+	var asideRight = document.querySelector(".aside-right")
+	var oclose = document.querySelector(".close")
+	var jbmTop = document.querySelector(".jbm-top")
+	var odic = document.querySelectorAll(".dic")
+	var jbmGwc = document.querySelector(".jbm-gwc")
+	var jbmBottom = document.querySelector(".jbm-bottom")
+	var JTrigger = document.querySelectorAll(".J-trigger")
+	var tabText = document.querySelectorAll(".tab-text")
+	var searchArr = ["海尔冰箱","西门子冰箱","格力空调"];
+
+	okuang.onclick = function(){	//搜索框
+		if(searchArr.length){
+			olisi.style.display = "block"
+		}else{
+			olisi.style.display = "none"
+		};
+		if(otext.value){
+			searchArr.push(otext.value)
+			if(searchArr.length === 10){
+				searchArr.shift();
+			};
+		};
+			MapSearchArr();
+	};
+	osearch.onmouseleave= function(){
+		olisi.style.display = "none"
+	};
+	function MapSearchArr(){
+		var HTML = "";
+		for(var i=0;i<searchArr.length;i++){
+			HTML += '<li>'+'<div class = "lisi-item">'+searchArr[i]+'</div>'+'<div class = "lisi-count">搜索历史</div>'+'</li>'
+		}
+		olisi.innerHTML = HTML
+	};
+
+	for(var i = 0;i<oa.length;i++){
+		oa[i].onclick = function(){
+			for(var i = 0;i<oa.length;i++){
+				oa[i].className = ""
+			}
+			this.className = "city-li"
+			var zhi = this.innerHTML
+			areaDq.innerHTML = zhi
+			areaDq.title = zhi
+		}
+	}
+	for(var i=0;i<oBJS.length;i++){
+		oBJS[i].index = i
+		oBJS[i].onmouseover = function(){
+			opall[this.index].style.display = "block"
+		}
+		oBJS[i].onmouseout = function(){
+			opall[this.index].style.display = "none"
+		}
+	};
+	oshopping.onmouseover = function(){
+		shoppingMy.style.display = "block"
+		ogwc.classList.add("gwc-list")
+	};
+	oshopping.onmouseout = function(){
+		shoppingMy.style.display = "none"
+		ogwc.classList.remove("gwc-list")
+	};
+	odt.onmouseover = function(){
+		for(var i=0;i<DDIi.length;i++){
+			DDIi[i].className = ""
+			DDLi[i].style.display = "none"
+		}
+	};
+	for(var i=0;i<DDIi.length;i++){
+		DDIi[i].index = i;
+		DDIi[i].onmouseover = function(){
+			for(var i=0;i<DDIi.length;i++){
+				DDIi[i].className = "";
+				DDLi[i].style.display = "none"
+			}
+			DDIi[this.index].className = "dd-list";
+			ddLayer.style.display = "block"
+			DDLi[this.index].style.display = "block"
+		}
+	}
+
+	for(var i = 0;i<JTrigger.length;i++){
+		JTrigger[i].index = i
+		JTrigger[i].onmouseover = function(){
+			tabText[this.index].classList.add("tab-hover")
+			odic[this.index].classList.add("iconfont-color")
+		}
+		JTrigger[i].onmouseout = function(){
+			tabText[this.index].classList.remove("tab-hover")
+			odic[this.index].classList.remove("iconfont-color")
+		}
+	}
+
+	clearInterval(timer)
+	var timer = setInterval(function(){
+		shoppingCenter.style.height =
+		document.documentElement.clientHeight-shoppingHead.offsetHeight-shoppingFoot.offsetHeight+"px"
+	},0)
+
+	JTrigger[2].onclick = function(){
+		asideRight.classList.add("aside-open")
+	}
+	oclose.onclick = function(){
+		asideRight.classList.remove("aside-open")
+	}
+</script>
+<section>
+	<article>
+		<div class = "hotsale">
+			<div class = "hotsale-left">热卖推荐</div>
+			<ul class = "hotsales">
+				<li>
+					<div class = "dtt">
+						<a href = ""><img alt = "[2599元] TCL正1.5匹一级能效直流变频空调" src = "imges/5b24e867N23b4566c.jpg"/></a>
+					</div>
+					<div class = "describe">
+						<p><a href = "">[2599元] TCL正1.5匹一级能效直流变频空调[全民消暑]</a></p>
+						<p>¥2599.00</p>
+						<a class = "btns" href = "">立即抢购</a>
+					</div>
+				</li>
+				<li>
+					<div class = "dtt">
+						<a href = ""><img alt = "[0元安装] 科龙3匹全直流变频一级能效智能圆柱空调" src = "imges/5b252057Na64e772f.jpg"/></a>
+					</div>
+					<div class = "describe">
+						<p><a href = "">[0元安装] 科龙3匹全直流变频一级能效智能圆柱空调</a></p>
+						<p>¥5799.00</p>
+						<a class = "btns" href = "">立即抢购</a>
+					</div>
+				</li>
+				<li>
+					<div class = "dtt">
+						<a href = ""><img alt = "格力(GREE) 2匹 变频 I酷 立柜式冷暖空调(深银色) KFR-50LW/(50551)FNAa-A3" src = "imges/56051a02N23c57a89.jpg"/></a>
+					</div>
+					<div class = "describe">
+						<p><a href = "">格力(GREE) 2匹 变频 I酷 立柜式冷暖空调(深银色) KFR-50LW/(50551)FNAa-A3</a></p>
+						<p>¥12299.00</p>
+						<a class = "btns" href = "">立即抢购</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class = "hot-news">
+			<div class = "hotsale-right">促销活动</div>
+			<ul>
+				<li>• <a href = "">【海信空调7.2超级品牌日】</a></li>
+				<li>• <a href = "">[超级品牌日]科龙一级能效888元抢购</a></li>
+				<li>• <a href = "">扬子一级变频低至2299</a></li>
+				<li>• <a href = "">6.29美的*清凉一夏*活动马上来袭</a></li>
+				<li>• <a href = "">TCL 清凉一夏, 直击底价</a></li>
+			</ul>
+		</div>
+	</article>
+	<div id = "main">
+		<div class = "path">
+			<div class = "main-nav-item one-leve">
+				<a class = "main-link" href = "">家用电器</a>
+				<i class = "iconfont main-arrow">&#xe61d;</i>
+			</div>
+			<div class = "main-nav-item">
+				<div class = "large">
+					<span class = "currty">大 家 电</span>
+					<i class = "iconfont large-curr">&#xe61f;</i>
+				</div>
+				<div class = "large-none" style = "display:none">
+					<ul>
+						<li><a href = "">厨卫大电</a></li>
+						<li><a href = "">大 家 电</a></li>
+						<li><a href = "">厨房小电</a></li>
+						<li><a href = "">生活电器</a></li>
+						<li><a href = "">个护健康</a></li>
+						<li><a href = "">商用电器</a></li>
+						<li><a href = "">家电服务</a></li>
+					</ul>
+				</div>
+				<i class = "iconfont main-arrow">&#xe61d;</i>
+			</div>
+			<div class = "main-nav-item">
+				<div class = "main-air">
+					<span class = "currty">空调</span>
+					<i class = "iconfont large-curr">&#xe61f;</i>
+				</div>
+				<div class = "large-none" style = "display:none">
+					<ul>
+						<li><a href = "">平板电视</a></li>
+						<li><a href = "">空调</a></li>
+						<li><a href = "">中央空调</a></li>
+						<li><a href = "">冰箱</a></li>
+						<li><a href = "">洗衣机</a></li>
+						<li><a href = "">家庭影院</a></li>
+						<li><a href = "">DVD/电视盒子</a></li>
+						<li><a href = "">迷你音响</a></li>
+						<li><a href = "">冷柜/冰吧</a></li>
+						<li><a href = "">家电配件</a></li>
+						<li><a href = "">功放</a></li>
+						<li><a href = "">回音壁/Soundbar</a></li>
+						<li><a href = "">Hi-Fi专区</a></li>
+						<li><a href = "">电视盒子</a></li>
+						<li><a href = "">酒柜</a></li>
+						<li><a href = "">移动空调</a></li>
+						<li><a href = "">KTV音响</a></li>
+						<li><a href = "">烘干机</a></li>
+					</ul>
+				</div>
+				<i class = "iconfont main-arrow">&#xe61d;</i>
+			</div>
+		</div>
+		<div class = "KT-screen">
+			<div class = "KT-path">
+				<h3><span>空调</span> 商品筛选</h3>
+				<div class = "se-ext">共 <span>10315</span>个商品</div>
+			</div>
+			<div class = "KT-brand cassted">
+				<div class = "brand-left">品牌:</div>
+				<div class = "brand-center">
+					<ul class = "sl-a" style = "display:none">
+						<li data-initial = "0" class = "curr">所有品牌</li>
+						<li data-initial = "a">A</li>
+						<li data-initial = "b">B</li>
+						<li data-initial = "c">C</li>
+						<li data-initial = "d">D</li>
+						<li data-initial = "e">E</li>
+						<li data-initial = "f">F</li>
+						<li data-initial = "g">G</li>
+						<li data-initial = "h">H</li>
+						<li data-initial = "i">I</li>
+						<li data-initial = "j">J</li>
+						<li data-initial = "k">K</li>
+						<li data-initial = "l">L</li>
+						<li data-initial = "m">M</li>
+						<li data-initial = "n">N</li>
+						<li data-initial = "o">O</li>
+						<li data-initial = "p" style = "display:none">P</li>
+						<li data-initial = "q">Q</li>
+						<li data-initial = "r">R</li>
+						<li data-initial = "s">S</li>
+						<li data-initial = "t">T</li>
+						<li data-initial = "u">U</li>
+						<li data-initial = "v" style = "display:none">V</li>
+						<li data-initial = "w">W</li>
+						<li data-initial = "x">X</li>
+						<li data-initial = "y">Y</li>
+						<li data-initial = "z">Z</li>
+						<li data-initial = "other" style = "display:none">其他</li>
+					</ul>
+					<div class = "sl-b">
+						<ul class = "v-fixed">
+							<li data-initial = "g">
+								<a title = "格力(GREE)" href = "">
+									<i></i>
+									<img width = "102" height = "36" src = "imges/jd.png"/>
+									<span>格力(GREE)</span>
+								</a>
+							</li>
+							<li data-initial = "m">
+								<a title = "美的(Midea)" href = "">
+									<i></i>
+									<img width = "102" height = "36" src = "imges/360.png"/>
+									<span>美的(Midea)</span>
+								</a>
+							</li>
+							<li data-initial = "a">
+								<a title = "奥克斯(AUX)" href = "">
+									<i></i>
+									<img width = "102" height = "36" src = "imges/360game.png"/>
+									<span>奥克斯(AUX)</span>
+								</a>
+							</li>
+							<li data-initial = "h">
+								<a title = "海尔(Haier)" href = "">
+									<i></i>
+									<img width = "102" height = "36" src = "imges/fenghuan.png"/>
+									<span>海尔(Haier)</span>
+								</a>
+							</li>
+							<li data-initial = "t">
+								<a title = "TCL" href = "">
+									<i></i>
+									<img width = "102" height = "36" src = "imges/renren.png"/>
+									<span>TCL</span>
+								</a>
+							</li>
+							<li data-initial = "z">
+								<a title = "志高(CHIGO)" href = "">
+									<i></i>
+									<img width = "102" height = "36" src = "imges/souhu.png"/>
+									<span>志高(CHIGO)</span>
+								</a>
+							</li>
+							<li data-initial = "h">
+								<a title = "海信(Hisense)" href = "">
+									<i></i>
+									<img width = "102" height = "36" src = "imges/taobao.png"/>
+									<span>海信(Hisense)</span>
+								</a>
+							</li>
+							<li data-initial = "s">
+								<a title = "三菱电机(Mitsubishi Electric)" href = "">
+									<i></i>
+									<img width = "102" height = "36" src = "imges/wangyi.png"/>
+									<span>三菱电机(Mitsubishi Electric)</span>
+								</a>
+							</li>
+							<li data-initial = "k">
+								<a title = "科龙(KELON)" href = "">
+									<i></i>
+									<img width = "102" height = "36" src = "imges/xinlan.png"/>
+									<span>科龙(KELON)</span>
+								</a>
+							</li>
+							<li data-initial = "c">
+								<a title = "长虹(CHANGHONG)" href = "">
+									<i></i>
+									<img width = "102" height = "36" src = "imges/youku.png"/>
+									<span>长虹(CHANGHONG)</span>
+								</a>
+							</li>
+							<li data-initial = "y">
+								<a title = "扬子" href = "">
+									<i></i>
+									<img width = "102" height = "36" src = "imges/360.png"/>
+									<span>扬子</span>
+								</a>
+							</li>
+							<li data-initial = "s">
+								<a title = "松下(Panasonic)" href = "">
+									<i></i>
+									<img width = "102" height = "36" src = "imges/youku.png"/>
+									<span>松下(Panasonic)</span>
+								</a>
+							</li>
+							<li data-initial = "f">
+								<a title = "富士通(Fujitsu)" href = "">
+									<i></i>
+									<img width = "102" height = "36" src = "imges/xinlan.png"/>
+									<span>富士通(Fujitsu)</span>
+								</a>
+							</li>
+							<li data-initial = "d">
+								<a title = "大金(DAIKIN)" href = "">
+									<i></i>
+									<img width = "102" height = "36" src = "imges/wangyi.png"/>
+									<span>大金(DAIKIN)</span>
+								</a>
+							</li>
+							</li>
+							<li data-initial = "g">
+								<a title = "格兰仕(Galanz)" href = "">
+									<i></i>
+									<img width = "102" height = "36" src = "imges/taobao.png"/>
+									<span>格兰仕(Galanz)</span>
+								</a>
+							</li>
+							<li data-initial = "t">
+								<a title = "统帅(Leader)" href = "">
+									<i></i>
+									<img width = "102" height = "36" src = "imges/souhu.png"/>
+									<span>统帅(Leader)</span>
+								</a>
+							</li>
+							<li data-initial = "k">
+								<a title = "康佳(KONKA)" href = "">
+									<i></i>
+									<img width = "102" height = "36" src = "imges/renren.png"/>
+									<span>康佳(KONKA)</span>
+								</a>
+							</li>
+							<li data-initial = "c">
+								<a title = "创维(Skyworth)" href = "">
+									<i></i>
+									<img width = "102" height = "36" src = "imges/fenghuan.png"/>
+									<span>创维(Skyworth)</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class = "sl-c" style = "display:none">
+						<span class = "sl-key">已选条件 : </span>
+						<ul class = "sl-ckey"></ul>
+					</div>
+					<div class = "sl-d" style = "display:none">
+						<a class = "btnl btn-qd disabled" href = "javascript:;">确定</a>
+						<a class = "btnl btn-qx" href = "javascript:;">取消</a>
+					</div>
+				</div>
+				<div class = "brand-right">
+					<a href = "javascript:" class = "sq">更多<i class = "iconfont">&#xe61f;</i></a>
+					<a href = "javascript:" class = "dx"><i>+</i>多选</a>
+				</div>
+			</div>
+			<div class = "KT-brand s-idex s-icon">
+				<div class = "brand-left">空调类别:</div>
+				<div class = "brand-center">
+					<div class = "sl-aa">
+						<ul class = "j-list">
+							<li><a href = ""><i></i>壁挂式空调<img src = "imges/5abb78b1N22484026.jpg"/></a></li>
+							<li><a href = ""><i></i>立柜式空调<img src = "imges/5abb78b5Nad2a2aec.jpg"/></a></li>
+							<li><a href = ""><i></i>移动空调<img src = "imges/5abb78baN3da315c4.jpg"/></a></li>
+						</ul>
+					</div>
+					<div class = "sl-d sl-dc" style = "display:none">
+						<a class = "btnl boton-qd disabled" href = "javascript:;">确定</a>
+						<a class = "btnl boton-qx" href = "javascript:;">取消</a>
+					</div>
+				</div>
+				<div class = "brand-right">
+					<a style = "visibility:hidden" href = "javascript:" class = "sq gd">更多<i class = "iconfont">&#xe61f;</i></a>
+					<a style = "visibility:hidden" href = "javascript:" class = "dx gb"><i>+</i>多选</a>
+				</div>
+			</div>
+			<div class = "KT-brand s-idex s-icon">
+				<div class = "brand-left">适用场景:</div>
+				<div class = "brand-center">
+					<div class = "sl-aa">
+						<ul class = "j-list">
+							<li><a href = ""><i></i>客厅<img src = "imges/5ac1d55fN817208b2.jpg"/></a></li>
+							<li><a href = ""><i></i>主卧<img src = "imges/5ac1d568N0e8394aa.jpg"/></a></li>
+							<li><a href = ""><i></i>次卧<img src = "imges/5ac1d56bN8f768429.jpg"/></a></li>
+							<li><a href = ""><i></i>书房/儿童房<img src = "imges/5ac1d574N73c0a68c.jpg"/></a></li>
+						</ul>
+					</div>
+					<div class = "sl-d sl-dc" style = "display:none">
+						<a class = "btnl boton-qd disabled" href = "javascript:;">确定</a>
+						<a class = "btnl boton-qx" href = "javascript:;">取消</a>
+					</div>
+				</div>
+				<div class = "brand-right">
+					<a style = "visibility:hidden" href = "javascript:" class = "sq gd">更多<i class = "iconfont">&#xe61f;</i></a>
+					<a style = "visibility:hidden" href = "javascript:" class = "dx gb"><i>+</i>多选</a>
+				</div>
+			</div>
+			<div class = "KT-brand s-idex">
+				<div class = "brand-left">商品匹数:</div>
+				<div class = "brand-center">
+					<div class = "sl-aa">
+						<ul class = "j-list">
+							<li><a href = ""><i></i>1匹</a></li>
+							<li><a href = ""><i></i>1.5匹</a></li>
+							<li><a href = ""><i></i>2匹</a></li>
+							<li><a href = ""><i></i>2.5匹</a></li>
+							<li><a href = ""><i></i>3匹</a></li>
+							<li><a href = ""><i></i>5匹及以上</a></li>
+						</ul>
+					</div>
+					<div class = "sl-d sl-dc" style = "display:none">
+						<a class = "btnl boton-qd disabled" href = "javascript:;">确定</a>
+						<a class = "btnl boton-qx" href = "javascript:;">取消</a>
+					</div>
+				</div>
+				<div class = "brand-right">
+					<a style = "visibility:hidden" href = "javascript:" class = "sq gd">更多<i class = "iconfont">&#xe61f;</i></a>
+					<a href = "javascript:" class = "dx gb"><i>+</i>多选</a>
+				</div>
+			</div>
+			<div class = "KT-brand s-idex hiden" style = "display:none">
+				<div class = "brand-left">品牌类型:</div>
+				<div class = "brand-center">
+					<div class = "sl-aa">
+						<ul class = "j-list">
+							<li><a href = ""><i></i>合资品牌</a></li>
+							<li><a href = ""><i></i>国产品牌</a></li>
+						</ul>
+					</div>
+					<div class = "sl-d sl-dc" style = "display:none">
+						<a class = "btnl boton-qd disabled" href = "javascript:;">确定</a>
+						<a class = "btnl boton-qx" href = "javascript:;">取消</a>
+					</div>
+				</div>
+				<div class = "brand-right">
+					<a style = "visibility:hidden" href = "javascript:" class = "sq gd">更多<i class = "iconfont">&#xe61f;</i></a>
+					<a style = "visibility:hidden" href = "javascript:" class = "dx gb"><i>+</i>多选</a>
+				</div>
+			</div>
+			<div class = "KT-brand s-idex hiden" style = "display:none">
+				<div class = "brand-left">价格:</div>
+				<div class = "brand-center">
+					<div class = "sl-aa">
+						<ul class = "j-list">
+							<li><a href = ""><i></i>0-2000</a></li>
+							<li><a href = ""><i></i>2001-2999</a></li>
+							<li><a href = ""><i></i>3000-3999</a></li>
+							<li><a href = ""><i></i>4000-4999</a></li>
+							<li><a href = ""><i></i>5000-5999</a></li>
+							<li><a href = ""><i></i>6000-7999</a></li>
+							<li><a href = ""><i></i>8000-9999</a></li>
+							<li><a href = ""><i></i>10000-11999</a></li>
+							<li><a href = ""><i></i>12000以上</a></li>
+						</ul>
+					</div>
+					<div class = "sl-d sl-dc" style = "display:none">
+						<a class = "btnl boton-qd disabled" href = "javascript:;">确定</a>
+						<a class = "btnl boton-qx" href = "javascript:;">取消</a>
+					</div>
+				</div>
+				<div class = "brand-right">
+					<a href = "javascript:" class = "sq gd">更多<i class = "iconfont">&#xe61f;</i></a>
+					<a href = "javascript:" class = "dx gb"><i>+</i>多选</a>
+				</div>
+			</div>
+			<div class = "KT-brand s-idex hiden" style = "display:none">
+				<div class = "brand-left">能效等级:</div>
+				<div class = "brand-center">
+					<div class = "sl-aa">
+						<ul class = "j-list">
+							<li><a href = ""><i></i>1级</a></li>
+							<li><a href = ""><i></i>2级</a></li>
+							<li><a href = ""><i></i>3级</a></li>
+							<li><a href = ""><i></i>其它</a></li>
+						</ul>
+					</div>
+					<div class = "sl-d sl-dc" style = "display:none">
+						<a class = "btnl boton-qd disabled" href = "javascript:;">确定</a>
+						<a class = "btnl boton-qx" href = "javascript:;">取消</a>
+					</div>
+				</div>
+				<div class = "brand-right">
+					<a style = "visibility:hidden" href = "javascript:" class = "sq gd">更多<i class = "iconfont">&#xe61f;</i></a>
+					<a style = "visibility:hidden" href = "javascript:" class = "dx gb"><i>+</i>多选</a>
+				</div>
+			</div>
+			<div class = "KT-brand s-idex hiden" style = "display:none">
+				<div class = "brand-left">产品特色:</div>
+				<div class = "brand-center">
+					<div class = "sl-aa">
+						<ul class = "j-list">
+							<li><a href = ""><i></i>圆柱式空调</a></li>
+							<li><a href = ""><i></i>全直流变频</a></li>
+							<li><a href = ""><i></i>静音空调</a></li>
+							<li><a href = ""><i></i>远程控制</a></li>
+							<li><a href = ""><i></i>可移动</a></li>
+							<li><a href = ""><i></i>柔风技术</a></li>
+							<li><a href = ""><i></i>无风感</a></li>
+							<li><a href = ""><i></i>防直吹</a></li>
+							<li><a href = ""><i></i>自动清洁</a></li>
+							<li><a href = ""><i></i>易拆洗</a></li>
+						</ul>
+					</div>
+					<div class = "sl-d sl-dc" style = "display:none">
+						<a class = "btnl boton-qd disabled" href = "javascript:;">确定</a>
+						<a class = "btnl boton-qx" href = "javascript:;">取消</a>
+					</div>
+				</div>
+				<div class = "brand-right">
+					<a style = "visibility:hidden" href = "javascript:" class = "sq gd">更多<i class = "iconfont">&#xe61f;</i></a>
+					<a href = "javascript:" class = "dx gb"><i>+</i>多选</a>
+				</div>
+			</div>
+			<div class = "KT-brand s-idex hiden" style = "display:none">
+				<div class = "brand-left">变频/定频:</div>
+				<div class = "brand-center">
+					<div class = "sl-aa">
+						<ul class = "j-list">
+							<li><a href = ""><i></i>变频</a></li>
+							<li><a href = ""><i></i>定频</a></li>
+						</ul>
+					</div>
+					<div class = "sl-d sl-dc" style = "display:none">
+						<a class = "btnl boton-qd disabled" href = "javascript:;">确定</a>
+						<a class = "btnl boton-qx" href = "javascript:;">取消</a>
+					</div>
+				</div>
+				<div class = "brand-right">
+					<a style = "visibility:hidden" href = "javascript:" class = "sq gd">更多<i class = "iconfont">&#xe61f;</i></a>
+					<a style = "visibility:hidden" href = "javascript:" class = "dx gb"><i>+</i>多选</a>
+				</div>
+			</div>
+			<div class = "KT-brand s-idex hiden" style = "display:none">
+				<div class = "brand-left">使用面积:</div>
+				<div class = "brand-center">
+					<div class = "sl-aa">
+						<ul class = "j-list">
+							<li><a href = ""><i></i>10m²以下</a></li>
+							<li><a href = ""><i></i>10-15m²以下</a></li>
+							<li><a href = ""><i></i>15-20m²以下</a></li>
+							<li><a href = ""><i></i>20-30m²以下</a></li>
+							<li><a href = ""><i></i>30-40m²以下</a></li>
+							<li><a href = ""><i></i>40m²以下</a></li>
+						</ul>
+					</div>
+					<div class = "sl-d sl-dc" style = "display:none">
+						<a class = "btnl boton-qd disabled" href = "javascript:;">确定</a>
+						<a class = "btnl boton-qx" href = "javascript:;">取消</a>
+					</div>
+				</div>
+				<div class = "brand-right">
+					<a style = "visibility:hidden" href = "javascript:" class = "sq gd">更多<i class = "iconfont">&#xe61f;</i></a>
+					<a href = "javascript:" class = "dx gb"><i>+</i>多选</a>
+				</div>
+			</div>
+			<div class = "KT-brand s-idex hiden" style = "display:none">
+				<div class = "brand-left">冷暖类型:</div>
+				<div class = "brand-center">
+					<div class = "sl-aa">
+						<ul class = "j-list">
+							<li><a href = ""><i></i>冷暖空调</a></li>
+							<li><a href = ""><i></i>单冷空调</a></li>
+						</ul>
+					</div>
+					<div class = "sl-d sl-dc" style = "display:none">
+						<a class = "btnl boton-qd disabled" href = "javascript:;">确定</a>
+						<a class = "btnl boton-qx" href = "javascript:;">取消</a>
+					</div>
+				</div>
+				<div class = "brand-right">
+					<a style = "visibility:hidden" href = "javascript:" class = "sq gd">更多<i class = "iconfont">&#xe61f;</i></a>
+					<a style = "visibility:hidden" href = "javascript:" class = "dx gb"><i>+</i>多选</a>
+				</div>
+			</div>
+			<div class = "KT-brand s-idex hiden" style = "display:none">
+				<div class = "brand-left">大家说:</div>
+				<div class = "brand-center">
+					<div class = "sl-aa">
+						<ul class = "j-list">
+							<li><a href = ""><i></i>制冷效果好</a></li>
+							<li><a href = ""><i></i>服务很好</a></li>
+							<li><a href = ""><i></i>制冷速度快</a></li>
+							<li><a href = ""><i></i>声音小</a></li>
+							<li><a href = ""><i></i>外机噪音小</a></li>
+							<li><a href = ""><i></i>制冷制热快</a></li>
+							<li><a href = ""><i></i>机器漂亮</a></li>
+							<li><a href = ""><i></i>变频省电</a></li>
+							<li><a href = ""><i></i>空调质量好</a></li>
+							<li><a href = ""><i></i>志高的空调</a></li>
+							<li><a href = ""><i></i>制热效果好</a></li>
+							<li><a href = ""><i></i>制冷比较快</a></li>
+							<li><a href = ""><i></i>送货快</a></li>
+							<li><a href = ""><i></i>安装速度</a></li>
+							<li><a href = ""><i></i>一般</a></li>
+						</ul>
+					</div>
+					<div class = "sl-d sl-dc" style = "display:none">
+						<a class = "btnl boton-qd disabled" href = "javascript:;">确定</a>
+						<a class = "btnl boton-qx" href = "javascript:;">取消</a>
+					</div>
+				</div>
+				<div class = "brand-right">
+					<a href = "javascript:" class = "sq gd">更多<i class = "iconfont">&#xe61f;</i></a>
+					<a href = "javascript:" class = "dx gb"><i>+</i>多选</a>
+				</div>
+			</div>
+			<div class = "KT-brand s-idex hiden" style = "display:none">
+				<div class = "brand-left">选购指数:</div>
+				<div class = "brand-center">
+					<div class = "sl-aa">
+						<ul class = "j-list">
+							<li><a href = ""><i></i>10.0-9.0</a></li>
+							<li><a href = ""><i></i>8.9-8.0</a></li>
+							<li><a href = ""><i></i>7.9-7.0</a></li>
+							<li><a href = ""><i></i>6.9-6.0</a></li>
+							<li><a href = ""><i></i>5.9-4.0</a></li>
+							<li><a href = ""><i></i>3.9-0</a></li>
+						</ul>
+					</div>
+					<div class = "sl-d sl-dc" style = "display:none">
+						<a class = "btnl boton-qd disabled" href = "javascript:;">确定</a>
+						<a class = "btnl boton-qx" href = "javascript:;">取消</a>
+					</div>
+				</div>
+				<div class = "brand-right">
+					<a style = "visibility:hidden" href = "javascript:" class = "sq gd">更多<i class = "iconfont">&#xe61f;</i></a>
+					<a href = "javascript:" class = "dx gb"><i>+</i>多选</a>
+				</div>
+			</div>
+			<div class = "s-more">
+				<span class = "sp-wrap">更多选项(价格、能效、产品特色 等)<i class = "iconfont">&#xe61f;</i></span>
+			</div>
+		</div>
+	</div>
+	<div id = "main-center">
+		<div class = "side-left">
+			<div class = "side-bar">
+				<div class = "tarde-sele" style = "display:block">
+					<div class = "tarde-top">
+						<h3>商品精选</h3>
+						<span></span>
+					</div>
+					<div class = "tarde-content">
+						<ul class = "tarde-con">
+							<li>
+								<div class = "p-img">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<img width = "190" height = "190" src = "imges/5b4fe659Nb5c83fce.jpg">
+									</a>
+								</div>
+								<div class = "p-name">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<i>科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))</i>
+									</a>
+								</div>
+								<div class = "p-price">
+									<strong>¥3699.00</strong>
+									<span>赠品</span>
+								</div>
+								<div class = "p-review">已有<a href = "">14092</a>人评价</div>
+							</li>
+							<li>
+								<div class = "p-img">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<img width = "190" height = "190" src = "imges/5b4fe659Nb5c83fce.jpg">
+									</a>
+								</div>
+								<div class = "p-name">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<i>科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))</i>
+									</a>
+								</div>
+								<div class = "p-price">
+									<strong>¥3699.00</strong>
+									<span>赠品</span>
+								</div>
+								<div class = "p-review">已有<a href = "">14092</a>人评价</div>
+							</li>
+							<li>
+								<div class = "p-img">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<img width = "190" height = "190" src = "imges/5b4fe659Nb5c83fce.jpg">
+									</a>
+								</div>
+								<div class = "p-name">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<i>科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))</i>
+									</a>
+								</div>
+								<div class = "p-price">
+									<strong>¥3699.00</strong>
+									<span>赠品</span>
+								</div>
+								<div class = "p-review">已有<a href = "">14092</a>人评价</div>
+							</li>
+							<li>
+								<div class = "p-img">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<img width = "190" height = "190" src = "imges/5b4fe659Nb5c83fce.jpg">
+									</a>
+								</div>
+								<div class = "p-name">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<i>科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))</i>
+									</a>
+								</div>
+								<div class = "p-price">
+									<strong>¥3699.00</strong>
+									<span>赠品</span>
+								</div>
+								<div class = "p-review">已有<a href = "">14092</a>人评价</div>
+							</li>
+							<li>
+								<div class = "p-img">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<img width = "190" height = "190" src = "imges/5b4fe659Nb5c83fce.jpg">
+									</a>
+								</div>
+								<div class = "p-name">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<i>科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))</i>
+									</a>
+								</div>
+								<div class = "p-price">
+									<strong>¥3699.00</strong>
+									<span>赠品</span>
+								</div>
+								<div class = "p-review">已有<a href = "">14092</a>人评价</div>
+							</li>
+							<li>
+								<div class = "p-img">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<img width = "190" height = "190" src = "imges/5b4fe659Nb5c83fce.jpg">
+									</a>
+								</div>
+								<div class = "p-name">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<i>科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))</i>
+									</a>
+								</div>
+								<div class = "p-price">
+									<strong>¥3699.00</strong>
+									<span>赠品</span>
+								</div>
+								<div class = "p-review">已有<a href = "">14092</a>人评价</div>
+							</li>
+							<li>
+								<div class = "p-img">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<img width = "190" height = "190" src = "imges/5b4fe659Nb5c83fce.jpg">
+									</a>
+								</div>
+								<div class = "p-name">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<i>科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))</i>
+									</a>
+								</div>
+								<div class = "p-price">
+									<strong>¥3699.00</strong>
+									<span>赠品</span>
+								</div>
+								<div class = "p-review">已有<a href = "">14092</a>人评价</div>
+							</li>
+							<li>
+								<div class = "p-img">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<img width = "190" height = "190" src = "imges/5b4fe659Nb5c83fce.jpg">
+									</a>
+								</div>
+								<div class = "p-name">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<i>科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))</i>
+									</a>
+								</div>
+								<div class = "p-price">
+									<strong>¥3699.00</strong>
+									<span>赠品</span>
+								</div>
+								<div class = "p-review">已有<a href = "">14092</a>人评价</div>
+							</li>
+							<li>
+								<div class = "p-img">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<img width = "190" height = "190" src = "imges/5b4fe659Nb5c83fce.jpg">
+									</a>
+								</div>
+								<div class = "p-name">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<i>科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))</i>
+									</a>
+								</div>
+								<div class = "p-price">
+									<strong>¥3699.00</strong>
+									<span>赠品</span>
+								</div>
+								<div class = "p-review">已有<a href = "">14092</a>人评价</div>
+							</li>
+							<li>
+								<div class = "p-img">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<img width = "190" height = "190" src = "imges/5b4fe659Nb5c83fce.jpg">
+									</a>
+								</div>
+								<div class = "p-name">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<i>科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))</i>
+									</a>
+								</div>
+								<div class = "p-price">
+									<strong>¥3699.00</strong>
+									<span>赠品</span>
+								</div>
+								<div class = "p-review">已有<a href = "">14092</a>人评价</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class = "tarde-sele" style = "display:block">
+					<div class = "tarde-top">
+						<h3>达人选购</h3>
+					</div>
+					<div class = "tarde-content">
+						<ul class = "tarde-con">
+							<li>
+								<div class = "p-img">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<img width = "190" height = "190" src = "imges/5b4fe659Nb5c83fce.jpg">
+									</a>
+								</div>
+								<div class = "p-name">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<i>科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))</i>
+									</a>
+								</div>
+								<div class = "p-price">
+									<strong>¥3699.00</strong>
+									<span>赠品</span>
+								</div>
+								<div class = "p-review">已有<a href = "">14092</a>人评价</div>
+							</li>
+							<li>
+								<div class = "p-img">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<img width = "190" height = "190" src = "imges/5b4fe659Nb5c83fce.jpg">
+									</a>
+								</div>
+								<div class = "p-name">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<i>科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))</i>
+									</a>
+								</div>
+								<div class = "p-price">
+									<strong>¥3699.00</strong>
+									<span>赠品</span>
+								</div>
+								<div class = "p-review">已有<a href = "">14092</a>人评价</div>
+							</li>
+							<li>
+								<div class = "p-img">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<img width = "190" height = "190" src = "imges/5b4fe659Nb5c83fce.jpg">
+									</a>
+								</div>
+								<div class = "p-name">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<i>科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))</i>
+									</a>
+								</div>
+								<div class = "p-price">
+									<strong>¥3699.00</strong>
+									<span>赠品</span>
+								</div>
+								<div class = "p-review">已有<a href = "">14092</a>人评价</div>
+							</li>
+							<li>
+								<div class = "p-img">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<img width = "190" height = "190" src = "imges/5b4fe659Nb5c83fce.jpg">
+									</a>
+								</div>
+								<div class = "p-name">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<i>科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))</i>
+									</a>
+								</div>
+								<div class = "p-price">
+									<strong>¥3699.00</strong>
+									<span>赠品</span>
+								</div>
+								<div class = "p-review">已有<a href = "">14092</a>人评价</div>
+							</li>
+							<li>
+								<div class = "p-img">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<img width = "190" height = "190" src = "imges/5b4fe659Nb5c83fce.jpg">
+									</a>
+								</div>
+								<div class = "p-name">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<i>科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))</i>
+									</a>
+								</div>
+								<div class = "p-price">
+									<strong>¥3699.00</strong>
+									<span>赠品</span>
+								</div>
+								<div class = "p-review">已有<a href = "">14092</a>人评价</div>
+							</li>
+							<li>
+								<div class = "p-img">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<img width = "190" height = "190" src = "imges/5b4fe659Nb5c83fce.jpg">
+									</a>
+								</div>
+								<div class = "p-name">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<i>科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))</i>
+									</a>
+								</div>
+								<div class = "p-price">
+									<strong>¥3699.00</strong>
+									<span>赠品</span>
+								</div>
+								<div class = "p-review">已有<a href = "">14092</a>人评价</div>
+							</li>
+							<li>
+								<div class = "p-img">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<img width = "190" height = "190" src = "imges/5b4fe659Nb5c83fce.jpg">
+									</a>
+								</div>
+								<div class = "p-name">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<i>科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))</i>
+									</a>
+								</div>
+								<div class = "p-price">
+									<strong>¥3699.00</strong>
+									<span>赠品</span>
+								</div>
+								<div class = "p-review">已有<a href = "">14092</a>人评价</div>
+							</li>
+							<li>
+								<div class = "p-img">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<img width = "190" height = "190" src = "imges/5b4fe659Nb5c83fce.jpg">
+									</a>
+								</div>
+								<div class = "p-name">
+									<a href = "" title = "科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))">
+										<i>科龙(Kelon) 2匹 定速 智能 冷暖 圆柱空调柜机 二级能效(KFR-50LW/VIF-N2(2N14))</i>
+									</a>
+								</div>
+								<div class = "p-price">
+									<strong>¥3699.00</strong>
+									<span>赠品</span>
+								</div>
+								<div class = "p-review">已有<a href = "">14092</a>人评价</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class = "tarde-sele" style = "display:none">
+					<div class = "tarde-top">
+						<h3>商家精选</h3>
+						<span></span>
+					</div>
+					<div class = "tarde-content">
+						<ul class = "tarde-con"></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class = "side-right">
+			<div class = "filter-m">
+				<div class = "f-line f-lin">
+					<div class = "f-sort">
+						<a class = "curr" href = "">综合排序<i></i></a>
+						<a href = "">销量<i></i></a>
+						<a href = "">价格<i></i></a>
+						<a href = "">评论数<i></i></a>
+						<a href = "">上架时间<i></i></a>
+					</div>
+					<div class = "f-pager">
+						<span class = "f-texts">
+							<b>1</b>
+							<em>/</em>
+							<i>171</i>
+						</span>
+						<a class = "f-prev disabl" href = "javascript:;"> < </a>
+						<a class = "f-next" href = ""> > </a>
+					</div>
+				</div>
+				<div class = "f-line clearfic">
+					<div class = "f-store">
+						<p>配送至</p>
+						<div class = "f_stoped">
+							<div class = "ul-area">
+								<div title = "浙江杭州市下沙区" class = "ul-area-text">浙江杭州市下沙区<i></i></div>
+							</div>
+							<div class = "ui-wrap" style = "display:none">
+								<div class = "ui-wrap-tp">
+									<a class = "ui-wrap-xz" title = "浙江" href = "javascript:;">浙江<i></i></a>
+									<a title = "杭州市" href = "javascript:;">杭州市<i></i></a>
+									<a title = "下沙区" href = "javascript:;">下沙区<i></i></a>
+								</div>
+								<div class = "ui-wrap-bt">
+									<div class = "ui-wrap-s" style = "display:none">
+										<ul>
+											<li><a href = "javascript:void(0)">北京</a></li>
+											<li><a href = "javascript:void(0)">上海</a></li>
+											<li><a href = "javascript:void(0)">天津</a></li>
+											<li><a href = "javascript:void(0)">重庆</a></li>
+											<li><a href = "javascript:void(0)">河北</a></li>
+											<li><a href = "javascript:void(0)">山西</a></li>
+											<li><a href = "javascript:void(0)">河南</a></li>
+											<li><a href = "javascript:void(0)">辽宁</a></li>
+											<li><a href = "javascript:void(0)">吉林</a></li>
+											<li><a href = "javascript:void(0)">黑龙江</a></li>
+											<li><a href = "javascript:void(0)">内蒙古</a></li>
+											<li><a href = "javascript:void(0)">江苏</a></li>
+											<li><a href = "javascript:void(0)">山东</a></li>
+											<li><a href = "javascript:void(0)">安徽</a></li>
+											<li class = "ui-wrap-hs"><a href = "javascript:void(0)">浙江</a></li>
+											<li><a href = "javascript:void(0)">福建</a></li>
+											<li><a href = "javascript:void(0)">湖北</a></li>
+											<li><a href = "javascript:void(0)">湖南</a></li>
+											<li><a href = "javascript:void(0)">广东</a></li>
+											<li><a href = "javascript:void(0)">广西</a></li>
+											<li><a href = "javascript:void(0)">江西</a></li>
+											<li><a href = "javascript:void(0)">四川</a></li>
+											<li><a href = "javascript:void(0)">海南</a></li>
+											<li><a href = "javascript:void(0)">贵州</a></li>
+											<li><a href = "javascript:void(0)">云南</a></li>
+											<li><a href = "javascript:void(0)">西藏</a></li>
+											<li><a href = "javascript:void(0)">陕西</a></li>
+											<li><a href = "javascript:void(0)">甘肃</a></li>
+											<li><a href = "javascript:void(0)">青海</a></li>
+											<li><a href = "javascript:void(0)">宁夏</a></li>
+											<li><a href = "javascript:void(0)">新疆</a></li>
+											<li><a href = "javascript:void(0)">港澳</a></li>
+											<li><a href = "javascript:void(0)">台湾</a></li>
+											<li><a href = "javascript:void(0)">钓鱼岛</a></li>
+											<li><a href = "javascript:void(0)">海外</a></li>
+										</ul>
+									</div>
+									<div class = "ui-wrap-s ui-wrap-xs" style = "display:none">
+										<ul>
+											<li><a href = "javascript:void(0)">宁波市</a></li>
+											<li><a href = "javascript:void(0)">衢州市</a></li>
+											<li><a href = "javascript:void(0)">丽水市</a></li>
+											<li><a href = "javascript:void(0)">台州市</a></li>
+											<li><a href = "javascript:void(0)">舟山市</a></li>
+											<li><a href = "javascript:void(0)">杭州市</a></li>
+											<li><a href = "javascript:void(0)">温州市</a></li>
+											<li><a href = "javascript:void(0)">嘉兴市</a></li>
+											<li><a href = "javascript:void(0)">湖州市</a></li>
+											<li><a href = "javascript:void(0)">绍兴市</a></li>
+											<li><a href = "javascript:void(0)">金华市</a></li>
+										</ul>
+									</div>
+									<div class = "ui-wrap-s ui-wrap-q" style = "display:none">
+										<ul>
+											<li><a href = "javascript:void(0)">上城区</a></li>
+											<li><a href = "javascript:void(0)">下城区</a></li>
+											<li><a href = "javascript:void(0)">拱墅区</a></li>
+											<li><a href = "javascript:void(0)">西湖区</a></li>
+											<li><a href = "javascript:void(0)">江干区</a></li>
+											<li><a href = "javascript:void(0)">下沙区</a></li>
+											<li><a href = "javascript:void(0)">余杭区</a></li>
+											<li><a href = "javascript:void(0)">萧山区</a></li>
+											<li><a href = "javascript:void(0)">滨江区</a></li>
+											<li><a href = "javascript:void(0)">临安区</a></li>
+											<li><a href = "javascript:void(0)">富阳区</a></li>
+											<li><a href = "javascript:void(0)">桐庐县</a></li>
+											<li><a href = "javascript:void(0)">建德市</a></li>
+											<li><a href = "javascript:void(0)">淳安县</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class = "f-feature">
+						<ul>
+							<li><a href = ""><i></i>京东物流</a></li>
+							<li><a href = ""><i></i>自营211</a></li>
+							<li><a href = ""><i></i>货到付款</a></li>
+							<li><a class = "secked" href = ""><i></i>仅显示有货</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class = "page-content">
+				<ul class = "sp-content">
+					<li class = "sp-cont">
+						<div class = "sp-conted">
+							<div class = "sp-img">
+								<a href = "">
+									<img width = "220" height = "220" src = "imges/shangpinlibiao/5b4412bbN2263ccda.jpg" title = "[空调冰爽大放价]"/>
+								</a>
+							</div>
+							<div class = "sp-scroll">
+								<div class = "sp-min">
+									<ul>
+										<li class = "sp-item">
+											<a href = "javascript:;">
+												<img width = "25" height = "25" src = "imges/shangpinlibiao/5b4412bbN2263ccda.jpg"/>
+											</a>
+										</li>
+										<li class = "sp-item">
+											<a href = "javascript:;">
+												<img width = "25" height = "25" src = "imges/shangpinlibiao/5b4412bbN2263ccda.jpg"/>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class = "sp-price">
+								<strong class = "sp_price">
+									<em>¥</em><i>1999.00</i>
+								</strong>
+								<strong class = "sp_price" style = "display:none">
+									<em>¥</em><i>1999.00</i>
+								</strong>
+							</div>
+							<div class = "sp-name">
+								<a href = "" title = "[空调冰爽大放价]">
+									<em>美的 (Midea) 正1.5匹 智弧 智能 静音 光线感应 定速冷暖壁挂式空调挂机 KFR-35GW/WDAD3@</em>
+								</a>
+								<span class = "sp-names">
+									<a title = "1.5匹" href = "" class = "attr">1.5匹</a>
+									<a title = "3级" href = "" class = "attr">3级</a>
+									<a title = "远程控制" href = "" class = "attr">远程控制</a>
+								</span>
+							</div>
+							<div class = "sp-commit">
+								<span class = "buy-score" title = "京东综合评估得出指数">
+									选购指数
+									<em>7.4</em>
+								</span>
+								<strong>已有<a href = "">22万+</a>人评价</strong>
+							</div>
+							<div class = "sp-focus">
+								<a class = "p-focus" href = ""><i></i>关注</a>
+							</div>
+							<div class = "sp-shop">
+								<span>
+									<a title = "美的空调自营旗舰店" href = "">美的空调自营旗舰店</a>
+									<em class = "im-02" title = "联系供应商进行咨询"></em>
+								</span>
+							</div>
+							<div class = "sp-icons">
+								<i class = "sp-icons-icon sp-icons-1" title = "京东自营,品质保障">自营</i>
+								<i class = "sp-icons-icon sp-icons-2" title = "购买本商品送赠品">赠</i>
+							</div>
+							<div class = "sp-stock"></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class = "page-break">
+				<div class = "p-page">
+					<ul class = "pa-page">
+						<li class = "pn-prev previous-page"><a class = "disableds" href = "">
+							<i><</i>
+							<em>上一页</em>
+						</a></li>
+						<li class = "first-page"><a class = "currss" href = "">1</a></li>
+						<li class = "pn-prev" style = "display:none"><span>...</span></li>
+						<li><a href = "">2</a></li>
+						<li><a href = "">3</a></li>
+						<li class = "pn-prev" style = "display:none"><span>...</span></li>
+						<li><a href = "">4</a></li>
+						<li><a href = "">5</a></li>
+						<li><a href = "">6</a></li>
+						<li class = "pn-prev" style = "display:none"><span>...</span></li>
+						<li><a href = "">7</a></li>
+						<li><a href = "">8</a></li>
+						<li class = "pn-prev" style = "display:block"><span>...</span></li>
+						<li><a href = "">171</a></li>
+						<li class = "pn-prev next-page"><a href = "">
+							<em>下一页</em>
+							<i>></i>
+						</a></li>
+					</ul>
+					<div class = "p-jump">
+						<em>共<b>171</b>页&nbsp;&nbsp;到第</em>
+						<input class = "input-txts" maxlength = "4" value = "2" onkeyup = "this.value = this.value.replace(/[^0-9]/g,'');" onkeydown = "javascript:if(event.keCode == 13){page_jump();return false}">
+						<em>页</em>
+						<a class = "btntn" href = "javascript:page_jump();">确定</a>
+					</div>
+				</div>
+			</div>
+			<div class = "clear-float"></div>
+		</div>
+	</div>
+</section>
+<script>
+	var KTScreen = document.querySelector(".KT-screen")
+	var mainNavItem = document.querySelectorAll(".main-nav-item")
+	var olarge = document.querySelector(".large")
+	var largeNone = document.querySelectorAll(".large-none")
+	var largeCurr = document.querySelectorAll(".large-curr")
+	var mainAir = document.querySelector(".main-air")
+
+	var ocassted = document.querySelector(".cassted")
+	var osq = ocassted.querySelector(".sq")
+	var vFixed = document.querySelector(".v-fixed")
+	var slA = document.querySelector(".sl-a")
+	var abc = false
+	var bcd = false
+	var nowed = true
+	var ali = slA.querySelectorAll("li")
+	var oli = vFixed.querySelectorAll("li")
+	var aa = vFixed.querySelectorAll("a")
+	var oi = vFixed.querySelectorAll("i")
+	var ospan = vFixed.querySelectorAll("span")
+	var odx = ocassted.querySelector(".dx")
+	var slD = ocassted.querySelector(".sl-d")
+	var slC = ocassted.querySelector(".sl-c")
+	var slCkey = ocassted.querySelector(".sl-ckey")
+	var btnQd = ocassted.querySelector(".btn-qd")
+	var btnQx = ocassted.querySelector(".btn-qx")
+
+	var bli = slCkey.querySelectorAll("li")
+	var ogd = document.querySelectorAll(".gd")
+	var Sidex = document.querySelectorAll(".s-idex")
+	var pli = KTScreen.getElementsByTagName("li")
+	var Jlist = document.querySelectorAll(".j-list")
+	var ogb = document.querySelectorAll(".gb")
+	var sLaa = document.querySelectorAll(".sl-aa")
+	var slDc = document.querySelectorAll(".sl-dc")
+	var xzkA = document.querySelector(".xzk-a")
+	var obotonQd = document.querySelectorAll(".boton-qd")
+	var botonQx = document.querySelectorAll(".boton-qx")
+	var sMore = document.querySelector(".s-more")
+	var spWrap = document.querySelector(".sp-wrap")
+	var ohiden = document.querySelectorAll(".hiden")
+
+	var fStoped = document.querySelector(".f_stoped")
+	var uiWrap = document.querySelector(".ui-wrap")
+	var uiWrapTp = document.querySelector(".ui-wrap-tp")
+	var dza = uiWrapTp.querySelectorAll("a")
+	var uiWrapS = document.querySelectorAll(".ui-wrap-s")
+	var ulAreaText = document.querySelector(".ul-area-text")
+	var ppad = true
+	var lmi = uiWrapS[0].querySelectorAll("li")
+	var lni = uiWrapS[1].querySelectorAll("li")
+	var lvi = uiWrapS[2].querySelectorAll("li")
+	//大家电和空调按钮移入移出
+	for (var i=0;i<mainNavItem.length;i++){
+		mainNavItem[1].onmouseover = function(){
+			largeNone[0].style.display = "block"
+			olarge.classList.add("large-hover")
+			largeNone[0].classList.add("largeNone-hover")
+			largeCurr[0].style.transform = "rotateX(180deg)"
+		}
+		mainNavItem[2].onmouseover = function(){
+			largeNone[1].style.display = "block"
+			mainAir.classList.add("large-hover")
+			largeNone[1].classList.add("largeNone-hover")
+			largeCurr[1].style.transform = "rotateX(180deg)"
+		}
+		mainNavItem[1].onmouseout = function(){
+			largeNone[0].style.display = "none"
+			olarge.classList.remove("large-hover")
+			largeNone[0].classList.remove("largeNone-hover")
+			largeCurr[0].style.transform = "rotateX(0deg)"
+		}
+		mainNavItem[2].onmouseout = function(){
+			largeNone[1].style.display = "none"
+			mainAir.classList.remove("large-hover")
+			largeNone[1].classList.remove("largeNone-hover")
+			largeCurr[1].style.transform = "rotateX(0deg)"
+		}
+	};
+	//更多按钮
+	osq.onclick = function(){
+		if(abc === false){
+			osq.innerHTML = '收起'+'<i class = "iconfont">&#xe61e;</i>';
+			ocassted.classList.add("entend")
+			vFixed.classList.add("v-fixe")
+			slA.style.display = "block"
+			abc = true
+		}else if(bcd == true&&abc == true){
+			osq.innerHTML = '更多'+'<i class = "iconfont">&#xe61f;</i>';
+			abc = false
+		}else if(bcd == false&&abc == true){
+			osq.innerHTML = '更多'+'<i class = "iconfont">&#xe61f;</i>';
+			ocassted.classList.remove("entend")
+			vFixed.classList.remove("v-fixe")
+			slA.style.display = "none"
+			abc = false
+		}
+	};
+	for(var i=0;i<ogd.length;i++){
+		ogd[i].noe = true
+		ogd[i].index = i
+		ogd[i].onclick = function(){
+			if(ogd[this.index].noe == true){
+				ogd[this.index].innerHTML = '收起'+'<i class = "iconfont">&#xe61e;</i>';
+				Jlist[this.index].style.height = "auto"
+				ogd[this.index].noe = false
+			}else if(ogd[this.index].noe == false && nowed == false){
+				ogd[this.index].innerHTML = '更多'+'<i class = "iconfont">&#xe61f;</i>';
+				ogd[this.index].noe = true
+			}else if(ogd[this.index].noe == false && nowed == true){
+				ogd[this.index].innerHTML = '更多'+'<i class = "iconfont">&#xe61f;</i>';
+				Jlist[this.index].style.height = ""
+				ogd[this.index].noe = true
+			}
+		}
+	}
+	//多选按钮
+	odx.onclick = function(){
+		ocassted.classList.add("entender")
+		vFixed.classList.add("v-fixe")
+		slA.style.display = "block"
+		slD.style.display = "block"
+		bcd = true
+		for(var i=0;i<oli.length;i++){
+			var attr = [];
+			oli[i].now = true
+			oli[i].index = i
+			oli[i].onclick = function(e){
+				if(oli[this.index].now === true){
+					oli[this.index].classList.add("fixed-gl")
+					aa[this.index].style.borderColor = "#e4393c"
+					oi[this.index].classList.add("fixed-i")
+					var Tex = oli[this.index].innerText		//取li里面的文字
+					var Titl = aa[this.index].title		//取li的title
+					var Tref = aa[this.index].href			//取li里面a标签的href
+					attr.push({Tex,Titl,Tref})
+					oli[this.index].now = false
+				}else{
+					oli[this.index].now = true
+					oli[this.index].classList.remove("fixed-gl")
+					aa[this.index].style.borderColor = "#fff"
+					oi[this.index].classList.remove("fixed-i")
+					var index = attr.indexOf(oli[this.index])	//先找出当前li在数组中的位置
+					attr.splice(index,attr.length)	//然后删除数组中当前位置的字符串
+				};
+				if(attr.length === 0){
+					slC.style.display = "none"
+					btnQd.classList.add("disabled")
+				}else{
+					slC.style.display = "block"
+					btnQd.classList.remove("disabled")
+					slCkey.innerHTML = ""
+					for(var i=0;i<attr.length;i++){
+						slCkey.innerHTML += "<li><a title = "+attr[i].Titl+" href = "+attr[i].Tref+"><i></i>"+attr[i].Tex+"</a></li>";
+					}
+				};
+				e.preventDefault();
+			};
+			btnQx.onclick = function(){
+				ocassted.classList.remove("entender")
+				ocassted.classList.remove("entend")
+				vFixed.classList.remove("v-fixe")
+				btnQd.classList.add("disabled")
+				slA.style.display = "none"
+				slD.style.display = "none"
+				osq.innerHTML = '更多'+'<i class = "iconfont">&#xe61f;</i>';
+				for(var i=0;i<oli.length;i++){
+					oli[i].classList.remove("fixed-gl")
+					aa[i].style.borderColor = "#fff"
+					oi[i].classList.remove("fixed-i")
+				}
+				attr.splice(0,attr.length)
+				slC.style.display = "none"
+				abc = false
+				bcd = false
+				vFixed.addEventListener("click",function(e){	//恢复被阻止的默认事件
+					e.returnValue = true
+				},false)
+			};
+		}
+	};
+	function retan(){
+		for(var i=0;i<obotonQd.length;i++){
+			obotonQd[i].classList.add("disabled")
+		}
+		for(var i=0;i<pli.length;i++){
+			pli[i].classList.remove("xzk-a")
+		}
+		for(var i=0;i<ogd.length;i++){
+			ogd[i].innerHTML = '更多'+'<i class = "iconfont">&#xe61f;</i>';
+		}
+		nowed = true
+	}
+	for(var i=0;i<ogb.length;i++){
+		ogb[i].index = i
+		ogb[i].onclick = function(i){
+			console.log(i)
+			retan()
+			for(var i=0;i<ogb.length;i++){
+				for(var i=0;i<Sidex.length;i++){
+					Sidex[i].classList.remove("v-faxe")
+					Jlist[i].style.height = ""
+					slDc[i].style.display = "none"
+				}
+				Sidex[this.index].classList.add("v-faxe")
+				Jlist[this.index].style.height = "auto"
+				slDc[this.index].style.display = "block"
+				nowed = false
+			};
+			var olia = Jlist[this.index].querySelectorAll("li")
+			var abi = Jlist[this.index].querySelectorAll("i")
+			var botonQd = Sidex[this.index].querySelector(".boton-qd")
+			for(var i=0;i<olia.length;i++){
+				var noe = 0
+				olia[i].now = true
+				olia[i].index = i
+				olia[i].onclick = function(e){
+					if(olia[this.index].now == true){
+						olia[this.index].classList.add("xzk-a")
+						olia[this.index].now = false
+						noe ++
+					}else{
+						olia[this.index].classList.remove("xzk-a")
+						olia[this.index].now = true
+						noe --
+					};
+					if(noe == 0){
+						botonQd.classList.add("disabled")
+					}else{
+						botonQd.classList.remove("disabled")
+					};
+					e.preventDefault();
+				}
+			}
+			for(var i=0;i<botonQx.length;i++){
+				botonQx[i].onclick = function(){
+					for(var i=0;i<Sidex.length;i++){
+						Sidex[i].classList.remove("v-faxe")
+						Jlist[i].style.height = ""
+						slDc[i].style.display = "none"
+						nowed = true
+					}
+					retan()
+				}
+			}
+		}
+	};
+	for(var i=0;i<ali.length;i++){
+		ali[i].index = i;
+		ali[i].onmouseover = function(){
+			for(var i=0;i<ali.length;i++){
+				ali[i].className = ""
+			}
+			ali[this.index].className = "curr"
+			var dataInitial = ali[this.index].getAttribute("data-initial")
+			var xtzdyys = new Array();
+			for(var j=0,len=oli.length;j<len;j++){
+				oli[j].style.display = "list-item"
+				var dataIn = oli[j].getAttribute("data-initial")   //获取所有属性值
+				xtzdyys.push({dataIn,j})
+				var xtzdyys = xtzdyys.filter(function(item){
+					return item.dataIn === dataInitial
+				})
+			}
+			for(var k=0,len=xtzdyys.length;k<len;k++){
+				oli[xtzdyys[k].j].style.display = "none"
+			}
+		}
+	};
+	sMore.onclick = function(){
+		for(var i=0;i<ohiden.length;i++){
+			if(ohiden[i].style.display == "none"){
+				ohiden[i].style.display = "block"
+				spWrap.innerHTML = '收起'+'<i class = "iconfont">&#xe61e;</i>';
+			}else{
+				ohiden[i].style.display = "none"
+				spWrap.innerHTML = '更多选项(价格、能效、产品特色 等)'+'<i class = "iconfont">&#xe61f;</i>';
+			}
+		}
+	}
+	fStoped.onmouseenter = function(){
+		ppad = false
+		if(uiWrap.style.display == "none"){
+			fStoped.classList.add("ui-area-hover")
+			for(var i=0;i<dza.length;i++){
+				dza[i].className = ""
+			}
+			dza[0].className = "ui-wrap-xz"
+			uiWrap.style.display = "block"
+			uiWrapS[0].style.display = "block"
+			uiWrapS[1].style.display = "none"
+			uiWrapS[2].style.display = "none"
+		}
+		for(var i=0;i<dza.length;i++){
+			dza[i].index = i;
+			dza[i].onclick = function(){
+				for(var i=0;i<dza.length;i++){
+					uiWrapS[i].style.display = "none"
+					dza[i].className = ""
+				}
+				uiWrapS[this.index].style.display = "block"
+				dza[this.index].className = "ui-wrap-xz"
+			}
+		}
+		for(var i=0;i<lmi.length;i++){
+			lmi[i].index = i
+			lmi[i].onclick = function(){
+				for(var i=0;i<lmi.length;i++){
+					lmi[i].className = ""
+					olmi = lmi[this.index].innerText
+				}
+				ppad = true
+				lmi[this.index].className = "ui-wrap-hs"
+				dza[0].innerHTML = olmi+'<i></i>'
+				dza[0].title = olmi
+				uiWrap.style.display = "block"
+				dza[0].className = ""
+				dza[1].className = "ui-wrap-xz"
+				uiWrapS[0].style.display = "none"
+				uiWrapS[1].style.display = "block"
+				uiWrapS[2].style.display = "none"
+			}
+		}
+		for(var i=0;i<lni.length;i++){
+			lni[i].index = i
+			lni[i].onclick = function(){
+				for(var i=0;i<lni.length;i++){
+					lni[i].className = ""
+					olni = lni[this.index].innerText
+				}
+				ppad = true
+				lni[this.index].className = "ui-wrap-hs"
+				dza[1].innerHTML = olni+'<i></i>'
+				dza[1].title = olni
+				uiWrap.style.display = "block"
+				dza[1].className = ""
+				dza[2].className = "ui-wrap-xz"
+				uiWrapS[0].style.display = "none"
+				uiWrapS[1].style.display = "none"
+				uiWrapS[2].style.display = "block"
+			}
+		}
+		for(var i=0;i<lvi.length;i++){
+			lvi[i].index = i
+			lvi[i].onclick = function(){
+				for(var i=0;i<lvi.length;i++){
+					lvi[i].className = ""
+					olvi = lvi[this.index].innerText
+				}
+				ppad = true
+				lvi[this.index].className = "ui-wrap-hs"
+				dza[2].innerHTML = olvi+'<i></i>'
+				dza[2].title = olvi
+				uiWrap.style.display = "none"
+				fStoped.classList.remove("ui-area-hover")
+			}
+		}
+	}
+	fStoped.onmouseleave = function(){
+		if(ppad == false){
+			fStoped.classList.remove("ui-area-hover")
+			uiWrap.style.display = "none"
+		}
+		console.log(dza[0].innerText+dza[1].innerText+dza[2].innerText)
+		ulAreaText.innerHTML = dza[0].innerText+dza[1].innerText+dza[2].innerText+'<i></i>'
+		ulAreaText.title = dza[0].innerText+dza[1].innerText+dza[2].innerText
+	}
+</script>
+</body>
+</html>

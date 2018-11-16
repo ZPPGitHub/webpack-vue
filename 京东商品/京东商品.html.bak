@@ -1,0 +1,2432 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset = "utf-8">
+<title>京东商品</title>
+<style>
+*{margin:0;padding:0}
+ul{list-style:none}
+a{color:#666;text-decoration:none}
+i,em{font-style:normal}
+img{border:0;vertical-align:middle}
+body{font:12px/150% tahoma,arial,Microsoft YaHei,Hiragino Sans GB,"\5b8b\4f53",sans-serif;color:#666;
+-webkit-font-smoothing:antialiased}
+section,.cen{width:1210px;margin:0 auto}
+.clr{display:block;overflow:hidden;clear:both;height:0;line-height:0;font-size:0}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.p-price strong{color:#e4393c;font-size:14px;font-family:Verdana}
+.current{background:#e4393c;color:#fff;cursor:default}
+
+.sec{position:relative}
+.spqjd{position:relative;height:110px;overflow:hidden}
+.sec-qjd{position:absolute;width:1920px;text-align:center;left:50%;margin-left:-960px;overflow:hidden}
+.sptj{position:absolute;height:100px;top:4px}
+.dpfl{width:100%;background:#004DA0}
+.sec-fl{position:relative;margin:0 auto;height:40px;font-size:14px;color:#333;width:990px}
+.sec-fl .s-fl{width:100%;height:40px;}
+.menu{float:left;line-height:24px;height:24px;padding:8px 0;border-radius:12px}
+.menu a{font-weight:bold;color:#fff;position:relative;display:block;padding:0 15px;border-radius:12px}
+.menu:hover .fl-h{background:#000}
+.sec-fl .menu .arrow{display:inline-block;vertical-align:middle;margin-left:10px;width:0;height:0;
+border-left:5px dashed transparent;border-right:5px dashed transparent;border-top:5px #666 solid}
+.menu-fl{position:absolute;left:0;top:39px;right:0;z-index:99;padding:20px 40px;
+border:1px #bebab0 solid;background:rgba(247,242,234,0.9)}
+.menu-fl dl{height:172px;float:left}
+.menu-fl dt{margin-bottom:13px;height:54px;line-height:54px;border-bottom:1px #c9c9c9 dashed;
+padding:0 20px}
+.menu-fl dt a{font-size:14px;font-weight:bold;color:#333;line-height:24px;display:inline-block;
+height:24px;padding:0 10px;margin-left:-10px;border-radius:12px;min-width:74px}
+.menu-fl dt a:hover{border:1px #e4393c solid;color:#e4393c}
+.menu-fl dd{padding:0 20px}
+.menu-fl dd li{font-size:12px;height:26px;line-height:26px}
+.menu-fl dd li a{color:#666}
+.sec-dp{padding-left:20px;clear:both}
+.sec-dp a{font-weight:bold;color:#000;line-height:24px;display:inline-block;border:1px #666 solid;
+height:24px;padding:0 10px;border-radius:12px;}
+.ss-fl{position:absolute;top:8px;right:0}
+.ss-text{padding:0 0 0 10px;width:130px;line-height:22px;height:22px;background-color:#fff;
+color:#c9c9c9;vertical-align:top;outline:none;border:1px #e1e1e1 solid;border-top-left-radius:11px;
+border-bottom-left-radius:11px}
+.ss-sub{margin-left:-5px;padding:0 10px;border:0;height:24px;width:46px;cursor:pointer;
+border-top-right-radius:11px;border-bottom-right-radius:11px;
+background:#333 url("imges/567cb046Ncc8f504a.png") no-repeat center}
+.lj-dp{background:#f2f2f2;clear:both;position:relative}
+.lj-dp .lj-lef{float:left;padding:13px 0 9px;position:relative}
+.lj-dp .lj-lef li,.li-qjd li{float:left}
+.lj-dp .lj-lef .lj-pm{width:120px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.lj-dp .lj-lef .sep{font-family:simsun;padding:0 10px}
+.lef-hove{position:relative;top:-2px}
+.aux-hove{border-bottom:none;padding-bottom:1px;height:20px;line-height:20px;background:#fff;
+border:1px #ccc solid;padding:0;float:left;cursor:pointer;position:relative;z-index:2}
+.aux-hove a{padding:0 5px}
+.lef-hove:hover .aux-hove{border-bottom-color:#fff}
+.aux-hove span{margin-left:0;display:inline-block;vertical-align:middle;width:13px;height:7px;
+margin:0 10px 0 5px;background:url("imges/arr-close.png") no-repeat}
+.content{position:absolute;background:#fff;right:auto;left:0;border:1px #ccc solid;top:20px;
+width:660px;padding:10px 0}
+.hove-con{margin:10px 0;border-bottom:1px #dfdfdf dotted;padding:0 10px 10px 10px}
+.hove-con,.p-img,.p-name,.p-price{overflow:hidden}
+.p-img{padding-bottom:5px}
+.hove-con li{width:206px;height:65px;margin-left:5px;position:relative}
+.hove-con li .p-img{float:left;margin-right:5px;padding-bottom:5px}
+.hove-con li .p-name{max-height:3em;min-height:36px;line-height:1.5em;margin-bottom:5px}
+.hove-tent li{display:inline-block;width:110px;padding-left:15px;margin-top:5px;overflow:hidden;
+white-space:nowrap;text-overflow:ellipsis}
+.li-righ{float:right;position:relative;padding:13px 0 0}
+.ziying{float:left;margin-right:10px;position:relative;cursor:pointer}
+.ziying em{display:inline-block;height:14px;padding:1px;line-height:14px;font-family:arial,simsun;
+color:#fff;background:#e4393c;margin-left:6px;cursor:pointer}
+.ziying em span{display:inline-block;padding:0 1px;background:#fff;color:#e4393c;font-weight:700;
+margin-right:2px}
+.li-qjd{position:relative;float:right}
+.jd-dm{margin-right:10px}
+.jd-kf,.jd-gz{cursor:pointer;margin-right:10px;white-space:nowrap}
+.sprite-im,.jd-gz i{display:inline-block;width:16px;vertical-align:text-top;height:16px;
+margin-right:2px;background:url("imges/__sprite.png") no-repeat}
+.sprite-im{background-position:-34px -16px}
+.jd-gz i{background-position:-34px 0px}
+.li-qjd .jd-dpsjd{clear:both;right:0;width:215px;border:1px #ccc solid;background:#fff;top:27px;
+position:absolute;z-index:666}
+.pop-kf{border-top:1px #e6e6e6 dotted;margin:0 15px;padding:10px 0}
+.pop-sjxd{border-top:1px dotted #e6e6e6;margin:0 15px;padding:14px 0 10px;text-align:center}
+.sj-ewm img{border:1px #cecece solid}
+.pop-sjxd p{padding-top:3px}
+.pop-gg{background:#f6f6f6;text-align:center}
+.pop-gg .btn-def{display:inline-block;vertical-align:middle;height:34px;line-height:34px}
+.pop-gg .btn-def:first-of-type{margin-right:5px}
+.pop-gg .btn-def i{display:inline-block;vertical-align:-2px;margin-right:5px;width:16px;height:16px;
+background:url("imges/__sprite.png") no-repeat}
+.pop-gg .btn-def:first-of-type i{background-position:-16px -18px}
+.pop-gg .btn-def:last-of-type i{background-position:-34px 0}
+.spetor{display:inline-block;margin:0 8px;background:#d1d1d1;width:1px;height:14px;
+vertical-align:middle}
+.sectoes{position:relative;margin-top:10px;margin-bottom:10px}
+.sect-tp{width:352px;float:left;padding-bottom:15px;position:relative}
+.secoe-img{position:relative;border:1px #eee solid;margin-bottom:20px}
+.img-zzc{position:absolute;width:236px;height:236px;visibility:visible;top:0;left:0;z-index:3;
+border:1px #aaa solid;background:#FEDE4F;opacity:.5;cursor:move}
+.quyu-img{width:540px;height:540px;position:absolute;left:352px;top:0;border:1px #e4e4e4 solid;
+background:url("imges/loading.gif") no-repeat;overflow:hidden}
+.secoe-list{margin-bottom:18px;position:relative}
+.spec-list{position:relative;width:290px;height:54px;overflow:hidden;margin:0 auto}
+.spec-list ul{position:absolute;width:522px;height:54px;top:0;left:0}
+.spec-list ul li{margin:0 2px;float:left}
+.spec-list ul li img{border:2px #fff solid}
+.spec-list ul .img-hover img{border:2px #e53e41 solid}
+.arrow-prev,.arrow-next{display:block;width:22px;height:32px;float:left;position:absolute;
+cursor:pointer;top:50%;margin-top:-16px}
+.arrow-prev{left:0}
+.arrow-next{right:0}
+.spec-prev,.spec-next{display:block;width:22px;height:32px;background:url("imges/disabled-prev.png") no-repeat}
+.spec-next{transform:rotateY(180deg)}
+.previ-info{height:20px}
+.lef-btns{float:left}
+.righ-btns{float:right}
+.info-gz,.info-fx,.info-db{display:inline-block;vertical-align:middle;margin-right:5px;
+background:url("imges/prites.png") no-repeat}
+.info-gz{width:14px;height:13px;background-position:-44px -40px}
+.info-fx{width:15px;height:14px;background-position:-45px -24px}
+.info-db{width:15px;height:16px;background-position:-30px -24px}
+.dprn{width:590px;float:left;margin-left:30px;min-height:479px;margin-right:24px;}
+.dpsp-pm{padding:10px 0 5px 0}
+.dpsp-pm .pm-name{font-size:16px;font-weight:700;line-height:28px;margin-bottom:5px}
+.dpsp-pm .pm-sm{width:590px;max-height:3em;white-space:normal;overflow:hidden;color:#e4393c;
+margin-bottom:5px;line-height:1.5em;text-overflow:ellipsis}
+.dpsp-pm .pm-sm a{text-decoration:underline;color:#5e69ad}
+.jdj-cx{position:relative;padding:10px 0 5px 0;background:#f3f3f3}
+.sum-zz{float:left;padding-left:10px;font-family:simsun;color:#999}
+.sum-yw{margin-left:70px}
+.jdj{position:relative;margin-bottom:5px}
+.jdj .sum-zz{line-height:22px}
+.jdj .jdj-b{margin-left:10px;color:#e4393c;font-family:"microsoft yahei";margin-right:10px;
+vertical-align:middle}
+.jdj .jdj-b span:first-of-type{font-size:16px}
+.jdj .jdj-b span:last-of-type{font-size:22px}
+.jdj a{color:#005aa0}
+.jdpj{position:absolute;right:10px;top:8px;color:#999}
+.comment,.buy-rate{border-left:1px #e6e6e6 solid;text-align:center;padding:0 10px;line-height:15px;
+float:left}
+.comment a,.buy-rate a{font:14px verdana;color:#005ea7}
+.jdcx{clear:both;padding:5px 0 5px}
+.jdcx .sum-zz{line-height:30px}
+.jdcx .sum-yw{position:relative;overflow:hidden}
+.cx-zp{position:relative;line-height:30px;min-height:35px;vertical-align:middle}
+.J-gifzp{padding-left:40px}
+.cx-zp .zp{float:left;width:40px;display:inline;margin-left:-40px}
+.prom-list{float:left;width:100%}
+.cx-zp .zp em{display:inline-block;color:#df3033;border:1px #df3033 solid;padding:2px 3px;
+margin-right:5px;line-height:16px}
+.cx-zp .pro-img{float:left;width:25px;height:25px;margin-right:3px}
+.cxcs{color:#e4393c}
+.s-arrpw{font-family:simsun}
+.dpsp-zz{position:relative;padding-bottom:5px}
+.summar-zzyw,.choose-JDbaitiao{margin-bottom:6px;line-height:32px}
+.summar-zzyw .sum-yw ul{overflow:hidden;zoom:1}
+.summar-zzyw .sum-yw .sum-yw-y li{float:left;margin-right:10px}
+.summar-zzyw .sum-yw ul li a{display:inline-block;line-height:18px}
+.summar-zzyw .sum-yw ul li a i{display:inline-block;width:16px;height:16px;vertical-align:-3px;
+background:url("imges/__spriteas.png") no-repeat -32px 0px}
+.summar-zzyw .sum-yw ul li a span{position:relative;display:inline-block;border:1px #ced2e6 solid;
+line-height:16px;border-radius:8px;padding:0 5px 0 18px;color:#5e69ad;margin-left:-18px;z-index:-1}
+.f_stoped{float:left;position:relative;z-index:3;height:26px;margin-top:-3px}
+.ul-area{float:left;position:relative;top:0;height:23px;background:#fff;border:1px solid #CECBCE;
+padding:0 24px 0 4px;line-height:23px;overflow:hidden}
+/*.ui-area-hover .ul-area{z-index:1;height:25px;border-bottom:0}*/
+.ul-area i,.ui-wrap-tp a i{display:block;position:absolute;top:0px;right:3px;width:17px;height:17px;
+background:url("imges/arr-close.png") no-repeat 3px 8px}
+.ui-wrap{position:absolute;left:0;top:25px;float:left;border:1px #CECBCE solid;width:460px;
+padding:12px 12px 15px;background:#fff;box-shadow:0 0 5px #ddd}
+.ui-wrap-s a:hover{color:#e4393c}
+.ui-wrap-tp{width:423px;cursor:default;height:25px;border-bottom:2px #e4393c solid;overflow:visible}
+.ui-wrap-tp a{position:relative;float:left;height:23px;line-height:23px;padding:0 25px 1px 6px;
+margin-right:4px;border:1px #ddd solid;border-bottom:0;color:#005AA0;text-align:center;
+cursor:pointer;overflow:hidden;max-width:36px}
+.ui-wrap-tp .ui-wrap-xz{height:25px;background-color:#fff;border:2px #e4393c solid;border-bottom:0;
+padding:0 25px 0 6px;line-height:22px}
+.ui-wrap-s ul{padding-top:10px;overflow:hidden;width:100%;margin-bottom:-5px}
+.ui-wrap-s ul li{float:left;width:80px;padding:0 16px 1px 0;line-height:18px}
+.ui-wrap-s li a{float:left;padding:2px 4px 2px 0;color:#005aa0}
+.ui-wrap-s .ui-wrap-hs a{color:#e4393c}
+.summar-stok .stok-prom{float:left;margin:0 10px 0 6px;color:#999;height:24px;font-weight:bold}
+.summar-stok .promise-ico{float:left;height:24px}
+.summar-stok .promise-ico p{margin-right:5px;float:left}
+.summar-stok .promise8,.summar-stok .promise8 li{float:left}
+.summar-stok .promise8 a{color:#646FB0;margin-bottom:5px;padding:0 10px}
+.summar-suply{line-height:32px}
+.summar-suply span,.summar-suply a{color:#e4393c}
+.summar-suply b{color:#999}
+.summar-weight{margin-bottom:3px;line-height:32px}
+.choose-stts{line-height:40px;margin-bottom:3px;border-top:1px #dfdfdf dotted;padding-top:15px}
+.dpsp-zz .choose-stts .sum-yw li{background-color:#F7F7F7}
+.choose-stts .sum-yw li,.choose-JDbaitiao .sum-yw li{float:left;background-color:#FFF;
+margin-right:7px;margin-bottom:4px;position:relative}
+.choose-stts .sum-yw li a{display:block;border:1px #ccc solid;white-space:nowrap}
+.choose-stts .sum-yw .selected a{border:1px #e3393c solid}
+.choose-stts .sum-yw li a i{margin:0 8px;font-style:normal}
+.choose-service,.choose-JDservice{margin-bottom:7px;line-height:18px}
+.choose-service .sum-zz,.choose-JDservice .sum-zz{line-height:30px}
+.choose-service .sum-yw li,.choose-JDservice .sum-yw li{float:left;position:relative}
+.service-hover:hover .yb-service,.choose-JDbaitiao .service-hover:hover a{border:1px #e3393c solid}
+.service-hover:hover .yb-service{z-index:5;border-bottom-color:#fff}
+.yb-service{padding:4px 5px 4px 6px;margin:0 7px 2px 0;line-height:20px;cursor:pointer;
+border:1px #ccc solid;position:relative}
+.yb-service img{display:inline-block;width:16px;height:16px;margin-right:4px}
+.yb-service .name{display:inline-block;margin-right:4px;vertical-align:middle;max-width:60px;
+height:20px;overflow:hidden}
+.yb-service .price{margin-right:5px;vertical-align:middle}
+.yb-service i{display:inline-block;width:15px;vertical-align:middle;height:10px;
+background:url("imges/arr-close.png") no-repeat 1px 3px}
+.more-service{position:absolute;top:31px;background:#fff;border:1px #ddd solid;width:240px;z-index:1;
+padding:10px 0 5px 10px;overflow:hidden;}
+.more-service li{width:100%;margin-bottom:10px;height:16px;cursor:pointer}
+.more-service li:hover{color:#E3393c}
+.more-service li:hover a{display:inline-block}
+.more-service li a:hover{color:#E3393c}
+.titlecs .sprit-checkbox{display:inline-block;vertical-align:-3px;margin-right:6px;width:14px;
+height:14px;background:url("imges/__spritecs.png") no-repeat -16px 0px}
+.titlecs .tips{display:inline-block;padding:0 4px;margin-right:6px;background:#f19c9d;color:#fff}
+.more-service .name{display:inline-block;max-width:60px;height:16px;vertical-align:-3px;
+overflow:hidden}
+.more-service .price{margin-right:0;margin-left:6px}
+.more-service .detail-mare{display:none;margin-left:10px;color:#5e69ad}
+.service-tips a .service-quest{display:inline-block;vertical-align:-10px;width:16px;height:16px;
+background:url("imges/__spritecs.png") no-repeat}
+.service-tips .tips{position:absolute;width:270px;left:-215px;top:35px;z-index:2}
+.service-tips .tips .quest-arrow{width:11px;height:6px;position:absolute;overflow:hidden;left:218px;
+background:url("imges/__spritecs.png") no-repeat -14px -16px;top:-5px}
+.service-tips .tips .quest-content{padding:10px;background:#fff;border:1px #cecbce solid;
+box-shadow:0 0 2px 2px #eee}
+.service-tips .tips .quest-content .quest-dd{line-height:170%}
+.service-tips .tips .quest-content .quest-p{border-top:1px #999 dotted;margin-top:7px;padding-top:7px}
+.choose-JDbaitiao .service-hover a{display:block;border:1px #ccc solid;padding:0 13px;
+text-align:center;white-space:nowrap}
+.choose-JDbaitiao .service-hover .baitiao-tips{position:absolute;width:250px;padding:5px 10px;
+background:#fefff7;border:1px #ccc solid;z-index:6;top:32px;left:0}
+.choose-JDbaitiao .service-tips .service-youhui,.choose-JDbaitiao .service-tips .service-siyi{display:inline-block;vertical-align:-5px;width:16px;
+height:16px;overflow:hidden;}
+.choose-JDbaitiao .service-tips .service-youhui{background:url("imges/hui.png") no-repeat}
+.choose-JDbaitiao .service-tips .service-siyi{background:url("imges/__spritecs.png") no-repeat}
+.choose-JDbaitiao .service-tips .tips{left:0}
+.choose-JDbaitiao .service-tips .tips .quest-arrow{left:8px}
+.choose-btns{margin-bottom:20px;padding:15px 10px 0 10px;border-top:1px #dfdfdf dotted}
+.choose-amount{float:left;position:relative;width:58px;height:44px;overflow:hidden;border:1px #ccc solid;margin-right:10px}
+.choose-amount input{display:block;position:absolute;width:43px;height:42px;line-height:42px;top:1px;
+left:0;border:0;text-align:center}
+.choose-amount a{display:block;position:absolute;width:15px;height:22px;line-height:22px;right:-1px;
+text-align:center;overflow:hidden;background:#f1f1f1;border:1px #ccc solid}
+.choose-amount .btn-reduce{bottom:-1px}
+.choose-amount .disabled{color:#ccc;cursor:not-allowed}
+.choose-amount .btn-add{top:-1px}
+.choose-btns .btn-lg{height:46px;line-height:46px;padding:0 26px;font-size:18px;font-family:"microsoft yahei";margin-right:10px;float:left}
+.choose-btns .btn-spec1{background:#df3033}
+.choose-btns .btn-spec2{background:#85c360}
+.choose-btns .btn-spec1,.choose-btns .btn-spec2{font-weight:700;color:#fff}
+.choose-btns .btn-spec3{background:#fff;border:1px #e4393c solid;color:#e4393c}
+.local-tips,.summary-tips{margin-bottom:5px}
+.local-tips li,.summary-tips li{float:left;margin-right:15px;font-family:simsun;color:#999}
+.local-tips li a{color:#005aa0}
+.track{width:210px;position:static;float:right;background:#fff;top:-10px;z-index:4}
+.track-tit{position:relative;line-height:50px;font-weight:400;text-align:center}
+.track-tit h3{position:relative;z-index:2;display:inline-block;background:#fff;padding:0 25px}
+.track-tit span{position:absolute;z-index:1;left:0;right:0;top:25px;height:1px;background:#f2f2f2}
+.track-con{position:relative;width:150px;height:376px;overflow:hidden;margin:0 auto}
+.track-con ul{position:absolute;width:150px;height:1128px;top:0;left:0}
+.track-con ul li{position:relative;float:left;padding:10px 0}
+.track-con ul li a{position:relative;display:inline-block}
+.track-con ul li a .con-name{position:absolute;left:0;right:0;top:126px;line-height:12px;padding:6px;
+background:rgba(255,255,255,.9);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.track-con ul li a .con-price{line-height:18px;text-align:center;color:#C81623}
+.track-more{padding-top:10px;text-align:center;clear:both}
+.track-more a{display:inline-block;width:28px;height:15px;margin:0 10px;overflow:hidden;
+background:url("imges/__sprites.png") no-repeat}
+.track-more .J-prev{background-position:-28px 0px}
+.tab-min{position:relative;background:#f7f7f7;border:1px #eee solid;border-bottom:1px #e4393c solid}
+.tab-min ul li{position:relative;display:inline-block;font-family:"microsoft yahei";padding:10px 25px;
+font-size:14px;cursor:pointer}
+.tab-con{padding:20px 0 10px 0}
+.tab-con .master{float:left;width:134px;height:161px;padding:0 5px;position:relative}
+.tab-con .master .p-name,.suits .switchble .lh-wrap li .p-name{max-height:3em;min-height:36px;
+line-height:1.5em}
+.tab-con .master .puls{width:23px;height:23px;overflow:hidden;line-height:23px;position:absolute;
+right:8px;top:38px;background:url("imges/plus.png") no-repeat}
+.suits{width:840px;float:left;height:187px;overflow:hidden;position:relative}
+.suits .switchble{overflow:hidden;height:161px;position:relative}
+.suits .switchble .btns a{width:23px;height:73px;display:block;position:absolute;top:15px;
+background:url("imges/page-btn.png") no-repeat}
+.suits .switchble .btns .prev-btn{left:22px;background-position:0 -94px}
+.suits .switchble .btns .next-btn{right:15px}
+.suits .switchble .btns  .prev-btn.disabled{background-position:-94px -94px;cursor:default}
+.suits .switchble .btns  .next-btn.disabled{background-position:-94px 0px;cursor:default}
+.suits .switchble .lh-wrap{margin:0 38px 0 68px}
+.suits .switchble .lh-wrap li{float:left;width:134px;height:161px;position:relative;padding:0 5px}
+.suits .switchble .lh-wrap li .p-price input{vertical-align:middle;margin:3px 3px 3px 4px}
+.tab-con .infos{position:relative;float:left;display:inline;width:150px;padding:15px 0 0 50px}
+.tab-con .infos .infos-sele,.tab-con .infos .p-price,.tab-con .infos .btns-lj{margin-bottom:10px}
+.tab-con .p-name a:hover{color:#e4393c}
+.tab-con .infos .p-price strong{font-size:18px}
+.tab-con .infos .btn-lj{display:inline-block;text-align:center;height:28px;line-height:28px;
+padding:0 22px;background:#df3033;color:#fff}
+.infos-xgzx{display:inline-block;padding:4px 10px;border:1px #ccc solid}
+.equal{width:23px;height:23px;overflow:hidden;position:absolute;left:0;top:30px;
+background:url("imges/equal.png") no-repeat}
+.aside{float:left;width:210px;margin-bottom:20px}
+.aside .popbox,.aside .sp-search,.aside .sp-categ,.aside .sp-popot,.aside .sp-gg{margin-bottom:15px}
+.popbox-fixed{position:fixed;top:0;z-index:30;width:210px}	/*控制置顶显示不随页面运动而消失*/
+.aside .popbox .popbox-fixed .box-mc{display:none}
+.aside .popbox .popbox-fixed .box-mt .box-arrow{display:inline-block;width:7px;height:4px;
+background:url("imges/arr-close.png") no-repeat -3px -3px;float:right;margin-top:8px;margin-right:3px;
+transition:transform .2s ease}
+.box-mt{padding:10px;background:#f7f7f7;border:1px #eee solid}
+.aside .popbox .box-mt h3{float:left;max-width:150px;height:18px;overflow:hidden}
+.box-mc{padding:0 10px 0 10px;border:1px #eee solid;background:#fff;border-top:none}
+.aside .popbox .box-mc .btns-mc{padding:10px 0;text-align:center}
+.aside .popbox .box-mc .btns-mc a{float:left;text-align:center;width:88px;height:34px;
+line-height:34px;margin-right:8px;border:1px #ddd solid;background:#f8f8f8}
+.aside .popbox .box-mc .btns-mc .follow-shop{margin-right:0}
+.aside .popbox .box-mc .btns-mc i{display:inline-block;vertical-align:-2px;width:16px;height:16px;
+background:url("imges/__sprite.png") no-repeat}
+.aside .popbox .box-mc .btns-mc .enter-shop i{background-position:-16px -18px}
+.aside .popbox .box-mc .btns-mc .follow-shop i{background-position:-34px 0px}
+.sp-search .box-mc{padding:8px}
+.sp-search .box-mc p{overflow:hidden;padding:2px;}
+.sp-search .box-mc label,.sp-search .box-mc input{display:inline-block}
+.sp-search .box-mc label{width:5em;text-align:right}
+.sp-search .box-mc input{border:1px #ccc solid;padding:2px}
+.sp-search .box-mc .sp-item1 input{width:104px}
+.sp-search .box-mc .sp-item2 input{width:3em}
+.sp-search .box-mc .sp-item3 input{margin-left:-1px;background:#fff;color:#000;padding:3px 10px;
+border-radius:3px;cursor:pointer}
+.sp-categ .box-mc{padding:0;margin-top:-1px}
+.sp-categ .box-mc dt{border-top:1px #ddd solid;position:relative}
+.sp-categ .box-mc dt i{display:block;width:16px;height:16px;position:absolute;left:10px;top:6px;
+background:url("imges/20130603A.png") no-repeat -20px 0px;cursor:pointer}
+.sp-categ .box-mc dt a{display:block;height:28px;line-height:28px;padding-left:36px;
+background:#f7f7f7}
+.sp-categ .box-mc a:hover{color:#e4393c}
+.sp-categ .box-mc dd{display:none}
+.sp-categ .box-mc .open dd{display:block}		/*控制dl里面的dd隐藏和显示*/
+.sp-categ .box-mc .open i{background-position:-37px 0px}
+.sp-categ .box-mc dd a{display:block;height:26px;line-height:26px;white-space:nowrap;
+padding-left:37px}
+.sp-popot{border:1px #eee solid;border-top:none}
+.sp-popot .tab-main{position:relative;background:#f7f7f7;border:1px #eee solid;
+border-bottom:1px #e4393c solid}
+.sp-popot .tab-main span{display:inline-block;position:relative;padding:10px 22px;font-size:14px;
+cursor:pointer}
+.sp-popot .tab-conent{padding:10px 0}
+.plist-pop1,.plist-pop2{padding:10px 10px 0}
+.plist-pop1 li,.plist-pop2 li{padding:5px 0;position:relative;margin-bottom:10px;
+overflow:hidden}
+.plist-pop1 li .p-img,.plist-pop2 li .p-img{text-align:center}
+.plist-pop1 li .p-name,.plist-pop2 li .p-name{width:140px;margin-left:15px;padding:0 10px;
+max-height:3em;min-height:36px;line-height:1.5em;margin-bottom:5px;background:rgba(0,0,0,.7);
+position:absolute;bottom:-42px}
+.plist-pop1 li .p-name a,.plist-pop2 li .p-name a{color:#fff}
+.plist-pop1 li .p-price{text-align:right}
+.plist-pop2 li .p-price i{float:left;position:absolute;width:20px;height:20px;line-height:20px;
+border-radius:10px;background:#e4393c;color:#fff;text-align:center;bottom:5px}
+.plist-pop2 li .p-price p{float:left;margin-left:22px;color:#999}
+.plist-pop2 li .p-price strong{float:right}
+.detail{float:right;min-height:220px;width:990px}
+.detail .popbox-fixed{width:990px}		/*控制置顶显示不随页面运动而消失*/
+.extra{position:absolute;top:0;right:0}
+.extra .extra-mini{float:left;margin-right:10px;padding-top:8px}
+.extra .extra-im{float:left;margin-right:10px;padding-top:8px}
+.extra .extra-im .extra-btn{height:23px;line-height:23px;padding:1px 1px 0}
+.extra .extra-im .extra-btn a{margin-top:-3px;display:inline-block;height:28px;line-height:28px;
+padding:0 16px;background:#df3033;color:#fff}
+.extra-conte{position:absolute;background:#fff;right:11px}
+.extra-ducts{width:224px;height:101px;padding:10px;border:1px #ccc solid}
+.extra-ducts .p-img{float:left;margin-right:10px;padding-bottom:5px}
+.extra-ducts .p-info .p-name{max-height:3em;min-height:36px;line-height:1.5em;margin-bottom:5px}
+.tab-conster{padding:10px 0}
+.tab-conster .p-parmetar{padding:20px 0 0}
+.tab-conster .p-parmetar p{width:50%;padding-left:42px;margin-bottom:5px}
+.tab-conster .p-parmetar p a{color:#5e69ad}
+.tab-conster .parameter2{padding:20px 0 15px}
+.tab-conster .parameter2 li{float:left;width:200px;padding-left:42px;margin-bottom:5px}
+.tab-conster .more-par{padding-right:20px;margin-top:-5px;text-align:right}
+.tab-conster .more-par a{color:#005aa0}
+.deta-sf{text-align:center;margin:10px 0 10px}
+.ktazsf{position:relative}
+.ktazsf .sfxq{display:inline-block;width:180px;height:66px;position:absolute;top:43%;right:158px;
+border-radius:35px}
+.ktazsf .cjshfw{display:inline-block;width:277px;height:33px;position:absolute;bottom:36px;left:36%}
+.deta-sf li i,.deta-sf li p{display:inline-block;width:750px;height:33px;line-height:33px;
+margin:0 auto;text-align:left;text-indent:10px}
+.deta-sf li i{color:#e4393c;font-size:24px}
+.deta-sf li p{color:#333;font-size:18px}
+.deta-module{width:750px;margin:0 auto;position:relative;text-align:left;background:#fff}
+.deta-module li{width:750px;background-size:100% 100%;background-color:#cbcbcb;position:relative;
+background-repeat:no-repeat}
+.box-mcted{overflow:visible}
+.guarantee .seve-detal{padding:10px;line-height:180%}
+.guarantee .seve-detal .seve-agrbd{padding:20px 20px 20px 62px}
+.seve-detal .seve-agrbd dt{display:block;height:32px;line-height:32px;margin-left:-42px;color:#e4393c;
+font-size:16px}
+.seve-detal .seve-agrbd dt i{display:inline-block;width:32px;height:32px;line-height:32px;
+padding-right:10px;vertical-align:bottom;background:url("imges/iconWY.png") no-repeat}
+.seve-detal .seve-agrbd dt strong{display:inline-block;padding:8px 0 3px}
+.seve-detal .seve-agrbd dd{display:block;padding:10px 0 30px;line-height:18px}
+.seve-detal .seve-agrbd dd a{color:#005aa0}
+.agrbd strong{display:inline-block;padding:8px 0 3px;color:#e4393c}
+.m-contents{margin-bottom:15px}
+.box-mcted .J-infpo{overflow:hidden;padding:25px 0}
+.box-mcted .J-infpo .J-incent{float:left;width:90px;padding:15px 0 0 40px}
+.box-mcted .J-infpo .J-incent strong{display:block;line-height:110%;font-size:45px;color:#e4393c;
+font-family:arial}
+.box-mcted .J-infpo .J-incent strong span{font-size:23px}
+.box-mcted .J-infpo .J-inpret{margin-left:90px}
+.box-mcted .J-infpo .J-inpret .tag-avable{padding-left:20px;overflow:visible}
+.box-mcted .J-infpo .J-inpret .tag-avable span{display:inline-block;line-height:20px;padding:0 9px;
+border:1px #e0e0e0 solid;border-radius:2px;margin-right:10px;margin-bottom:10px;color:#999}
+.box-mcted .J-infpo .J-inpret .tag-avable span:hover{cursor:pointer;border-color:#000;color:#000}
+.box-mcted .J-list-coment{min-height:93px}
+.J-list-coment .J-small{position:relative;border:1px #f5f5f5 solid;background:#fafafa;
+padding-left:10px}
+.J-list-coment .J-small ul{margin-top:-1px}
+.J-list-coment .J-small .J-sppj li{position:relative;display:inline-block;padding:5px 10px}
+.J-list-coment .J-small ul li span input{margin:3px 3px 3px 4px}
+.J-list-coment .J-small ul .currents a{color:#e4393c}
+.J-list-coment .J-small ul li a:hover{color:#e4393c}
+.J-list-coment .J-small .extras{position:absolute;top:0;right:0;white-space:nowrap;line-height:30px}
+.extras-cur{position:relative;;margin-right:10px;padding:0 10px;height:30px}
+.extras-cur span,.extras-oth .curr-oth span{display:inline-block;height:30px;vertical-align:top}
+.extras-cur i,.extras-oth .curr-oth i{display:inline-block;width:16px;height:30px;
+background:url("imges/arr-close.png") no-repeat 2px 13px}
+.extras-oth{position:absolute;top:-1px;right:9px;background:#fff;border:1px #ccc solid;
+box-shadow:0 0 2px 0 #888}
+.extras-oth .curr-oth{padding:0 10px}
+.extras .extras-oth .curr-oth i{transform:rotateX(180deg)}
+.extras .extras-oth ul li{position:relative;padding:0 20px 0 10px;cursor:pointer}
+.extras .extras-oth ul li:hover{color:#e4393c;background:#e6e6e6}
+.J-tabcs{padding:10px 0}
+.J-tabcs ul li{padding:15px;border-bottom:1px #ddd solid;overflow:hidden;zoom:1}
+.user-lumn{float:left;width:140px}
+.user-lumn .user-info{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+.user-lumn .user-info img{border-radius:50%;margin-right:5px}
+.user-lumn .user-level{padding-top:3px}
+.user-lumn .user-level span{color:#088000;margin-right:8px}
+.coment-lumn{margin-left:150px}
+.coment-lumn .lumn-star{width:78px;height:14px;background:url("imges/star.png") no-repeat 0px 0px}
+.lumn-pjnr{font-size:14px;padding:10px 0;line-height:180%;color:#333}
+.coment-lumn .J-pic-list{padding-bottom:15px}
+.coment-lumn .J-pic-list a{display:inline-block;position:relative}
+.coment-lumn .J-pic-list a img{border:1px #e2e2e2 solid;padding:1px;margin-right:6px}
+.J-pic-messg{overflow:hidden;zoom:1}
+.J-pic-messg .order-info{float:left;color:#999}
+.J-pic-messg .order-info span{margin-right:20px}
+.J-pic-messg .commen-info{float:right}
+.J-pic-messg .commen-info a{display:inline-block;margin-left:25px}
+.J-pic-messg .commen-info a i{display:inline-block;width:16px;height:16px;margin-right:5px;
+background:url("imges/__spritees.png") no-repeat;vertical-align:-2px}
+.J-pic-messg .commen-info .JD-DZ i{background-position:-32px -34px}
+.J-pic-messg .commen-info .JD-DZ:hover i{background-position:-16px -50px}
+.J-pic-messg .commen-info .JD-HF i{background-position:-48px -34px}
+.J-pic-messg .commen-info .JD-HF:hover i{background-position:-16px -34px}
+.J-pic-messg .commen-info a:hover{color:#e4393c}
+.coment-lumn .apped-zp{border-top:1px #f0f0f0 solid;margin-top:12px;padding-top:12px}
+.coment-lumn .apped-zp .app-time,.coment-lumn .reco-con .huifusj{color:#999}
+.coment-lumn .apped-zp .lumn-pjnr{padding-top:5px}
+.coment-lumn .tag-list{height:22px;padding-bottom:12px;overflow:hidden}
+.coment-lumn .tag-list span{display:inline-block;line-height:20px;padding:0 9px;cursor:text;
+border:1px #e0e0e0 solid;border-radius:2px;margin:0 10px 10px 0;color:999}
+.coment-lumn .reco-con{border-top:1px #f0f0f0 solid;margin-top:12px;font-size:14px}
+.coment-lumn .reco-con dl{padding:12px 0 5px;color:#ff561c;line-height:170%}
+.com-footer .ui-page{padding-top:15px;text-align:right}
+.com-footer .ui-page a{display:inline-block;color:#333;padding:4px 1.2em;border:1px #ddd solid;
+margin-left:3px;background:#f3f2f2}
+.com-footer .ui-page span{margin-left:3px}
+.com-footer .ui-page .ui-peg-curr{border:0;background:#fff;cursor:default;font-weight:700;
+color:#e33b3d}
+.ask-wap{height:75px;text-align:center;color:#333;font-size:14px;
+background:url("imges/radius-rect.png") no-repeat #f9f9f9}
+.ask-wap i{display:inline-block;width:123px;height:67px;margin-top:8px;margin-right:15px;
+background:url("imges/icon-dog.png") no-repeat;vertical-align:middle}
+.ask-wap a{display:inline-block;line-height:26px;padding:0 18px;margin-left:12px;color:#e4393c;
+border:1px #e4393c solid;border-radius:13px;vertical-align:middle}
+.askwap-list ul .askapitem{padding-top:18px;border-bottom:1px #ddd solid}
+.askwap-list .ask-top{overflow:hidden;zoom:1}
+.askwap-list .ask-top i,.ask-bottom .da{float:left;width:18px;height:18px;color:#fff;
+border-radius:9px;text-align:center;background:#f91}
+.askwap-list .ask-bottom .da{background:#9b1;margin-top:15px}
+.askwap-list .item-con{font-size:14px;margin-left:25px;overflow:hidden;zoom:1}
+.askwap-list .ask-top .item-con p{font-weight:700}
+.askwap-list .item-con p{float:left;width:770px;color:#333}
+.askwap-list .item-con span{float:right;color:#999}
+.ask-bottom .item-con{line-height:50px}
+.ask-bottom .item-con li{overflow:hidden;zoom:1}
+.ask-bottom .item-con li p{padding:10px 0 8px;line-height:220%}
+.item-con .more{line-height:100%;padding-bottom:18px}
+.item-con .more a{color:#005ea7}
+.item-con .more a i{display:inline-block;width:9px;height:5px;margin-left:5px;
+vertical-align:1px;background:url("imges/__spritees.png") no-repeat;background-position:-2px -68px}
+.item-con .more a .sprit-Down{background-position:-66px -34px}
+</style>
+</head>
+<body>
+	<div class = "sec">
+		<div class = "spqjd">
+			<div class = "sec-qjd">
+				<img width = "1920" height = "110" src = "imges/5b72b2deN881f14d5.jpg"/>
+				<a style = "width:350px;left:853px" class = "sptj" href = ""></a>
+				<a style = "width:245px;left:1215px" class = "sptj" href = ""></a>
+			</div>
+		</div>
+		<div class = "dpfl">
+			<div class = "sec-fl">
+				<ul class = "s-fl">
+					<li class = "menu">
+						<a class = "fl-h" href = "">首页</a>
+					</li>
+					<li class = "menu">
+						<a class = "fl-h" href = "">全部分类<span class = "arrow"></span></a>
+						<div class = "menu-fl" style = "display:none">
+							<dl>
+								<dt><a href = "">变频空调</a></dt>
+								<dd>
+									<ul>
+										<li><a href = "">1匹</a></li>
+										<li><a href = "">1.5匹</a></li>
+										<li><a href = "">2匹</a></li>
+										<li><a href = "">3匹</a></li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt><a href = "">定速空调</a></dt>
+								<dd>
+									<ul>
+										<li><a href = "">1匹</a></li>
+										<li><a href = "">1.5匹</a></li>
+										<li><a href = "">2匹</a></li>
+										<li><a href = "">3匹</a></li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt><a href = "">一级能效</a></dt>
+								<dd>
+									<ul>
+										<li><a href = "">挂机</a></li>
+										<li><a href = "">柜机</a></li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt><a href = "">二级能效</a></dt>
+								<dd>
+									<ul>
+										<li><a href = "">挂机</a></li>
+										<li><a href = "">柜机</a></li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt><a href = "">智能空调</a></dt>
+								<dd>
+									<ul>
+										<li><a href = "">挂机</a></li>
+										<li><a href = "">柜机</a></li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt><a href = "">艺术化空调</a></dt>
+								<dd>
+									<ul>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt><a href = "">单冷空调</a></dt>
+								<dd>
+									<ul>
+									</ul>
+								</dd>
+							</dl>
+							<div class = "sec-dp">
+								<a href = "">查看所有商品</a>
+							</div>
+						</div>
+					</li>
+					<li class = "menu">
+						<a class = "fl-h" href = "">热门活动</a>
+					</li>
+					<li class = "menu">
+						<a class = "fl-h" href = "">企业采购</a>
+					</li>
+					<li class = "menu">
+						<a class = "fl-h" href = "">镇店单品</a>
+					</li>
+					<li class = "menu">
+						<a class = "fl-h" href = "">品牌售后</a>
+					</li>
+					<li class = "menu">
+						<a class = "fl-h" href = "">品牌故事</a>
+					</li>
+					<li class = "menu">
+						<a class = "fl-h" href = "">获奖名单</a>
+					</li>
+					<li class = "menu">
+						<a class = "fl-h" href = "">购物指南</a>
+					</li>
+				</ul>
+				<div class = "ss-fl">
+					<input type = "text" class = "ss-text" placeholder = "一级能耗" size = "60" maxlength = "60"/>
+					<input type = "button" class = "ss-sub">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class = "lj-dp">
+		<div class = "cen">
+			<ul class = "lj-lef clearfix">
+				<li><a href = "">家用电器</a></li>
+				<li class = "sep"> > </li>
+				<li><a href = "">大家电</a></li>
+				<li class = "sep"> > </li>
+				<li><a href = "">空调</a></li>
+				<li class = "sep"> > </li>
+				<li>
+					<div class = "lef-hove">
+						<div class = "aux-hove">
+							<a href = "">奥克斯 ( AUX )</a>
+							<span></span>
+						</div>
+						<div class = "content" style = "display:none">
+							<ul class = "hove-con">
+								<li>
+									<div class = "p-img">
+										<a href = "">
+											<img width = "65" height = "65" alt = "奥克斯 (AUX) 正1.5匹 一级能效 变频冷暖 黄金侠壁挂式空调挂机 微联控制 (KFR-35GW/BpTYC1+1)" src = "imges/5ab48ea4N4368d115.jpg"/>
+										</a>
+									</div>
+									<div class = "p-name">
+										<a href = "">奥克斯 (AUX) 正1.5匹 一级能效 变频冷暖 黄金侠壁挂式空调挂机 微联控制 (KFR-35GW/BpTYC1+1)</a>
+									</div>
+									<div class = "p-price">
+										<strong>¥2799.00</strong>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a href = "">
+											<img width = "65" height = "65" alt = "奥克斯 (AUX) 3匹 一级能效 变频冷暖 黄金侠壁挂式空调挂机 微联控制 (KFR-35GW/BpTYC1+1)" src = "imges/5944c122N7d533d88.jpg"/>
+										</a>
+									</div>
+									<div class = "p-name">
+										<a href = "">奥克斯 (AUX) 3匹 一级能效 变频冷暖 黄金侠壁挂式空调挂机 微联控制 (KFR-35GW/BpTYC1+1)</a>
+									</div>
+									<div class = "p-price">
+										<strong>¥6399.00</strong>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a href = "">
+											<img width = "65" height = "65" alt = "奥克斯 (AUX) 正1.5匹 一级能效 变频冷暖 黄金侠壁挂式空调挂机 微联控制 (KFR-35GW/BpTYC1+1)" src = "imges/5b61b3c7N3400c60e.jpg"/>
+										</a>
+									</div>
+									<div class = "p-name">
+										<a href = "">奥克斯 (AUX) 正1.5匹 一级能效 变频冷暖 黄金侠壁挂式空调挂机 微联控制 (KFR-35GW/BpTYC1+1)</a>
+									</div>
+									<div class = "p-price">
+										<strong>¥2299.00</strong>
+									</div>
+								</li>
+							</ul>
+							<ul class = "hove-tent">
+								<li><a href = "">奥克斯 ( AUX )</a></li>
+								<li><a href = "">美的 ( Midea )</a></li>
+								<li><a href = "">格力 ( GREE )</a></li>
+								<li><a href = "">TCL</a></li>
+								<li><a href = "">科龙 ( KELON )</a></li>
+								<li><a href = "">长虹 ( CHANGHONG )</a></li>
+								<li><a href = "">志高 ( CHIGO )</a></li>
+								<li><a href = "">YAIR</a></li>
+								<li><a href = "">海尔 ( Haier )</a></li>
+								<li><a href = "">更多>></a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class = "sep"> > </li>
+				<li class = "lj-pm" title = "奥克斯KFR-25GW/NFW+3">奥克斯KFR-25GW/NFW+3</li>
+			</ul>
+			<div class = "li-righ clearfix">
+				<div class = "ziying">
+					<em>
+						<span>JD</span>自营
+					</em>
+				</div>
+				<ul class = "li-qjd">
+					<li class = "jd-dm"><a href = "">奥克斯空调自营旗舰店</a></li>
+					<li class = "jd-kf">
+						<i class = "sprite-im"></i>
+						<a href = "">联系客服</a>
+					</li>
+					<li class = "jd-gz">
+						<i></i>
+						<a href = "">关注店铺</a>
+					</li>
+					<li class = "jd-dpsjd" style = "display:none">
+						<div class = "pop-kf">
+							<div>客服</div>
+							<div title = "联系客服" class = "lxkf">
+								<i class = "sprite-im"></i> 联系客服
+							</div>
+						</div>
+						<div class = "pop-sjxd">
+							<div class = "sj-ewm">
+								<img width = "118" height = "118" src = "imges/截图04.png"/>
+							</div>
+							<p>手机下单</p>
+						</div>
+						<div class = "pop-gg">
+							<a class = "btn-def" href = "">
+								<i></i>
+								<span>进店逛逛</span>
+							</a>
+							<span class = "spetor"></span>
+							<a class = "btn-def" href = "">
+								<i></i>
+								<span>关注店铺</span>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class = "clr"></div>
+		</div>
+	</div>
+	<section>
+		<div class = "sectoes clearfix">
+			<div class = "sect-tp">
+				<div class = "secoe-img">
+					<img width = "350" height = "350" src = "imges/img-123/hs21d/5ab48c55Na22e95ff.jpg"/>
+					<div class = "img-zzc" style = "display:none"></div>
+				</div>
+				<div class = "quyu-img" style = "display:none">
+					<img class = "qu-img" src = "imges/img-123/pokdjh/5ab48c55Na22e95ff.jpg"/>
+				</div>
+				<div class = "secoe-list">
+					<div class = "spec-list">
+						<ul>
+							<li class = "img-hover"><img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" width = "50" height = "50" src = "imges/img-123/hs21d/5ab48c55Na22e95ff.jpg"/></li>
+							<li><img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" width = "50" height = "50" src = "imges/img-123/hs21d/5b84ddceNaefbc352.jpg"/></li>
+							<li><img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" width = "50" height = "50" src = "imges/img-123/hs21d/5b7f76d6N456fd6d2.jpg"/></li>
+							<li><img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" width = "50" height = "50" src = "imges/img-123/hs21d/5b7f7654N48e0911c.jpg"/></li>
+							<li><img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" width = "50" height = "50" src = "imges/img-123/hs21d/5b7f765aN74cdc7e3.jpg"/></li>
+							<li><img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" width = "50" height = "50" src = "imges/img-123/hs21d/5b7f76ffN2bd8f692.jpg"/></li>
+							<li><img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" width = "50" height = "50" src = "imges/img-123/hs21d/5b7f76e4N1d625128.jpg"/></li>
+							<li><img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" width = "50" height = "50" src = "imges/img-123/hs21d/5b7f7711N1bc0dae2.jpg"/></li>
+							<li><img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" width = "50" height = "50" src = "imges/img-123/hs21d/5a619a48N644034da.jpg"/></li>
+						</ul>
+					</div>
+					<a class = "arrow-prev" href = "">
+						<i class = "spec-prev"></i>
+					</a>
+					<a class = "arrow-next" href = "">
+						<i class = "spec-next"></i>
+					</a>
+				</div>
+				<div class = "previ-info">
+					<div class = "lef-btns">
+						<a href = "">
+							<i class = "info-gz"></i>
+							<em>关注</em>
+						</a>
+						<a href = "">
+							<i class = "info-fx"></i>
+							<em>分享</em>
+						</a>
+						<a href = "">
+							<i class = "info-db"></i>
+							<em>对比</em>
+						</a>
+					</div>
+					<div class = "righ-btns">
+						<a href = "">举报</a>
+					</div>
+				</div>
+			</div>
+			<div class = "dprn">
+				<div class = "dpsp-pm">
+					<p class = "pm-name">奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)</p>
+					<p class = "pm-sm" title = "【月末冲量,工厂放'价',全民疯抢】&#10;①1799到手价疯抢,早买早享受!&#10;②APP关注店铺参与抽奖赢空调!&#10;③销售火爆,库存告急,随时断货,预购从速!&#10;④网红爆品,象牙白时尚简约,隐藏式显示屏,自动水洗!天赐'凉机',好货不错过,入场看秘籍">【月末冲量 , 工厂放'价' , 全民疯抢】 &#10;①1799到手价疯抢 , 早买早享受 !&#10;②APP关注店铺参与抽奖赢空调 !&#10;③销售火爆 , 库存告急 , 随时断货 , 预购从速 !&#10;④网红爆品 , 象牙白时尚简约 , 隐藏式显示屏 , 自动水洗 !<a href = "">天赐'凉机' , 好货不错过 , 入场看秘籍</a></p>
+					<div class = "jdj-cx">
+						<div class = "jdj clearfix">
+							<div class = "sum-zz">京 东 价</div>
+							<div class = "sum-yw">
+								<span class = "jdj-b">
+									<span>¥</span>
+									<span>1799.00</span>
+								</span>
+								<a href = "">降价通知</a>
+							</div>
+						</div>
+						<div class = "jdpj">
+							<div class = "comment">
+								<p>累计评价</p>
+								<a href = "">17万+</a>
+							</div>
+							<div class = "buy-rate">
+								<p>选购指数</p>
+								<a href = "">5.5</a>
+							</div>
+						</div>
+						<div class = "jdcx clearfix">
+							<div class = "sum-zz">促&nbsp;&nbsp;销</div>
+							<div class = "sum-yw clearfix">
+								<div class = "cx-zp">
+									<div class = "J-gifzp clearfix">
+										<span class = "zp">
+											<em>赠品</em>
+										</span>
+										<div class = "prom-list">
+											<a class = "pro-img" href = ""><img width = "25" height = "25" src = "imges/5b681eebNaa84cb6b.jpg" style = "display:block"/></a>
+											<em class = "cxcs">×1</em>
+											<span style = "color:#999;margin-left:10px">(赠完即止)</span>
+										</div>
+									</div>
+								</div>
+								<div class = "cx-zp">
+									<div class = "J-gifzp clearfix">
+										<span class = "zp">
+											<em>满送</em>
+										</span>
+										<div class = "prom-list">
+											<em class = "prom-mz">满2000元即赠热销商品,赠完即止</em>
+											<a href = "">详情 <i class = "s-arrpw">>></i></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class = "dpsp-zz">
+					<div class = "summar-zzyw clearfix">
+						<div class = "sum-zz">增值业务</div>
+						<div class = "sum-yw">
+							<ul class = "sum-yw-y">
+								<li>
+									<a href = "">
+										<i></i>
+										<span>家电回收,以旧换新</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class = "summar-stok">
+						<div class = "sum-zz">配 送 至</div>
+						<div class = "sum-yw clearfix">
+							<div class = "f_stoped">
+								<div class = "ul-area">
+									<div title = "浙江杭州市下沙区" class = "ul-area-text">浙江杭州市下沙区<i></i></div>
+								</div>
+								<div class = "ui-wrap" style = "display:none">
+									<div class = "ui-wrap-tp">
+										<a class = "ui-wrap-xz" title = "浙江" href = "javascript:;">浙江<i></i></a>
+										<a title = "杭州市" href = "javascript:;">杭州市<i></i></a>
+										<a title = "下沙区" href = "javascript:;">下沙区<i></i></a>
+									</div>
+									<div class = "ui-wrap-bt">
+										<div class = "ui-wrap-s" style = "display:none">
+											<ul>
+												<li><a href = "javascript:void(0)">北京</a></li>
+												<li><a href = "javascript:void(0)">上海</a></li>
+												<li><a href = "javascript:void(0)">天津</a></li>
+												<li><a href = "javascript:void(0)">重庆</a></li>
+												<li><a href = "javascript:void(0)">河北</a></li>
+												<li><a href = "javascript:void(0)">山西</a></li>
+												<li><a href = "javascript:void(0)">河南</a></li>
+												<li><a href = "javascript:void(0)">辽宁</a></li>
+												<li><a href = "javascript:void(0)">吉林</a></li>
+												<li><a href = "javascript:void(0)">黑龙江</a></li>
+												<li><a href = "javascript:void(0)">内蒙古</a></li>
+												<li><a href = "javascript:void(0)">江苏</a></li>
+												<li><a href = "javascript:void(0)">山东</a></li>
+												<li><a href = "javascript:void(0)">安徽</a></li>
+												<li class = "ui-wrap-hs"><a href = "javascript:void(0)">浙江</a></li>
+												<li><a href = "javascript:void(0)">福建</a></li>
+												<li><a href = "javascript:void(0)">湖北</a></li>
+												<li><a href = "javascript:void(0)">湖南</a></li>
+												<li><a href = "javascript:void(0)">广东</a></li>
+												<li><a href = "javascript:void(0)">广西</a></li>
+												<li><a href = "javascript:void(0)">江西</a></li>
+												<li><a href = "javascript:void(0)">四川</a></li>
+												<li><a href = "javascript:void(0)">海南</a></li>
+												<li><a href = "javascript:void(0)">贵州</a></li>
+												<li><a href = "javascript:void(0)">云南</a></li>
+												<li><a href = "javascript:void(0)">西藏</a></li>
+												<li><a href = "javascript:void(0)">陕西</a></li>
+												<li><a href = "javascript:void(0)">甘肃</a></li>
+												<li><a href = "javascript:void(0)">青海</a></li>
+												<li><a href = "javascript:void(0)">宁夏</a></li>
+												<li><a href = "javascript:void(0)">新疆</a></li>
+												<li><a href = "javascript:void(0)">港澳</a></li>
+												<li><a href = "javascript:void(0)">台湾</a></li>
+												<li><a href = "javascript:void(0)">钓鱼岛</a></li>
+												<li><a href = "javascript:void(0)">海外</a></li>
+											</ul>
+										</div>
+										<div class = "ui-wrap-s ui-wrap-xs" style = "display:none">
+											<ul>
+												<li><a href = "javascript:void(0)">宁波市</a></li>
+												<li><a href = "javascript:void(0)">衢州市</a></li>
+												<li><a href = "javascript:void(0)">丽水市</a></li>
+												<li><a href = "javascript:void(0)">台州市</a></li>
+												<li><a href = "javascript:void(0)">舟山市</a></li>
+												<li><a href = "javascript:void(0)">杭州市</a></li>
+												<li><a href = "javascript:void(0)">温州市</a></li>
+												<li><a href = "javascript:void(0)">嘉兴市</a></li>
+												<li><a href = "javascript:void(0)">湖州市</a></li>
+												<li><a href = "javascript:void(0)">绍兴市</a></li>
+												<li><a href = "javascript:void(0)">金华市</a></li>
+											</ul>
+										</div>
+										<div class = "ui-wrap-s ui-wrap-q" style = "display:none">
+											<ul>
+												<li><a href = "javascript:void(0)">上城区</a></li>
+												<li><a href = "javascript:void(0)">下城区</a></li>
+												<li><a href = "javascript:void(0)">拱墅区</a></li>
+												<li><a href = "javascript:void(0)">西湖区</a></li>
+												<li><a href = "javascript:void(0)">江干区</a></li>
+												<li><a href = "javascript:void(0)">下沙区</a></li>
+												<li><a href = "javascript:void(0)">余杭区</a></li>
+												<li><a href = "javascript:void(0)">萧山区</a></li>
+												<li><a href = "javascript:void(0)">滨江区</a></li>
+												<li><a href = "javascript:void(0)">临安区</a></li>
+												<li><a href = "javascript:void(0)">富阳区</a></li>
+												<li><a href = "javascript:void(0)">桐庐县</a></li>
+												<li><a href = "javascript:void(0)">建德市</a></li>
+												<li><a href = "javascript:void(0)">淳安县</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class = "stok-prom">有货</div>
+							<div class = "promise-ico">
+								<p>支持</p>
+								<ul class = "promise8">
+									<li><a href = "">京东安装</a></li>
+									<li>|</li>
+									<li><a href = "">家电净洗</a></li>
+									<li>|</li>
+									<li><a href = "">99元免基础运费</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class = "summar-suply">
+						<div class = "sum-zz">&nbsp;&nbsp;</div>
+						<div class = "sum-yw">
+							<p>由 <span>京东</span> 发货, <a href = "">奥克斯空调京东自营旗舰店</a> 提供售后服务, 18:00前发单,预计<b>明天(09月01日)</b>送达</p>
+						</div>
+					</div>
+					<div class = "summar-weight clearfix">
+						<div class = "sum-zz">重&nbsp;&nbsp;量</div>
+						<div class = "sum-yw">不计重量</div>
+					</div>
+					<div class = "choose-stts clearfix">
+						<div class = "sum-zz">选择匹数</div>
+						<div class = "sum-yw">
+							<ul class = "clearfix">
+								<li class = "selected" title = "正1匹">
+									<a href = "">
+										<img width = "40" height = "40" src = "imges/img-123/hs21d/5ab48c55Na22e95ff.jpg">
+										<i>正1匹</i>
+									</a>
+								</li>
+								<li title = "小1.5">
+									<a href = "">
+										<img width = "40" height = "40" src = "imges/img-123/hs21d/5ab48c55Na22e95ff.jpg">
+										<i>小1.5匹</i>
+									</a>
+								</li>
+								<li title = "正1.5匹">
+									<a href = "">
+										<img width = "40" height = "40" src = "imges/img-123/hs21d/5ab48c55Na22e95ff.jpg">
+										<i>正1.5匹</i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class = "choose-service  clearfix">
+						<div class = "sum-zz">增值保障</div>
+						<div class = "sum-yw">
+							<ul class = "clearfix">
+								<li class = "service-hover">
+									<div class = "yb-service">
+										<img width = "16" height = "16" src = "imges/590c0c85N460e4552.png"/>
+										<span class = "name">全保修7年</span>
+										<span class = "price">￥59</span>
+										<i></i>
+									</div>
+									<div class = "more-service" style = "display:none">
+										<ul class = "clearfix">
+											<li class = "titlecs" title = "性能故障、意外故障全面保修">
+												<span>
+													<i class = "sprit-checkbox"></i>
+													<span class = "tips">优惠</span>
+													<span class = "name">全保修7年</span>
+													<span class = "price">￥59</span>
+												</span>
+												<a class = "detail-mare" href = "">详情<i class = "s-arrpw">>></i></a>
+											</li>
+											<li class = "titlecs" title = "性能故障、意外故障全面保修">
+												<span>
+													<i class = "sprit-checkbox"></i>
+													<span class = "name">全保修8年</span>
+													<span class = "price">￥99</span>
+												</span>
+												<a class = "detail-mare" href = "">详情<i class = "s-arrpw">>></i></a>
+											</li>
+											<li class = "titlecs" title = "性能/意外故障8年保修+清洗服务">
+												<span>
+													<i class = "sprit-checkbox"></i>
+													<span class = "name">全保+清洗</span>
+													<span class = "price">￥129</span>
+												</span>
+												<a class = "detail-mare" href = "">详情<i class = "s-arrpw">>></i></a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class = "service-hover">
+									<div class = "yb-service">
+										<img width = "16" height = "16" src = "imges/567cb046Ncc8f504a.png"/>
+										<span class = "name">延保至8年</span>
+										<span class = "price">￥79</span>
+										<i></i>
+									</div>
+									<div class = "more-service" style = "display:none">
+										<ul class = "clearfix">
+											<li class = "titlecs" title = "延长厂家保修期">
+												<span>
+													<i class = "sprit-checkbox"></i>
+													<span class = "tips">优惠</span>
+													<span class = "name">延保至8年</span>
+													<span class = "price">￥79</span>
+												</span>
+												<a class = "detail-mare" href = "">详情<i class = "s-arrpw">>></i></a>
+											</li>
+											<li class = "titlecs" title = "延长厂家保修期">
+												<span>
+													<i class = "sprit-checkbox"></i>
+													<span class = "name">延保至9年</span>
+													<span class = "price">￥139</span>
+												</span>
+												<a class = "detail-mare" href = "">详情<i class = "s-arrpw">>></i></a>
+											</li>
+											<li class = "titlecs" title = "性能故障免费换新或折旧换新机型">
+												<span>
+													<i class = "sprit-checkbox"></i>
+													<span class = "name">换新保3年</span>
+													<span class = "price">￥179</span>
+												</span>
+												<a class = "detail-mare" href = "">详情<i class = "s-arrpw">>></i></a>
+											</li>
+											<li class = "titlecs" title = "性能故障免费换新或折旧换新机型">
+												<span>
+													<i class = "sprit-checkbox"></i>
+													<span class = "name">换新保5年</span>
+													<span class = "price">￥249</span>
+												</span>
+												<a class = "detail-mare" href = "">详情<i class = "s-arrpw">>></i></a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class = "service-hover">
+									<div class = "yb-service">
+										<img width = "16" height = "16" src = "imges/567cb057N77e247ca.png"/>
+										<span class = "name">意外保3年</span>
+										<span class = "price">￥79</span>
+										<i></i>
+									</div>
+									<div class = "more-service" style = "display:none">
+										<ul class = "clearfix">
+											<li class = "titlecs" title = "因意外引起的故障免费修">
+												<span>
+													<i class = "sprit-checkbox"></i>
+													<span class = "name">意外保2年</span>
+													<span class = "price">￥59</span>
+												</span>
+												<a class = "detail-mare" href = "">详情<i class = "s-arrpw">>></i></a>
+											</li>
+											<li class = "titlecs" title = "因意外引起的故障免费修">
+												<span>
+													<i class = "sprit-checkbox"></i>
+													<span class = "name">意外保3年</span>
+													<span class = "price">￥79</span>
+												</span>
+												<a class = "detail-mare" href = "">详情<i class = "s-arrpw">>></i></a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class = "service-tips">
+									<a href = ""><i class = "service-quest"></i></a>
+									<div class = "tips" style = "display:none">
+										<div class = "quest-arrow"></div>
+										<div class = "quest-content">
+											<p class = "quest-dd">增值保障是指凡在京东购买商品或服务的消费者，在保障期间内遇到无论是正常使用中的问题还是意外事故，即可享受增值保障服务。保障内容包括：延长保修、只换不修、意外保护、服务保障。覆盖家电、手机数码、电脑办公、汽车用品、服饰家居等商品。</p>
+											<p class = "quest-p">增值保障服务，只能提供增值税普通电子发票，如有疑问，请与在线客服联系</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class = "choose-JDservice clearfix">
+						<div class = "sum-zz">京东服务</div>
+						<div class = "sum-yw">
+							<ul class = "clearfix">
+								<li class = "service-hover">
+									<div class = "yb-service">
+										<img width = "16" height = "16" src = "imges/5ae2a3ccN9f6d5bff.png"/>
+										<span class = "name">空调清洗</span>
+										<span class = "price">￥56</span>
+										<i></i>
+									</div>
+									<div class = "more-service" style = "display:none">
+										<ul class = "clearfix">
+											<li class = "titlecs" title = "深度清洗 , 上门服务">
+												<span>
+													<i class = "sprit-checkbox"></i>
+													<span class = "name">空调清洗</span>
+													<span class = "price">￥56</span>
+												</span>
+												<a class = "detail-mare" href = "">详情<i class = "s-arrpw">>></i></a>
+											</li>
+											<li class = "titlecs" title = "深度清洗 , 上门服务">
+												<span>
+													<i class = "sprit-checkbox"></i>
+													<span class = "name">清洗套装</span>
+													<span class = "price">￥106</span>
+												</span>
+												<a class = "detail-mare" href = "">详情<i class = "s-arrpw">>></i></a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class = "service-tips">
+									<a href = ""><i class = "service-quest"></i></a>
+									<div class = "tips" style = "display:none">
+										<div class = "quest-arrow"></div>
+										<div class = "quest-content">
+											<p class = "quest-dd">京东服务+，为用户打造统一、标准化的服务体验，将服务产品化，形成覆盖零售领域全链条服务、具备专业知识的新一代服务生态平台。服务产品内容包括：安装服务、清洗保养、检测维修、企悦服务等，覆盖家电、手机数码、电脑办公、居家生活、服饰等商品。</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class = "choose-JDbaitiao clearfix">
+						<div class = "sum-zz">白条分期</div>
+						<div class = "sum-yw">
+							<ul class = "clearfix">
+								<li class = "service-hover">
+									<a href = "javascript:;">不分期</a>
+									<div class = "baitiao-tips" style = "display:none">
+										<p>无手续费</p>
+									</div>
+								</li>
+								<li class = "service-hover">
+									<a href = "javascript:;">￥591.4起×3期</a>
+									<div class = "baitiao-tips" style = "display:none">
+										<p>含手续费:费率0.5%起 , ￥8.74起×3期</p>
+									</div>
+								</li>
+								<li class = "service-hover">
+									<a href = "javascript:;">￥300.09起×6期</a>
+									<div class = "baitiao-tips" style = "display:none">
+										<p>含手续费:费率0.5%起 , ￥8.74起×6期</p>
+									</div>
+								</li>
+								<li class = "service-hover">
+									<a href = "javascript:;">￥154.37起×12期</a>
+									<div class = "baitiao-tips" style = "display:none">
+										<p>含手续费:费率0.5%起 , ￥8.74起×12期</p>
+									</div>
+								</li>
+								<li class = "service-hover">
+									<a href = "javascript:;">￥81.65起×24期</a>
+									<div class = "baitiao-tips" style = "display:none">
+										<p>含手续费:费率0.5%起 , ￥8.74起×24期</p>
+									</div>
+								</li>
+								<li class = "service-tips">
+									<a href = "javascript:;"><i class = "service-youhui"></i></a>
+									<div class = "tips" style = "display:none">
+										<div class = "quest-arrow"></div>
+										<div class = "quest-content">
+											<p class = "quest-dd">【白条支付】首单享立减优惠</p>
+										</div>
+									</div>
+								</li>
+								<li class = "service-tips">
+									<a href = "javascript:;"><i class = "service-siyi"></i></a>
+									<div class = "tips" style = "display:none">
+										<div class = "quest-arrow"></div>
+										<div class = "quest-content">
+											<p class = "quest-dd">1、实际分期金额及手续费以白条剩余额度及收银台优惠为准<br/>2、什么是白条分期?<br/>白条是一种"先消费,后付款"的支付方式,使用白条可以享受先用后付,以及最长36期的分期还款.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class = "choose-btns clearfix">
+						<div class = "choose-amount">
+							<input class = "text" type = "text" value = "1">
+							<a class = "btn-reduce disabled" href = "javascript:;">-</a>
+							<a class = "btn-add" href = "javascript:;">+</a>
+						</div>
+						<a style = "display:none" class = "btn-spec1 btn-lg" href = "JavaScript:;">选择号码和套餐</a>
+						<a class = "btn-spec1 btn-lg" href = "JavaScript:;">加入购物车</a>
+						<a style = "display:none" class = "btn-spec2 btn-lg" href = "JavaScript:;">打白条</a>
+						<a style = "display:none" class = "btn-spec2 btn-lg" href = "JavaScript:;">使用金采</a>
+						<a style = "display:none" class = "btn-spec3 btn-lg" href = "JavaScript:;">到货通知</a>
+					</div>
+					<div class = "local-tips">
+						<div class = "sum-zz">本地活动</div>
+						<div class = "sum-yw">
+							<ul class = "clearfix">
+								<li>· <a href = "">企采低至4折 >></a></li>
+								<li>· <a href = "">新家装主义 >></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class = "summary-tips">
+						<div class = "sum-zz">温馨提示</div>
+						<div class = "sum-yw">
+							<ul class = "clearfix">
+								<li>· 支持7天无理由退货(安装后不支持)</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class = "track">
+				<div class = "brand-log">
+					<a href = ""><img width = "180" height = "60" title = "奥克斯空调京东自营旗舰店" src = "imges/5938fcbfN88055956.jpg"></a>
+				</div>
+				<div class = "track-tit">
+					<h3>店长推荐</h3>
+					<span></span>
+				</div>
+				<div class = "track-con">
+					<ul>
+						<li>
+							<a href = "" title = "奥克斯 (AUX) 正1.5匹 一级能效 变频冷暖 30秒速冷 窈窕智能壁挂式空调挂机(KFR-35GW/BpR3DYA1+1)">
+								<img width = "150" height = "150" alt = "奥克斯 (AUX) 正1.5匹 一级能效 变频冷暖 30秒速冷 窈窕智能壁挂式空调挂机(KFR-35GW/BpR3DYA1+1)" src = "imges/5b61b89eN6ff816d0.jpg">
+								<p class = "con-name">奥克斯 (AUX) 正1.5匹 一级能效 变频冷暖 30秒速冷 窈窕智能壁挂式空调挂机(KFR-35GW/BpR3DYA1+1)</p>
+								<p class = "con-price">￥2888.00</p>
+							</a>
+						</li>
+						<li>
+							<a href = "" title = "奥克斯 (AUX) 2匹 二级能效 定速冷暖 节能 淑女立柜式智能空调柜机(KFR-51LW/R1PYA1+2)">
+								<img width = "150" height = "150" alt = "奥克斯 (AUX) 2匹 二级能效 定速冷暖 节能 淑女立柜式智能空调柜机(KFR-51LW/R1PYA1+2)" src = "imges/5b61b8ccN02e06074.jpg">
+								<p class = "con-name">奥克斯 (AUX) 2匹 二级能效 定速冷暖 节能 淑女立柜式智能空调柜机(KFR-51LW/R1PYA1+2)</p>
+								<p class = "con-price">￥4599.00</p>
+							</a>
+						</li>
+						<li>
+							<a href = "" title = "奥克斯 (AUX) 3匹 一级能效 变频冷暖 智能 倾城空调柜机 京东微联APP控制(KFR-72LW/BpNHA2+1)">
+								<img width = "150" height = "150" alt = "奥克斯 (AUX) 3匹 一级能效 变频冷暖 智能 倾城空调柜机 京东微联APP控制(KFR-72LW/BpNHA2+1)" src = "imges/5944c122N7d533d88.jpg">
+								<p class = "con-name">奥克斯 (AUX) 3匹 一级能效 变频冷暖 智能 倾城空调柜机 京东微联APP控制(KFR-72LW/BpNHA2+1)</p>
+								<p class = "con-price">￥6199.00</p>
+							</a>
+						</li>
+						<li>
+							<a href = "" title = "奥克斯 (AUX) 正1.5匹 一级能效 变频冷暖 黄金侠空调挂机 京东微联APP控制(KFR-35GW/BpTYC1+1)">
+								<img width = "150" height = "150" alt = "奥克斯 (AUX) 正1.5匹 一级能效 变频冷暖 黄金侠空调挂机 京东微联APP控制(KFR-35GW/BpTYC1+1)" src = "imges/5b61b428N92d5a1c1.jpg">
+								<p class = "con-name">奥克斯 (AUX) 正1.5匹 一级能效 变频冷暖 黄金侠空调挂机 京东微联APP控制(KFR-35GW/BpTYC1+1)</p>
+								<p class = "con-price">￥2688.00</p>
+							</a>
+						</li>
+						<li>
+							<a href = "" title = "奥克斯 (AUX) 大1匹 一级能效 变频冷暖 30秒速冷 祥月智能壁挂式空调挂机(KFR-26GW/BpPYB1+1)">
+								<img width = "150" height = "150" alt = "奥克斯 (AUX) 大1匹 一级能效 变频冷暖 30秒速冷 祥月智能壁挂式空调挂机(KFR-26GW/BpPYB1+1)" src = "imges/5b61b4e9N40ea5d52.jpg">
+								<p class = "con-name">奥克斯 (AUX) 大1匹 一级能效 变频冷暖 30秒速冷 祥月智能壁挂式空调挂机(KFR-26GW/BpPYB1+1)</p>
+								<p class = "con-price">￥3099.00</p>
+							</a>
+						</li>
+						<li>
+							<a href = "" title = "奥克斯 (AUX) 3匹 二级能效 变频冷暖 30秒速冷 淑女空调圆柱柜机 微信智控(KFR-72LW/BpPYA1+2)">
+								<img width = "150" height = "150" alt = "奥克斯 (AUX) 3匹 二级能效 变频冷暖 30秒速冷 淑女空调圆柱柜机 微信智控(KFR-72LW/BpPYA1+2)" src = "imges/5b61b63cN2f79d49b.jpg">
+								<p class = "con-name">奥克斯 (AUX) 3匹 二级能效 变频冷暖 30秒速冷 淑女空调圆柱柜机 微信智控(KFR-72LW/BpPYA1+2)</p>
+								<p class = "con-price">￥5788.00</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class = "track-more">
+					<a href = "JavaScript:;" class = "J-prev"></a>
+					<a href = "JavaScript:;" class = "J-next"></a>
+				</div>
+			</div>
+		</div>
+		<div class = "fittings">
+			<div class = "tab-min">
+				<ul>
+					<li class = "current">人气配件</li>
+					<li>空调挡板</li>
+					<li>空调罩</li>
+					<li>空调底座</li>
+					<li>空调外机架</li>
+					<li>空调其他配件</li>
+				</ul>
+			</div>
+			<div class = "tab-con clearfix">
+				<div class = "master">
+					<div class = "p-img">
+						<a href = "#"><img width = "100" height = "100" alt = "奥克斯 ( AUX ) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" src = "imges/img-123/hs21d/5ab48c55Na22e95ff.jpg"></a>
+					</div>
+					<div class = "p-name">
+						<a href = "">奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)</a>
+					</div>
+					<i class = "puls"></i>
+				</div>
+				<div class = "suits">
+					<div class = "switchble" style = "display:block">
+						<div class = "btns">
+							<a href = "JavaScript:void(0)" class = "prev-btn disabled"></a>
+							<a href = "JavaScript:void(0)" class = "next-btn disabled"></a>
+						</div>
+						<div class = "lh-wrap">
+							<ul class = "clearfix">
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-df/5b502abeNe54e0f42.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "七角板 空调挡风板 空调出风口挡风罩 风向长度可调导风板挡板 防直吹空调挡风板 适用70-80cm 北欧风 灰色">七角板 空调挡风板 空调出风口挡风罩 风向长度可调导风板挡板 防直吹空调挡风板 适用70-80cm 北欧风 灰色</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥59.00</strong>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-ktz/5b5845b4N5f9f94c4.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "七角板 Q-L6006 欧式田园风空调罩蕾丝小清新防尘罩简洁挡灰家用空调帘 适用1-1.5p 蓝白色">七角板 Q-L6006 欧式田园风空调罩蕾丝小清新防尘罩简洁挡灰家用空调帘 适用1-1.5p 蓝白色</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥69.00</strong>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-dizuo/5b26077bN5887fb1d.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "贝石 (beishi) 柜式圆柱形空调底座托美的格力科龙志高海尔奥克斯扬子变频空调托架防潮DY-8J (8大地脚)">贝石 (beishi) 柜式圆柱形空调底座托美的格力科龙志高海尔奥克斯扬子变频空调托架防潮DY-8J (8大地脚)</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥99.00</strong>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-waijijia/5b18e8dbN5d3ac4af.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "嘉沛 AC-15PRO 空调架子外机架 加厚不锈钢室外空调支架托架配件 1p-1.5匹 送膨胀螺丝 海尔格力奥克斯等适用">嘉沛 AC-15PRO 空调架子外机架 加厚不锈钢室外空调支架托架配件 1p-1.5匹 送膨胀螺丝 海尔格力奥克斯等适用</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥99.00</strong>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-qtpj/5b0f8df6N42aaaec3.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "美的 (Midea) 空调辅材费">美的 (Midea) 空调辅材费</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥9.90</strong>
+										</label>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class = "switchble" style = "display:none">
+						<div class = "btns">
+							<a href = "JavaScript:void(0)" class = "prev-btn disabled"></a>
+							<a href = "JavaScript:void(0)" class = "next-btn disabled"></a>
+						</div>
+						<div class = "lh-wrap">
+							<ul class = "clearfix">
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-df/5b502abeNe54e0f42.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "七角板 空调挡风板 空调出风口挡风罩 风向长度可调导风板挡板 防直吹空调挡风板 适用70-80cm 北欧风 灰色">七角板 空调挡风板 空调出风口挡风罩 风向长度可调导风板挡板 防直吹空调挡风板 适用70-80cm 北欧风 灰色</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥59.00</strong>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-df/5b457822N8bfb12d3.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "科锐迩 空调挡风板 防直吹 海尔 美的 奥克斯 格力空调通用">科锐迩 空调挡风板 防直吹 海尔 美的 奥克斯 格力空调通用</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥47.90</strong>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-df/5b285c9bN43eae262.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "嘉沛 AC-1352Pro 空调挡风罩 防直吹 美的格力科龙志高海尔奥克斯扬子变频空调">嘉沛 AC-1352Pro 空调挡风罩 防直吹 美的格力科龙志高海尔奥克斯扬子变频空调</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥79.00</strong>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-df/5b10e314N6215d618.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "IT-CEO C503 空调挡风板 加厚不锈钢室外空调支架托架配件  海尔格力奥克斯等适用">IT-CEO C503 空调挡风板 加厚不锈钢室外空调支架托架配件  海尔格力奥克斯等适用</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥79.00</strong>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-df/5b45d339N0e1da737.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "宜白丽 (Yeebarle) 空调挡风板 防直吹 空调挡板 90cm内空调适用 纯白">宜白丽 (Yeebarle) 空调挡风板 防直吹 空调挡板 90cm内空调适用 纯白</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥59.00</strong>
+										</label>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class = "switchble" style = "display:none">
+						<div class = "btns">
+							<a href = "JavaScript:void(0)" class = "prev-btn disabled"></a>
+							<a href = "JavaScript:void(0)" class = "next-btn disabled"></a>
+						</div>
+						<div class = "lh-wrap">
+							<ul class = "clearfix">
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-ktz/5b5845b4N5f9f94c4.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "七角板 Q-L6006 欧式田园风空调罩蕾丝小清新防尘罩简洁挡灰家用空调帘 适用1-1.5p 蓝白色">七角板 Q-L6006 欧式田园风空调罩蕾丝小清新防尘罩简洁挡灰家用空调帘 适用1-1.5p 蓝白色</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥69.00</strong>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-ktz/59fffb50Nce4c219e.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "安美饰 空调罩格力挂机防尘罩套  布艺全包空调罩 海尔 美的 奥克斯 格力空调通用">安美饰 空调罩格力挂机防尘罩套  布艺全包空调罩 海尔 美的 奥克斯 格力空调通用</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥25.00</strong>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-ktz/5b459a62N7f4f9462.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "科锐迩Kerier 空调防尘罩卧室挂机防尘罩套 防直吹 美的格力科龙志高海尔奥克斯扬子变频空调">科锐迩Kerier 空调防尘罩卧室挂机防尘罩套 防直吹 美的格力科龙志高海尔奥克斯扬子变频空调</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥39.90</strong>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-ktz/5b1f7124Nface8861.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "威视朗DF-B9(总长60厘米) 双翼调节2+1防直吹 海尔格力奥克斯等适用">威视朗DF-B9(总长60厘米) 双翼调节2+1防直吹 海尔格力奥克斯等适用</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥99.00</strong>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-ktz/5b3c600bNb5d70fb6.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "贝石 (beishi) 升级版空调挡风板 防直吹 空调挡板 90cm内空调适用 纯白">贝石 (beishi) 升级版空调挡风板 防直吹 空调挡板 90cm内空调适用 纯白</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥79.00</strong>
+										</label>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class = "switchble" style = "display:none">
+						<div class = "btns">
+							<a href = "JavaScript:void(0)" class = "prev-btn disabled"></a>
+							<a href = "JavaScript:void(0)" class = "next-btn disabled"></a>
+						</div>
+						<div class = "lh-wrap">
+							<ul class = "clearfix">
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-dizuo/5b26077bN5887fb1d.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "贝石 (beishi) 柜式圆柱形空调底座托美的格力科龙志高海尔奥克斯扬子变频空调托架防潮DY-8J (8大地脚)">贝石 (beishi) 柜式圆柱形空调底座托美的格力科龙志高海尔奥克斯扬子变频空调托架防潮DY-8J (8大地脚)</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥99.00</strong>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-dizuo/5b6548d0N47bec6bb.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "七角板 Q-HC-04 柜式圆柱形空调底座托 滚筒洗衣机也可使用 通用美的格力科龙志高海尔奥克斯">七角板 Q-HC-04 柜式圆柱形空调底座托 滚筒洗衣机也可使用 通用美的格力科龙志高海尔奥克斯</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥89.00</strong>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-dizuo/5b67d0d3N60ae4510.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "Brateck洗衣机底座 冰箱底座托盘架 美的格力科龙志高海尔奥克斯扬子变频空调托架防潮">Brateck洗衣机底座 冰箱底座托盘架 美的格力科龙志高海尔奥克斯托架防潮</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥138.00</strong>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-dizuo/5b8c9688Naa806c8b.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "贝石 (beishi) 柜式圆柱形空调底座托美的格力科龙志高海尔奥克斯扬子变频空调托架防潮">贝石 (beishi) 柜式圆柱形空调底座托美的格力科龙志高海尔奥克斯扬子变频空调托架防潮</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥69.00</strong>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-dizuo/5b4da641Nb674bfa5.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "Brateck洗衣机底座 冰箱底座托盘架 美的格力科龙志高海尔奥克斯扬子变频空调托架防潮">Brateck洗衣机底座 冰箱底座托盘架 美的格力科龙志高海尔奥克斯扬子变频空调托架防潮</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥109.00</strong>
+										</label>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class = "switchble" style = "display:none">
+						<div class = "btns">
+							<a href = "JavaScript:void(0)" class = "prev-btn disabled"></a>
+							<a href = "JavaScript:void(0)" class = "next-btn disabled"></a>
+						</div>
+						<div class = "lh-wrap">
+							<ul class = "clearfix">
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-waijijia/5b18e8dbN5d3ac4af.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "嘉沛 AC-15PRO 空调架子外机架 加厚不锈钢室外空调支架托架配件 1p-1.5匹 送膨胀螺丝 海尔格力奥克斯等适用">嘉沛 AC-15PRO 空调架子外机架 加厚不锈钢室外空调支架托架配件 1p-1.5匹 送膨胀螺丝 海尔格力奥克斯等适用</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥99.00</strong>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-waijijia/5b344883Ne099a77e.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "沛瑞 AC-15PRO 空调外机架 不锈钢室外空调支架托架配件 1p-1.5匹 送膨胀螺丝 海尔格力奥克斯等适用">沛瑞 AC-15PRO 空调外机架 不锈钢室外空调支架托架配件 1p-1.5匹 送膨胀螺丝 海尔格力奥克斯等适用</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥69.00</strong>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-waijijia/5a9f7ae2Nc46f3174.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "IT-CEO 空调外机架 空气能热水器外机不锈钢室外空调支架托架配件 海尔格力奥克斯等适用">IT-CEO 空调外机架 空气能热水器外机不锈钢室外空调支架托架配件 海尔格力奥克斯等适用</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥69.00</strong>
+										</label>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class = "switchble" style = "display:none">
+						<div class = "btns">
+							<a href = "JavaScript:void(0)" class = "prev-btn disabled"></a>
+							<a href = "JavaScript:void(0)" class = "next-btn disabled"></a>
+						</div>
+						<div class = "lh-wrap">
+							<ul class = "clearfix">
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-qtpj/5b0f8df6N42aaaec3.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "美的 (Midea) 空调辅材费">美的 (Midea) 空调辅材费</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥9.90</strong>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-qtpj/5b0f8df6N42aaaec3.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "美的 (Midea) 空调辅材费">美的 (Midea) 空调辅材费</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥99.00</strong>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-qtpj/5b2653e7N63aadb23.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "净主义 AC-201W 空调遥控器 适用美的格力科龙志高海尔奥克斯扬子空调">净主义 AC-201W 空调遥控器 适用美的格力科龙志高海尔奥克斯扬子空调</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥35.00</strong>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-qtpj/5a5f2695Na54d6c22.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "IT-CEO J03402 空调遥控器 适用美的格力科龙志高海尔奥克斯扬子空调">IT-CEO J03402 空调遥控器 适用美的格力科龙志高海尔奥克斯扬子空调</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥19.00</strong>
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a href = ""><img width = "100" height = "100" src = "imges/img-pj/img-qtpj/5b28a0a8N555962fa.jpg"></a>
+									</div>
+									<div class = "p-name">
+										<a href = "" title = "净主义 K-209W 空调遥控器 适用美的格力科龙志高海尔奥克斯扬子空调">净主义 K-209W 空调遥控器 适用美的格力科龙志高海尔奥克斯扬子空调</a>
+									</div>
+									<div class = "p-price">
+										<input type = "checkbox" id = "p-checkbox">
+										<label for = "p-checkbox">
+											<strong>￥29.00</strong>
+										</label>
+									</div>
+								</li>
+							</ul>
+						</div>	
+					</div>
+				</div>
+				<div class = "infos">
+					<div class = "infos-sele">已选择<span>0</span>个配件</div>
+					<div class = "p-price">
+						<span>组合价</span>
+						<strong>￥1799.00</strong>
+					</div>
+					<div class = "btns-lj">
+						<a class = "btn-lj" href = "">立即购买</a>
+					</div>
+					<a class = "infos-xgzx" href = "">配件选购中心</a>
+					<i class = "equal"></i>
+				</div>
+			</div>
+			<div class = "sect-zt clearfix">
+				<div class = "aside">
+					<div class = "popbox">
+						<div class = "popbox-inner"><!--popbox-fixed 控制置顶显示-->
+							<div class = "box-mt clearfix">
+								<h3><a title = "奥克斯空调京东自营旗舰店" href = "">奥克斯空调京东自营旗舰店</a></h3>
+								<span class = "box-arrow"></span>
+							</div>
+							<div class = "box-mc">
+								<div class = "btns-mc clearfix">
+									<a class = "enter-shop" href = "">
+										<i></i>
+										<span>进店逛逛</span>
+									</a>
+									<a class = "follow-shop" href = "">
+										<i></i>
+										<span>关注店铺</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class = "sp-search">
+						<div class = "box-mt"><h3>店内搜索</h3></div>
+						<div class = "box-mc">
+							<p class = "sp-item1">
+								<label for = "sp-gjz">关键字:</label>
+								<input id = "sp-gjz" type = "text">
+							</p>
+							<p class = "sp-item2">
+								<label for = "sp-price">价&nbsp;&nbsp;&nbsp;格:</label>
+								<input id = "sp-price" type = "text"> 到 <input id = "sp-price1" type = "text">
+							</p>
+							<p class = "sp-item3">
+								<label for = "sp-gjz"></label>
+								<input type = "submit" value = "搜索">
+							</p>
+						</div>
+					</div>
+					<div class = "sp-categ">
+						<div class = "box-mt"><h3>店内分类</h3></div>
+						<div class = "box-mc">
+							<dl>
+								<dt><i></i><a href = "">变频空调</a></dt>
+								<dd><a href = "">1匹</a></dd>
+								<dd><a href = "">1.5匹</a></dd>
+								<dd><a href = "">2匹</a></dd>
+								<dd><a href = "">3匹</a></dd>
+							</dl>
+							<dl>
+								<dt><i></i><a href = "">定速空调</a></dt>
+								<dd><a href = "">1匹</a></dd>
+								<dd><a href = "">1.5匹</a></dd>
+								<dd><a href = "">2匹</a></dd>
+								<dd><a href = "">3匹</a></dd>
+							</dl>
+							<dl>
+								<dt><i></i><a href = "">一级能效</a></dt>
+								<dd><a href = "">挂机</a></dd>
+								<dd><a href = "">柜机</a></dd>
+							</dl>
+							<dl>
+								<dt><i></i><a href = "">二级能效</a></dt>
+								<dd><a href = "">挂机</a></dd>
+								<dd><a href = "">柜机</a></dd>
+							</dl>
+							<dl>
+								<dt><i></i><a href = "">智能空调</a></dt>
+								<dd><a href = "">挂机</a></dd>
+								<dd><a href = "">柜机</a></dd>
+							</dl>
+							<dl>
+								<dt><i></i><a href = "">艺术化空调</a></dt>
+								<dd></dd>
+							</dl>
+							<dl>
+								<dt><i></i><a href = "">单冷空调</a></dt>
+								<dd></dd>
+							</dl>
+						</div>
+					</div>
+					<div class = "sp-popot">
+						<div class = "tab-main">
+							<span class = "current">店铺热销</span>
+							<span>热门关注</span>
+						</div>
+						<div class = "tab-conent">
+							<ul class = "plist-pop1" style = "display:block">
+								<li>
+									<div class = "p-img">
+										<a title = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" href = "">
+											<img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" src = "imges/rexiaoguanzhu/dianpurexiao/5ab48c55Na22e95ff.jpg">
+										</a>
+										<div class = "p-name">
+											<a title = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" href = "">奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)</a>
+										</div>
+									</div>
+									<div class = "p-price">
+										<strong>￥1799.00</strong>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a title = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" href = "">
+											<img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" src = "imges/rexiaoguanzhu/dianpurexiao/5ab48e6fN5a27c543.jpg">
+										</a>
+										<div class = "p-name">
+											<a title = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" href = "">奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)</a>
+										</div>
+									</div>
+									<div class = "p-price">
+										<strong>￥2449.00</strong>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a title = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" href = "">
+											<img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" src = "imges/rexiaoguanzhu/dianpurexiao/5ab48c55Na22e95ff.jpg">
+										</a>
+										<div class = "p-name">
+											<a title = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" href = "">奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)</a>
+										</div>
+									</div>
+									<div class = "p-price">
+										<strong>￥2088.00</strong>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a title = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" href = "">
+											<img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" src = "imges/rexiaoguanzhu/dianpurexiao/5ab489abN6360b2c6.jpg">
+										</a>
+										<div class = "p-name">
+											<a title = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" href = "">奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)</a>
+										</div>
+									</div>
+									<div class = "p-price">
+										<strong>￥1749.00</strong>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a title = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" href = "">
+											<img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" src = "imges/rexiaoguanzhu/dianpurexiao/5ab48ab4N193c88a0.jpg">
+										</a>
+										<div class = "p-name">
+											<a title = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" href = "">奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)</a>
+										</div>
+									</div>
+									<div class = "p-price">
+										<strong>￥2099.00</strong>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a title = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" href = "">
+											<img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" src = "imges/rexiaoguanzhu/dianpurexiao/59643be1N429ac0e1.jpg">
+										</a>
+										<div class = "p-name">
+											<a title = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" href = "">奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)</a>
+										</div>
+									</div>
+									<div class = "p-price">
+										<strong>￥5199.00</strong>
+									</div>
+								</li>
+							</ul>
+							<ul class = "plist-pop2" style = "display:none">
+								<li>
+									<div class = "p-img">
+										<a title = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" href = "">
+											<img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" src = "imges/rexiaoguanzhu/renmenguanzhu/5b03790aN5a623142.jpg">
+										</a>
+										<div class = "p-name">
+											<a title = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" href = "">奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)</a>
+										</div>
+									</div>
+									<div class = "p-price">
+										<i>1</i>
+										<p><span>21</span>人关注</p>
+										<strong>￥5099.00</strong>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a title = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" href = "">
+											<img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" src = "imges/rexiaoguanzhu/renmenguanzhu/5944c10aN80c9c6f4.jpg">
+										</a>
+										<div class = "p-name">
+											<a title = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" href = "">奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)</a>
+										</div>
+									</div>
+									<div class = "p-price">
+										<i>2</i>
+										<p><span>15</span>人关注</p>
+										<strong>￥5199.00</strong>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a title = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" href = "">
+											<img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" src = "imges/rexiaoguanzhu/renmenguanzhu/59433135N8c711bab.jpg">
+										</a>
+										<div class = "p-name">
+											<a title = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" href = "">奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)</a>
+										</div>
+									</div>
+									<div class = "p-price">
+										<i>3</i>
+										<p><span>9</span>人关注</p>
+										<strong>￥3499.00</strong>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a title = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" href = "">
+											<img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" src = "imges/rexiaoguanzhu/renmenguanzhu/5944c156N0e9b0b80.jpg">
+										</a>
+										<div class = "p-name">
+											<a title = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" href = "">奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)</a>
+										</div>
+									</div>
+									<div class = "p-price">
+										<i>4</i>
+										<p><span>8</span>人关注</p>
+										<strong>￥7499.00</strong>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a title = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" href = "">
+											<img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" src = "imges/rexiaoguanzhu/renmenguanzhu/5ab48934Nd29c4d50.jpg">
+										</a>
+										<div class = "p-name">
+											<a title = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" href = "">奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)</a>
+										</div>
+									</div>
+									<div class = "p-price">
+										<i>5</i>
+										<p><span>8</span>人关注</p>
+										<strong>￥3149.00</strong>
+									</div>
+								</li>
+								<li>
+									<div class = "p-img">
+										<a title = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" href = "">
+											<img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" src = "imges/rexiaoguanzhu/renmenguanzhu/5944c10aN80c9c6f4.jpg">
+										</a>
+										<div class = "p-name">
+											<a title = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" href = "">奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)</a>
+										</div>
+									</div>
+									<div class = "p-price">
+										<i>6</i>
+										<p><span>7</span>人关注</p>
+										<strong>￥4499.00</strong>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class = "sp-gg">
+						<a title = "窈窕新品" href = "">
+							<img alt = "窈窕新品" src = "imges/rexiaoguanzhu/5b730b1fNa2e92f5f.jpg"/>
+						</a>
+						<a title = "奥粉狂欢" href = "">
+							<img alt = "奥粉狂欢" src = "imges/rexiaoguanzhu/5b8f79f4Nb05a1a81.png"/>
+						</a>
+					</div>
+				</div>
+				<div class = "detail">
+					<div class = "tab-min">
+						<ul>
+							<li class = "current">商品介绍</li>
+							<li>规格与包装</li>
+							<li>售后保障</li>
+							<li>商品评价(17万+)</li>
+						</ul>
+						<div class = "extra">
+							<div class = "extra-mini">
+								<a href = ""><i class = "sprite-im"></i> 联系客服</a>
+							</div>
+							<div class = "extra-im">
+								<div class = "extra-btn">
+									<a class = "btn-priay" href = "">加入购物车</a>
+								</div>
+								<div class = "extra-conte" style = "display:none">
+									<div class = "extra-ducts">
+										<div class = "p-img">
+											<img width = "100" height = "100" src = "imges/img-123/hs21d/5ab48c55Na22e95ff.jpg">
+										</div>
+										<div class = "p-info">
+											<div class = "p-name">奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)</div>
+											<div class = "p-price">
+												<strong>￥1799.00</strong>
+												<span>×<i>1</i></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class = "tab-conster">
+						<div class = "p-parmetar">
+							<p>品牌: <a href = "">奥克斯 (AUX)</a></p>
+						</div>
+						<ul class = "parameter2 clearfix">
+							<li title = "奥克斯KFR-25GW/NFW+3">商品名称:奥克斯KFR-25GW/NFW+3</li>
+							<li title = "6254701">商品编号:6254701</li>
+							<li title = "11.0kg">商品毛重:11.0kg</li>
+							<li title = "中国大陆">商品产地:中国大陆</li>
+							<li title = "定频">变频/定频:定频</li>
+							<li title = "自动清洁 , 独立除湿">商品特色:自动清洁 , 独立除湿</li>
+							<li title = "冷暖空调">冷暖类型:冷暖空调</li>
+							<li title = "3级">能效等级:3级</li>
+							<li title = "1匹(15㎡以下)">商品匹数:1匹( 15㎡以下 )</li>
+							<li title = "壁挂式空调">空调类别:壁挂式空调</li>
+						</ul>
+						<p class = "more-par"><a href = "">更多参数>></a></p>
+					</div>
+					<div>
+						<a href = "">
+							<img width = "990" src = "imges/img-top25/5b8ddb15Nb07df7f2.jpg">
+						</a>
+					</div>
+					<ul class = "deta-sf">
+						<li>
+							<a href = "">
+								<img src = "imges/img-top25/5b8656e5Nf7be817b.jpg">
+							</a>
+						</li>
+						<li>
+							<a href = "">
+								<img src = "imges/img-top25/5b8feaebN3d795fea.jpg">
+							</a>
+						</li>
+						<li>
+							<a href = "">
+								<img src = "imges/img-top25/68fc4edf83a04bb4.jpg">
+							</a>
+						</li>
+						<li>
+							<a href = "">
+								<img src = "imges/img-top25/5b62dc3eN25fafc26.gif">
+							</a>
+						</li>
+						<li class = "ktazsf">
+							<img src = "imges/img-top25/58eb6f5dN3ada4cb3.gif">
+							<img src = "imges/img-top25/5b0566acNe8d00428.jpg">
+							<a class = "sfxq" href = ""></a>
+							<a class = "cjshfw" href = ""></a>
+						</li>
+						<li><i>温馨提示 : </i></li>
+						<li><p>建议大家电商外包装在收货之日起保留30天或更长时间</p></li>
+					</ul>
+					<ul class = "deta-module">
+						<li style = "height:1072px;background-image:url('imges/img-9614/5b768b34Ndcb153f2.jpg')"></li>
+						<li style = "height:1043px;background-image:url('imges/img-9614/5b768b34Nebbd775d.jpg')"></li>
+						<li style = "height:1047px;background-image:url('imges/img-9614/5b768b35N7b885b19.jpg')"></li>
+						<li style = "height:1043px;background-image:url('imges/img-9614/5b768b34N01eee4b3.jpg')"></li>
+						<li style = "height:1046px;background-image:url('imges/img-9614/5b768b34N9032c90b.jpg')"></li>
+						<li style = "height:1047px;background-image:url('imges/img-9614/5b768b34N507c6ba6.jpg')"></li>
+						<li style = "height:1046px;background-image:url('imges/img-9614/5b768b34N0b6911e9.jpg')"></li>
+						<li style = "height:1073px;background-image:url('imges/img-9614/5b7d300fNb1e56b74.jpg')"></li>
+						<li style = "height:598px;background-image:url('imges/img-9614/5b5a76f1N5fa4a731.jpg')"></li>
+						<li style = "height:300px;background-image:url('imges/img-9614/5ac1d743N6daa81a3.jpg')"></li>
+						<li style = "height:441px;background-image:url('imges/img-9614/5a616187Naef0f910.jpg')"></li>
+						<li style = "height:515px;background-image:url('imges/img-9614/5a616188Nff707aa5.jpg')"></li>
+						<li style = "height:331px;background-image:url('imges/img-9614/5a616188N2b40b384.jpg')"></li>
+						<li style = "height:329px;background-image:url('imges/img-9614/5a616187N42c7c263.jpg')"></li>
+						<li style = "height:497px;background-image:url('imges/img-9614/5a616187N2550e095.jpg')"></li>
+						<li style = "height:259px;background-image:url('imges/img-9614/5a616188N45b602da.jpg')"></li>
+						<li style = "height:397px;background-image:url('imges/img-9614/5a616188N20d7d14d.jpg')"></li>
+						<li style = "height:450px;background-image:url('imges/img-9614/5a616188N81586e9f.jpg')"></li>
+						<li style = "height:204px;background-image:url('imges/img-9614/5a616188Ndc555f49.jpg')"></li>
+					</ul>
+					<div style = "text-align:center">
+						<img width = "750" src = "imges/img-652/5a9c081dN6f7923c3.jpg"/>
+						<img width = "750" src = "imges/img-652/5a9c083eNf4cb98ba.jpg"/>
+						<img width = "750" height = "350" src = "imges/img-652/5976ebafN1e64b2fa.jpg"/>
+					</div>
+					<div style = "text-align:center">
+						<img src = "imges/img-652/5aaa3eafN87eed01e.jpg"/>
+					</div>
+					<div class = "guarantee">
+						<div class = "box-mt">
+							<h3>售后保障</h3>
+						</div>
+						<div class = "box-mcted">
+							<div class = "seve-detal">
+								<div class = "seve-agrbd">
+									<dl>
+										<dt>
+											<i></i>
+											<strong>厂家服务</strong>
+										</dt>
+										<dd>
+											本产品全国联保，享受三包服务，质保期为：六年质保<br/>本产品提供上门安装调试、提供上门检测和维修等售后服务，自收到商品之日起，如您所购买家电商品出现质量问题，请先联系厂家进行检测，凭厂商提供的故障检测证明，在“我的京东-客户服务-返修退换货”页面提交退换申请，将有专业售后人员提供服务。京东承诺您：30天内产品出现质量问题可退货，180天内产品出现质量问题可换货，超过180天按国家三包规定享受服务。<br/>您可以查询本品牌在各地售后服务中心的联系方式，<a href = "">请点击这儿查询......</a><br/><br/>品牌官方网站：<a href = "">http://www.auxgroup.com/</a><br/>售后服务电话：4008268268
+										</dd>
+										<dt>
+											<i></i>
+											<strong>京东承诺</strong>
+										</dt>
+										<dd>
+											京东平台卖家销售并发货的商品，由平台卖家提供发票和相应的售后服务。请您放心购买！<br/>注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解！
+										</dd>
+										<dt>
+											<i></i>
+											<strong>正品行货</strong>
+										</dt>
+										<dd>京东商城向您保证所售商品均为正品行货，京东自营商品开具机打发票或电子发票。</dd>
+										<dt>
+											<i></i>
+											<strong>全国联保</strong>
+										</dt>
+										<dd>
+											凭质保证书及京东商城发票，可享受全国联保服务（奢侈品、钟表除外；奢侈品、钟表由京东联系保修，享受法定三包售后服务），与您亲临商场选购的商品享受相同的质量保证。京东商城还为您提供具有竞争力的商品价格和<a href = "">运费政策</a>，请您放心购买！<br/><br/> 注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解！
+										</dd>
+										<dt>
+											<i></i>
+											<strong>无忧退货</strong>
+										</dt>
+										<dd>客户购买京东自营商品7日内（含7日，自客户收到商品之日起计算），在保证商品完好的前提下，可无理由退货。（部分商品除外，详情请见各商品细则）</dd>
+									</dl>
+								</div>
+								<div class = "agrbd">
+									<strong>权利声明 :</strong>
+									<p>京东上的所有商品信息、客户评价、商品咨询、网友讨论等内容，是京东重要的经营资源，未经许可，禁止非法转载使用。</p>
+									<p>注：本站商品信息均来自于合作方，其真实性、准确性和合法性由信息拥有者（合作方）负责。本站不提供任何保证，并不承担任何法律责任。</p><br/>
+									<strong>价格说明 :</strong>
+									<p><b>京东价：</b>京东价为商品的销售价，是您最终决定是否购买商品的依据。</p>
+									<p><b>划线价：</b>商品展示的划横线价格为参考价，并非原价，该价格可能是品牌专柜标价、商品吊牌价或由品牌供应商提供的正品零售价（如厂商指导价、建议零售价等）或该商品在京东平台上曾经展示过的销售价；由于地区、时间的差异性和市场行情波动，品牌专柜标价、商品吊牌价等可能会与您购物时展示的不一致，该价格仅供您参考。</p>
+									<p><b>折扣：</b>如无特殊说明，折扣指销售商在原价、或划线价（如品牌专柜标价、商品吊牌价、厂商指导价、厂商建议零售价）等某一价格基础上计算出的优惠比例或优惠金额；如有疑问，您可在购买前联系销售商进行咨询。</p>
+									<p><b>异常问题：</b>商品促销信息以商品详情页“促销”栏中的信息为准；商品的具体售价以订单结算页价格为准；如您发现活动商品售价或促销信息有异常，建议购买前先联系销售商咨询。</p><br/>
+									<strong>能效标识说明 :</strong>
+									<p>根据国家相关能效标识法规和标准的要求，京东自营在售商品的能效标识图样，将会逐步替换为新版能源效率标识贴；受能效标识标准变化影响，部分产品的新版和旧版能效标识，在能效等级、测试值等方面会有差异，但产品实际性能完全一样，并不影响购买和使用，加贴新版或旧版能效标识的商品会随机发放，请您放心购买；如有疑问，请在购买前通过咚咚或来电咨询。</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class = "m-contents">
+						<div class = "box-mt">
+							<h3>商品评价</h3>
+						</div>
+						<div class = "box-mcted">
+							<div class = "J-infpo">
+								<div class = "J-incent">
+									<p>好评度</p>
+									<strong>99<span>%</span></strong>
+								</div>
+								<div class = "J-inpret">
+									<div class = "tag-avable">
+										<span data-rid ="sfqx">收费清晰(1229)</span>
+										<span data-rid ="plhk">漂亮好看(406)</span>
+										<span data-rid ="gddq">高端大气(291)</span>
+										<span data-rid ="zlsc">质量上乘(229)</span>
+										<span data-rid ="jyxh">静音性好(183)</span>
+										<span data-rid ="zxdq">彰显大气(132)</span>
+										<span data-rid ="xgxz">效果显著(123)</span>
+										<span data-rid ="azjb">安装简便(120)</span>
+										<span data-rid ="qjdl">强劲动力(118)</span>
+										<span data-rid ="xyxs">响应迅速(37)</span>
+										<span data-rid ="flqj">风力强劲(21)</span>
+										<span data-rid ="gnyl">功能优良(17)</span>
+									</div>
+								</div>
+							</div>
+							<div class = "J-list-coment">
+								<div class = "J-small">
+									<ul class = "J-sppj">
+										<li class = "currents">
+											<a href = "JavaScript:;">全部评价<em>(17万+)</em></a>
+										</li>
+										<li>
+											<a href = "JavaScript:;">晒图<em>(500)</em></a>
+										</li>
+										<li>
+											<a href = "JavaScript:;">视频晒单<em>(800+)</em></a>
+										</li>
+										<li>
+											<a href = "JavaScript:;">追评<em>(3700+)</em></a>
+										</li>
+										<li>
+											<a href = "JavaScript:;">好评<em>(17万+)</em></a>
+										</li>
+										<li>
+											<a href = "JavaScript:;">中评<em>(200+)</em></a>
+										</li>
+										<li>
+											<a href = "JavaScript:;">差评<em>(400+)</em></a>
+										</li>
+										<li>
+											<span><input id = "J-zkdq" type = "checkbox"></span>
+											<label for = "J-zkdq">只看当前商品</label>
+										</li>
+									</ul>
+									<div class = "extras">
+										<div class = "extras-cur">
+											<span class = "J-extras">推荐排序</span>
+											<i></i>
+										</div>
+										<div class = "extras-oth" style = "display:none">
+											<div class = "curr-oth">
+												<span>推荐排序</span>
+												<i></i>
+											</div>
+											<ul>
+												<li>推荐排序</li>
+												<li>时间排序</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class = "J-tabcs">
+									<ul>
+										<li>
+											<div class = "user-lumn">
+												<p class = "user-info">
+													<img title = "s***x" width = "25" height = "25" src = "imges/01.gif"/>s***x
+												</p>
+												<p class = "user-level">
+													<span style = "color:#e1a10a">PLUS会员</span>
+												</p>
+											</div>
+											<div class = "coment-lumn">
+												<div class = "lumn-star"></div>
+												<p class = "lumn-pjnr">此用户未填写评价内容</p>
+												<div class = "J-pic-list">
+													<a href = ""><img alt = "s***x的晒单图片" width = "48" height = "48" src = "imges/5944c122N7d533d88.jpg"></a>
+												</div>
+												<div class = ""></div>
+												<div class = "tag-list">
+													<span>制冷/制暖: 冷暖很快</span>
+												</div>
+												<div class = "J-pic-messg">
+													<div class = "order-info">
+														<span>正一匹</span>
+														<span>NFW</span>
+														<span>2018-09-06 15:35</span>
+													</div>
+													<div class = "commen-info">
+														<a class = "JD-JB" href = "">举报</a>
+														<a class = "JD-DZ" href = ""><i></i>0</a>
+														<a class = "JD-HF" href = ""><i></i>1</a>
+													</div>
+												</div>
+												<div class = "apped-zp">
+													<div class = "app-time">[购买1天后追评]</div>
+													<p class = "lumn-pjnr">安装服务态度很好</p>
+												</div>
+												<div class = "reco-con">
+													<dl>
+														<dt>奥克斯空调京东自营旗舰店 回复 :</dt>
+														<dd>您好 , 我是奥克斯空调京东自营旗舰店</dd>
+													</dl>
+													<div class = "huifusj">2018.09.06</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<div class = "com-footer">
+										<div class = "ui-page">
+											<a class = "ui-peg-curr" href = "JavaScript:void(0)">1</a>
+											<a href = "">2</a>
+											<a href = "">3</a>
+											<a href = "">4</a>
+											<a href = "">5</a>
+											<a href = "">6</a>
+											<span>...</span>
+											<a href = "">下一页</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class = "m-askAnswer">
+						<div class = "box-mt">
+							<h3>商品问答</h3>
+						</div>
+						<div class = "box-mcted">
+							<div class = "ask-wap">
+								<i></i>
+								<span>心中疑惑就问问买过此商品的同学吧~</span>
+								<a href = "">我要提问</a>
+							</div>
+							<div class = "askwap-list">
+								<ul>
+									<li class = "askapitem">
+										<div class = "ask-top">
+											<i>问</i>
+											<div class = "item-con">
+												<p>这款空调耗电量怎么样? 制冷调到多少度最省电</p>
+												<span>j***u 2018-05-10 11:31</span>
+											</div>
+										</div>
+										<div class = "ask-bottom">
+											<i class = "da">答</i>
+											<div class = "item-con">
+												<ul>
+													<li>
+														<p>室外温度30度,空调调26度开四小时,用电一度半</p>
+														<span>f***4 2018-05-15 23:49</span>
+													</li>
+												</ul>
+												<div class = "more">
+													<a href = "JavaScript:;">
+														继续查看<em>26</em>条回答
+														<i class = "sprit-arrow"></i>
+													</a>
+													<a href = "JavaScript:;" style = "display:none">
+														收起回答<i class = "sprit-Down"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

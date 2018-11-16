@@ -1,0 +1,848 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset = "utf-8">
+<title>京东商品(商品信息及套餐)</title>
+<style>
+*{margin:0;padding:0}
+ul{list-style:none}
+a{color:#666;text-decoration:none}
+i,em{font-style:normal}
+img{border:0;vertical-align:middle}
+body{font:12px/150% tahoma,arial,Microsoft YaHei,Hiragino Sans GB,"\5b8b\4f53",sans-serif;color:#666;
+-webkit-font-smoothing:antialiased}
+section,.cen{width:1210px;margin:0 auto}
+.clr{display:block;overflow:hidden;clear:both;height:0;line-height:0;font-size:0}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.p-price strong{color:#e4393c;font-size:14px;font-family:Verdana}
+.current{background:#e4393c;color:#fff;cursor:default}
+
+.hidden{display:none}
+.dprn{width:590px;float:left;margin-left:30px;min-height:479px;margin-right:24px;}
+.dpsp-pm{padding:10px 0 5px 0}
+.dpsp-pm .pm-name{font-size:16px;font-weight:700;line-height:28px;margin-bottom:5px}
+.dpsp-pm .pm-sm{width:590px;max-height:3em;white-space:normal;overflow:hidden;color:#e4393c;
+margin-bottom:5px;line-height:1.5em;text-overflow:ellipsis}
+.dpsp-pm .pm-sm a{text-decoration:underline;color:#5e69ad}
+.jdj-cx{position:relative;padding:10px 0 5px 0;background:#f3f3f3}
+.sum-zz{float:left;padding-left:10px;font-family:simsun;color:#999}
+.sum-yw{margin-left:70px}
+.jdj{position:relative;margin-bottom:5px}
+.jdj .sum-zz{line-height:22px}
+.jdj .jdj-b{margin-left:10px;color:#e4393c;font-family:"microsoft yahei";margin-right:10px;
+vertical-align:middle}
+.jdj .jdj-b span:first-of-type{font-size:16px}
+.jdj .jdj-b span:last-of-type{font-size:22px}
+.jdj a{color:#005aa0}
+.jdpj{position:absolute;right:10px;top:8px;color:#999}
+.comment,.buy-rate{border-left:1px #e6e6e6 solid;text-align:center;padding:0 10px;line-height:15px;
+float:left}
+.comment a,.buy-rate a{font:14px verdana;color:#005ea7}
+.jdcx{clear:both;padding:5px 0 5px}
+.jdcx .sum-zz{line-height:30px}
+.jdcx .sum-yw{position:relative;overflow:hidden}
+.cx-zp{position:relative;line-height:30px;min-height:35px;vertical-align:middle}
+.J-gifzp{padding-left:40px}
+.cx-zp .zp{float:left;width:40px;display:inline;margin-left:-40px}
+.prom-list{float:left;width:100%}
+.cx-zp .zp em{display:inline-block;color:#df3033;border:1px #df3033 solid;padding:2px 3px;
+margin-right:5px;line-height:16px}
+.cx-zp .pro-img{float:left;width:25px;height:25px;margin-right:3px}
+.cxcs{color:#e4393c}
+.s-arrpw{font-family:simsun}
+.dpsp-zz{position:relative;padding-bottom:5px}
+.summar-zzyw,.choose-JDbaitiao{margin-bottom:6px;line-height:32px}
+.summar-zzyw .sum-yw .sum-yw-y li{float:left;margin-right:10px;position:relative}
+.sum-yw-y .tips{width:190px;padding:1px;position:absolute;z-index:66;background:#fff}
+.summar-zzyw .sum-yw .sum-yw-y .tips .quest-arrow{left:10px;top:-4px}
+.summar-zzyw .sum-yw .sum-yw-y .tips .quest-content p{line-height:18px}
+.summar-zzyw .sum-yw ul li a{display:inline-block;line-height:18px}
+.summar-zzyw .sum-yw ul li a i{display:inline-block;width:16px;height:16px;vertical-align:-3px;
+background:url("imges/__spriteas.png") no-repeat -32px 0px}
+.summar-zzyw .sum-yw ul li a span{position:relative;display:inline-block;border:1px #ced2e6 solid;
+line-height:16px;border-radius:8px;padding:0 5px 0 18px;color:#5e69ad;margin-left:-18px;z-index:-1}
+.f_stoped{float:left;position:relative;z-index:3;height:26px;margin-top:-3px}
+.ul-area{float:left;position:relative;top:0;height:23px;background:#fff;border:1px solid #CECBCE;
+padding:0 24px 0 4px;line-height:23px;overflow:hidden}
+.ui-area-hover .ul-area{z-index:1;height:25px;border-bottom:0}
+.ul-area i,.ui-wrap-tp a i{display:block;position:absolute;top:0px;right:3px;width:17px;height:17px;
+background:url("imges/arr-close.png") no-repeat 3px 8px}
+.ui-wrap{position:absolute;left:0;top:25px;float:left;border:1px #CECBCE solid;width:460px;
+padding:12px 12px 15px;background:#fff;box-shadow:0 0 5px #ddd}
+.ui-wrap-s a:hover{color:#e4393c}
+.ui-wrap-tp{width:423px;cursor:default;height:25px;border-bottom:2px #e4393c solid;overflow:visible}
+.ui-wrap-tp a{position:relative;float:left;height:23px;line-height:23px;padding:0 25px 1px 6px;
+margin-right:4px;border:1px #ddd solid;border-bottom:0;color:#005AA0;text-align:center;
+cursor:pointer;overflow:hidden;max-width:36px}
+.ui-wrap-tp .ui-wrap-xz{height:25px;background-color:#fff;border:2px #e4393c solid;border-bottom:0;
+padding:0 25px 0 6px;line-height:22px}
+.ui-wrap-s ul{padding-top:10px;overflow:hidden;width:100%;margin-bottom:-5px}
+.ui-wrap-s ul li{float:left;width:80px;padding:0 16px 1px 0;line-height:18px}
+.ui-wrap-s li a{float:left;padding:2px 4px 2px 0;color:#005aa0}
+.ui-wrap-s .ui-wrap-hs a{color:#e4393c}
+.summar-stok .stok-prom{float:left;margin:0 10px 0 6px;color:#999;height:24px;font-weight:bold}
+.summar-stok .promise-ico{float:left;height:24px}
+.summar-stok .promise-ico p{margin-right:5px;float:left}
+.summar-stok .promise8,.summar-stok .promise8 li{float:left}
+.summar-stok .promise8 a{color:#646FB0;margin-bottom:5px;padding:0 10px}
+.summar-suply{line-height:32px}
+.summar-suply span,.summar-suply a{color:#e4393c}
+.summar-suply b{color:#999}
+.summar-weight{margin-bottom:3px;line-height:32px}
+.choose-stts{line-height:40px;margin-bottom:3px;border-top:1px #dfdfdf dotted;padding-top:15px}
+.dpsp-zz .choose-stts .sum-yw li{background-color:#F7F7F7}
+.choose-stts .sum-yw a:hover{border:1px #e3393c solid}
+.choose-stts .sum-yw li,.choose-JDbaitiao .sum-yw li{float:left;background-color:#FFF;
+margin-right:7px;margin-bottom:4px;position:relative}
+.choose-stts .sum-yw li a{display:block;border:1px #ccc solid;white-space:nowrap}
+.choose-stts .sum-yw .selected a{border:1px #e3393c solid}
+.choose-stts .sum-yw li a i{margin:0 8px;font-style:normal}
+.choose-service,.choose-JDservice{margin-bottom:7px;line-height:18px}
+.choose-service .sum-zz,.choose-JDservice .sum-zz{line-height:30px}
+.choose-service .sum-yw li,.choose-JDservice .sum-yw li{float:left;position:relative}
+.service-hover:hover .yb-service,.choose-JDbaitiao .service-hover:hover a{border:1px #e3393c solid}
+.dpsp-zz .sum-yw .service-hover:hover .yb-service{z-index:5;border-bottom-color:#fff}
+.yb-service{padding:4px 5px 4px 6px;margin:0 7px 2px 0;line-height:20px;cursor:pointer;
+border:1px #ccc solid;position:relative}
+.yb-service img{display:inline-block;width:16px;height:16px;margin-right:4px}
+.yb-service .name{display:inline-block;margin-right:4px;vertical-align:middle;max-width:60px;
+height:20px;overflow:hidden}
+.yb-service .price{margin-right:5px;vertical-align:middle}
+.yb-service i{display:inline-block;width:15px;vertical-align:middle;height:10px;
+background:url("imges/arr-close.png") no-repeat 1px 3px}
+.more-service{position:absolute;top:31px;background:#fff;border:1px #ddd solid;width:240px;z-index:1;
+padding:10px 0 5px 10px;overflow:hidden}
+.more-service li{width:100%;margin-bottom:10px;height:16px;cursor:pointer}
+.more-service li:hover{color:#E3393c}
+.more-service li:hover a{display:inline-block}
+.more-service li a:hover{color:#E3393c}
+.titlecs .sprit-checkbox{display:inline-block;vertical-align:-3px;margin-right:6px;width:14px;
+height:14px;background:url("imges/__spritecs.png") no-repeat;background-position:-16px 0px}
+.titlecs .tips{display:inline-block;padding:0 4px;margin-right:6px;background:#f19c9d;color:#fff}
+.more-service .name{display:inline-block;max-width:60px;height:16px;vertical-align:-3px;
+overflow:hidden}
+.more-service .price{margin-right:0;margin-left:6px}
+.more-service .detail-mare{display:none;margin-left:10px;color:#5e69ad}
+.service-tips a .service-quest{display:inline-block;vertical-align:-10px;width:16px;height:16px;
+background:url("imges/__spritecs.png") no-repeat}
+.service-tips .tips{position:absolute;width:270px;left:-215px;top:35px;z-index:2}
+.tips .quest-arrow{width:11px;height:6px;position:absolute;overflow:hidden;left:218px;
+background:url("imges/__spritecs.png") no-repeat -14px -16px;top:-5px}
+.tips .quest-content{padding:10px;background:#fff;border:1px #cecbce solid;box-shadow:0 0 2px 2px #eee}
+.service-tips .tips .quest-content .quest-dd{line-height:170%}
+.service-tips .tips .quest-content .quest-p{border-top:1px #999 dotted;margin-top:7px;padding-top:7px}
+.choose-JDbaitiao .service-hover a{display:block;border:1px #ccc solid;padding:0 13px;
+text-align:center;white-space:nowrap}
+.choose-JDbaitiao .service-hover .baitiao-tips{position:absolute;width:250px;padding:5px 10px;
+background:#fefff7;border:1px #ccc solid;z-index:6;top:32px;left:0}
+.choose-JDbaitiao .disabled a{border:1px #ccc dashed;color:#999}
+.choose-JDbaitiao .service-tips .service-youhui,.choose-JDbaitiao .service-tips .service-siyi{display:inline-block;vertical-align:-5px;width:16px;
+height:16px;overflow:hidden;}
+.choose-JDbaitiao .service-tips .service-youhui{background:url("imges/hui.png") no-repeat}
+.choose-JDbaitiao .service-tips .service-siyi{background:url("imges/__spritecs.png") no-repeat}
+.choose-JDbaitiao .service-tips .tips{left:0}
+.choose-JDbaitiao .service-tips .tips .quest-arrow{left:8px}
+.choose-btns{margin-bottom:20px;padding:15px 10px 0 10px;border-top:1px #dfdfdf dotted}
+.choose-amount{float:left;position:relative;width:58px;height:44px;overflow:hidden;border:1px #ccc solid;margin-right:10px}
+.choose-amount input{display:block;position:absolute;width:43px;height:42px;line-height:42px;top:1px;
+left:0;border:0;text-align:center}
+.choose-amount a{display:block;position:absolute;width:15px;height:22px;line-height:22px;right:-1px;
+text-align:center;overflow:hidden;background:#f1f1f1;border:1px #ccc solid}
+.choose-amount .btn-reduce{bottom:-1px}
+.choose-amount .disabled{color:#ccc;cursor:not-allowed}
+.choose-amount .btn-add{top:-1px}
+.choose-btns .btn-lg{height:46px;line-height:46px;padding:0 26px;font-size:18px;font-family:"microsoft yahei";margin-right:10px;float:left}
+.choose-btns .btn-spec1{background:#df3033}
+.choose-btns .btn-spec2{background:#85c360}
+.choose-btns .btn-spec1,.choose-btns .btn-spec2{font-weight:700;color:#fff}
+.choose-btns .btn-spec3{background:#fff;border:1px #e4393c solid;color:#e4393c}
+.local-tips,.summary-tips{margin-bottom:5px}
+.local-tips li,.summary-tips li{float:left;margin-right:15px;font-family:simsun;color:#999}
+.local-tips li a{color:#005aa0}
+
+.choose-service .service-hover .poliu,.choose-JDservice .service-hover .poliu{border-color:#e4393c}
+.uiyr-i{border:1px #ccc dashed;color:#999}
+.choose-JDbaitiao
+</style>
+</head>
+<body>
+	<section>
+		<div class = "sectoes clearfix">
+			<div class = "dprn">
+				<div class = "dpsp-pm">
+					<p class = "pm-name">奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)</p>
+					<p class = "pm-sm" title = "【月末冲量,工厂放'价',全民疯抢】&#10;①1799到手价疯抢,早买早享受!&#10;②APP关注店铺参与抽奖赢空调!&#10;③销售火爆,库存告急,随时断货,预购从速!&#10;④网红爆品,象牙白时尚简约,隐藏式显示屏,自动水洗!天赐'凉机',好货不错过,入场看秘籍">【月末冲量 , 工厂放'价' , 全民疯抢】 &#10;①1799到手价疯抢 , 早买早享受 !&#10;②APP关注店铺参与抽奖赢空调 !&#10;③销售火爆 , 库存告急 , 随时断货 , 预购从速 !&#10;④网红爆品 , 象牙白时尚简约 , 隐藏式显示屏 , 自动水洗 !<a href = "">天赐'凉机' , 好货不错过 , 入场看秘籍</a></p>
+					<div class = "jdj-cx">
+						<div class = "jdj clearfix">
+							<div class = "sum-zz">京 东 价</div>
+							<div class = "sum-yw">
+								<span class = "jdj-b">
+									<span>¥</span>
+									<span>1738.00</span>
+								</span>
+								<a href = "">降价通知</a>
+							</div>
+						</div>
+						<div class = "jdpj">
+							<div class = "comment">
+								<p>累计评价</p>
+								<a href = "">17万+</a>
+							</div>
+							<div class = "buy-rate">
+								<p>选购指数</p>
+								<a href = "">5.5</a>
+							</div>
+						</div>
+						<div class = "jdcx clearfix">
+							<div class = "sum-zz">促&nbsp;&nbsp;销</div>
+							<div class = "sum-yw clearfix">
+								<div class = "cx-zp">
+									<div class = "J-gifzp clearfix">
+										<span class = "zp">
+											<em>赠品</em>
+										</span>
+										<div class = "prom-list">
+											<a class = "pro-img" href = ""><img width = "25" height = "25" src = "imges/5b681eebNaa84cb6b.jpg" style = "display:block"/></a>
+											<em class = "cxcs">×1</em>
+											<span style = "color:#999;margin-left:10px">(赠完即止)</span>
+										</div>
+									</div>
+								</div>
+								<div class = "cx-zp">
+									<div class = "J-gifzp clearfix">
+										<span class = "zp">
+											<em>满送</em>
+										</span>
+										<div class = "prom-list">
+											<em class = "prom-mz">满2000元即赠热销商品,赠完即止</em>
+											<a href = "">详情 <i class = "s-arrpw">>></i></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class = "dpsp-zz">
+					<div class = "summar-zzyw clearfix">
+						<div class = "sum-zz">增值业务</div>
+						<div class = "sum-yw">
+							<ul class = "sum-yw-y clearfix">
+								<li>
+									<a class = "mouseove" href = "">
+										<i></i>
+										<span>家电回收,以旧换新</span>
+									</a>
+									<div class = "tips hidden">
+										<div class = "quest-arrow"></div>
+										<div class = "quest-content">
+											<p class = "quest-dd">免费提供旧机回收服务,完成回收服务后获得京东E卡或京东钱包现金再次用于京东消费.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class = "summar-stok">
+						<div class = "sum-zz">配 送 至</div>
+						<div class = "sum-yw clearfix">
+							<div class = "f_stoped">
+								<div class = "ul-area">
+									<div title = "浙江杭州市下沙区" class = "ul-area-text">浙江杭州市下沙区<i></i></div>
+								</div>
+								<div class = "ui-wrap" style = "display:none">
+									<div class = "ui-wrap-tp">
+										<a class = "ui-wrap-djs ui-wrap-xz" title = "浙江" href = "javascript:;">浙江<i></i></a>
+										<a class = "ui-wrap-ds" title = "杭州市" href = "javascript:;">杭州市<i></i></a>
+										<a class = "ui-wrap-xq" title = "下沙区" href = "javascript:;">下沙区<i></i></a>
+									</div>
+									<div class = "ui-wrap-bt">
+										<div class = "ui-wrap-s ui-wrap-gszx">
+											<ul>
+												<li><a href = "javascript:void(0)">北京</a></li>
+												<li><a href = "javascript:void(0)">上海</a></li>
+												<li><a href = "javascript:void(0)">天津</a></li>
+												<li><a href = "javascript:void(0)">重庆</a></li>
+												<li><a href = "javascript:void(0)">河北</a></li>
+												<li><a href = "javascript:void(0)">山西</a></li>
+												<li><a href = "javascript:void(0)">河南</a></li>
+												<li><a href = "javascript:void(0)">辽宁</a></li>
+												<li><a href = "javascript:void(0)">吉林</a></li>
+												<li><a href = "javascript:void(0)">黑龙江</a></li>
+												<li><a href = "javascript:void(0)">内蒙古</a></li>
+												<li><a href = "javascript:void(0)">江苏</a></li>
+												<li><a href = "javascript:void(0)">山东</a></li>
+												<li><a href = "javascript:void(0)">安徽</a></li>
+												<li class = "ui-wrap-hs"><a href = "javascript:void(0)">浙江</a></li>
+												<li><a href = "javascript:void(0)">福建</a></li>
+												<li><a href = "javascript:void(0)">湖北</a></li>
+												<li><a href = "javascript:void(0)">湖南</a></li>
+												<li><a href = "javascript:void(0)">广东</a></li>
+												<li><a href = "javascript:void(0)">广西</a></li>
+												<li><a href = "javascript:void(0)">江西</a></li>
+												<li><a href = "javascript:void(0)">四川</a></li>
+												<li><a href = "javascript:void(0)">海南</a></li>
+												<li><a href = "javascript:void(0)">贵州</a></li>
+												<li><a href = "javascript:void(0)">云南</a></li>
+												<li><a href = "javascript:void(0)">西藏</a></li>
+												<li><a href = "javascript:void(0)">陕西</a></li>
+												<li><a href = "javascript:void(0)">甘肃</a></li>
+												<li><a href = "javascript:void(0)">青海</a></li>
+												<li><a href = "javascript:void(0)">宁夏</a></li>
+												<li><a href = "javascript:void(0)">新疆</a></li>
+												<li><a href = "javascript:void(0)">港澳</a></li>
+												<li><a href = "javascript:void(0)">台湾</a></li>
+												<li><a href = "javascript:void(0)">钓鱼岛</a></li>
+												<li><a href = "javascript:void(0)">海外</a></li>
+											</ul>
+										</div>
+										<div class = "ui-wrap-s ui-wrap-xs" style = "display:none">
+											<ul>
+												<li><a href = "javascript:void(0)">宁波市</a></li>
+												<li><a href = "javascript:void(0)">衢州市</a></li>
+												<li><a href = "javascript:void(0)">丽水市</a></li>
+												<li><a href = "javascript:void(0)">台州市</a></li>
+												<li><a href = "javascript:void(0)">舟山市</a></li>
+												<li><a href = "javascript:void(0)">杭州市</a></li>
+												<li><a href = "javascript:void(0)">温州市</a></li>
+												<li><a href = "javascript:void(0)">嘉兴市</a></li>
+												<li><a href = "javascript:void(0)">湖州市</a></li>
+												<li><a href = "javascript:void(0)">绍兴市</a></li>
+												<li><a href = "javascript:void(0)">金华市</a></li>
+											</ul>
+										</div>
+										<div class = "ui-wrap-s ui-wrap-q" style = "display:none">
+											<ul>
+												<li><a href = "javascript:void(0)">上城区</a></li>
+												<li><a href = "javascript:void(0)">下城区</a></li>
+												<li><a href = "javascript:void(0)">拱墅区</a></li>
+												<li><a href = "javascript:void(0)">西湖区</a></li>
+												<li><a href = "javascript:void(0)">江干区</a></li>
+												<li><a href = "javascript:void(0)">下沙区</a></li>
+												<li><a href = "javascript:void(0)">余杭区</a></li>
+												<li><a href = "javascript:void(0)">萧山区</a></li>
+												<li><a href = "javascript:void(0)">滨江区</a></li>
+												<li><a href = "javascript:void(0)">临安区</a></li>
+												<li><a href = "javascript:void(0)">富阳区</a></li>
+												<li><a href = "javascript:void(0)">桐庐县</a></li>
+												<li><a href = "javascript:void(0)">建德市</a></li>
+												<li><a href = "javascript:void(0)">淳安县</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class = "stok-prom">有货</div>
+							<div class = "promise-ico">
+								<p>支持</p>
+								<ul class = "promise8">
+									<li><a href = "">京东安装</a></li>
+									<li>|</li>
+									<li><a href = "">家电净洗</a></li>
+									<li>|</li>
+									<li><a href = "">99元免基础运费</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class = "summar-suply">
+						<div class = "sum-zz">&nbsp;&nbsp;</div>
+						<div class = "sum-yw">
+							<p>由 <span>京东</span> 发货, <a href = "">奥克斯空调京东自营旗舰店</a> 提供售后服务, 18:00前发单,预计<b>明天(09月01日)</b>送达</p>
+						</div>
+					</div>
+					<div class = "summar-weight clearfix">
+						<div class = "sum-zz">重&nbsp;&nbsp;量</div>
+						<div class = "sum-yw">不计重量</div>
+					</div>
+					<div class = "choose-stts clearfix">
+						<div class = "sum-zz">选择匹数</div>
+						<div class = "sum-yw">
+							<ul class = "clearfix">
+								<li class = "selected" title = "正1匹">
+									<a href = "">
+										<img width = "40" height = "40" src = "imges/img-123/hs21d/5ab48c55Na22e95ff.jpg">
+										<i>正1匹</i>
+									</a>
+								</li>
+								<li title = "小1.5">
+									<a href = "">
+										<img width = "40" height = "40" src = "imges/img-123/hs21d/5ab48c55Na22e95ff.jpg">
+										<i>小1.5匹</i>
+									</a>
+								</li>
+								<li title = "正1.5匹">
+									<a href = "">
+										<img width = "40" height = "40" src = "imges/img-123/hs21d/5ab48c55Na22e95ff.jpg">
+										<i>正1.5匹</i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class = "choose-service  clearfix">
+						<div class = "sum-zz">增值保障</div>
+						<div class = "sum-yw">
+							<ul class = "clearfix">
+								<li class = "service-hover mouseove">
+									<div class = "yb-service">
+										<img width = "16" height = "16" src = "imges/590c0c85N460e4552.png"/>
+										<span class = "name">全保修7年</span>
+										<span class = "price">￥59</span>
+										<i></i>
+									</div>
+									<div class = "more-service hidden">
+										<ul class = "clearfix">
+											<li class = "titlecs" title = "性能故障、意外故障全面保修">
+												<span>
+													<i class = "sprit-checkbox"></i>
+													<em class = "tips">优惠</em>
+													<span class = "name">全保修7年</span>
+													<span class = "price">￥59</span>
+												</span>
+												<a class = "detail-mare" href = "">详情<i class = "s-arrpw">>></i></a>
+											</li>
+											<li class = "titlecs" title = "性能故障、意外故障全面保修">
+												<span>
+													<i class = "sprit-checkbox"></i>
+													<span class = "name">全保修8年</span>
+													<span class = "price">￥99</span>
+												</span>
+												<a class = "detail-mare" href = "">详情<i class = "s-arrpw">>></i></a>
+											</li>
+											<li class = "titlecs" title = "性能/意外故障8年保修+清洗服务">
+												<span>
+													<i class = "sprit-checkbox"></i>
+													<span class = "name">全保+清洗</span>
+													<span class = "price">￥129</span>
+												</span>
+												<a class = "detail-mare" href = "">详情<i class = "s-arrpw">>></i></a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class = "service-hover mouseove">
+									<div class = "yb-service">
+										<img width = "16" height = "16" src = "imges/567cb046Ncc8f504a.png"/>
+										<span class = "name">延保至8年</span>
+										<span class = "price">￥79</span>
+										<i></i>
+									</div>
+									<div class = "more-service hidden">
+										<ul class = "clearfix">
+											<li class = "titlecs" title = "延长厂家保修期">
+												<span>
+													<i class = "sprit-checkbox"></i>
+													<em class = "tips">优惠</em>
+													<span class = "name">延保至8年</span>
+													<span class = "price">￥79</span>
+												</span>
+												<a class = "detail-mare" href = "">详情<i class = "s-arrpw">>></i></a>
+											</li>
+											<li class = "titlecs" title = "延长厂家保修期">
+												<span>
+													<i class = "sprit-checkbox"></i>
+													<span class = "name">延保至9年</span>
+													<span class = "price">￥139</span>
+												</span>
+												<a class = "detail-mare" href = "">详情<i class = "s-arrpw">>></i></a>
+											</li>
+											<li class = "titlecs" title = "性能故障免费换新或折旧换新机型">
+												<span>
+													<i class = "sprit-checkbox"></i>
+													<span class = "name">换新保3年</span>
+													<span class = "price">￥179</span>
+												</span>
+												<a class = "detail-mare" href = "">详情<i class = "s-arrpw">>></i></a>
+											</li>
+											<li class = "titlecs" title = "性能故障免费换新或折旧换新机型">
+												<span>
+													<i class = "sprit-checkbox"></i>
+													<span class = "name">换新保5年</span>
+													<span class = "price">￥249</span>
+												</span>
+												<a class = "detail-mare" href = "">详情<i class = "s-arrpw">>></i></a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class = "service-hover mouseove">
+									<div class = "yb-service">
+										<img width = "16" height = "16" src = "imges/567cb057N77e247ca.png"/>
+										<span class = "name">意外保3年</span>
+										<span class = "price">￥79</span>
+										<i></i>
+									</div>
+									<div class = "more-service hidden">
+										<ul class = "clearfix">
+											<li class = "titlecs" title = "因意外引起的故障免费修">
+												<span>
+													<i class = "sprit-checkbox"></i>
+													<span class = "name">意外保2年</span>
+													<span class = "price">￥59</span>
+												</span>
+												<a class = "detail-mare" href = "">详情<i class = "s-arrpw">>></i></a>
+											</li>
+											<li class = "titlecs" title = "因意外引起的故障免费修">
+												<span>
+													<i class = "sprit-checkbox"></i>
+													<span class = "name">意外保3年</span>
+													<span class = "price">￥79</span>
+												</span>
+												<a class = "detail-mare" href = "">详情<i class = "s-arrpw">>></i></a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class = "service-tips mouseove">
+									<a href = ""><i class = "service-quest"></i></a>
+									<div class = "tips hidden">
+										<div class = "quest-arrow"></div>
+										<div class = "quest-content">
+											<p class = "quest-dd">增值保障是指凡在京东购买商品或服务的消费者，在保障期间内遇到无论是正常使用中的问题还是意外事故，即可享受增值保障服务。保障内容包括：延长保修、只换不修、意外保护、服务保障。覆盖家电、手机数码、电脑办公、汽车用品、服饰家居等商品。</p>
+											<p class = "quest-p">增值保障服务，只能提供增值税普通电子发票，如有疑问，请与在线客服联系</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class = "choose-JDservice clearfix">
+						<div class = "sum-zz">京东服务</div>
+						<div class = "sum-yw">
+							<ul class = "clearfix">
+								<li class = "service-hover mouseove">
+									<div class = "yb-service">
+										<img width = "16" height = "16" src = "imges/5ae2a3ccN9f6d5bff.png"/>
+										<span class = "name">空调清洗</span>
+										<span class = "price">￥56</span>
+										<i></i>
+									</div>
+									<div class = "more-service hidden">
+										<ul class = "clearfix">
+											<li class = "titlecs" title = "深度清洗 , 上门服务">
+												<span>
+													<i class = "sprit-checkbox"></i>
+													<span class = "name">空调清洗</span>
+													<span class = "price">￥56</span>
+												</span>
+												<a class = "detail-mare" href = "">详情<i class = "s-arrpw">>></i></a>
+											</li>
+											<li class = "titlecs" title = "深度清洗 , 上门服务">
+												<span>
+													<i class = "sprit-checkbox"></i>
+													<span class = "name">清洗套装</span>
+													<span class = "price">￥106</span>
+												</span>
+												<a class = "detail-mare" href = "">详情<i class = "s-arrpw">>></i></a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class = "service-tips mouseove">
+									<a href = ""><i class = "service-quest"></i></a>
+									<div class = "tips hidden">
+										<div class = "quest-arrow"></div>
+										<div class = "quest-content">
+											<p class = "quest-dd">京东服务+，为用户打造统一、标准化的服务体验，将服务产品化，形成覆盖零售领域全链条服务、具备专业知识的新一代服务生态平台。服务产品内容包括：安装服务、清洗保养、检测维修、企悦服务等，覆盖家电、手机数码、电脑办公、居家生活、服饰等商品。</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class = "choose-JDbaitiao clearfix">
+						<div class = "sum-zz">白条分期</div>
+						<div class = "sum-yw">
+							<ul class = "clearfix">
+								<li class = "service-hover mouseove">
+									<a class = "xuxian" href = "javascript:;">不分期</a>
+									<div class = "baitiao-tips hidden">
+										<p>无手续费</p>
+									</div>
+								</li>
+								<li class = "service-hover mouseove">
+									<a class = "xuxian" href = "javascript:;">￥591.4起×3期</a>
+									<div class = "baitiao-tips hidden">
+										<p>含手续费:费率0.5%起 , ￥8.74起×3期</p>
+									</div>
+								</li>
+								<li class = "service-hover mouseove">
+									<a class = "xuxian" href = "javascript:;">￥300.09起×6期</a>
+									<div class = "baitiao-tips hidden">
+										<p>含手续费:费率0.5%起 , ￥8.74起×6期</p>
+									</div>
+								</li>
+								<li class = "service-hover mouseove">
+									<a class = "xuxian" href = "javascript:;">￥154.37起×12期</a>
+									<div class = "baitiao-tips hidden">
+										<p>含手续费:费率0.5%起 , ￥8.74起×12期</p>
+									</div>
+								</li>
+								<li class = "service-hover mouseove">
+									<a class = "xuxian" href = "javascript:;">￥81.65起×24期</a>
+									<div class = "baitiao-tips hidden">
+										<p>含手续费:费率0.5%起 , ￥8.74起×24期</p>
+									</div>
+								</li>
+								<li class = "service-tips">
+									<a href = "javascript:;"><i class = "service-youhui mouseove"></i></a>
+									<div class = "tips hidden">
+										<div class = "quest-arrow"></div>
+										<div class = "quest-content">
+											<p class = "quest-dd">【白条支付】首单享立减优惠</p>
+										</div>
+									</div>
+								</li>
+								<li class = "service-tips">
+									<a href = "javascript:;"><i class = "service-siyi mouseove"></i></a>
+									<div class = "tips hidden">
+										<div class = "quest-arrow"></div>
+										<div class = "quest-content">
+											<p class = "quest-dd">1、实际分期金额及手续费以白条剩余额度及收银台优惠为准<br/>2、什么是白条分期?<br/>白条是一种"先消费,后付款"的支付方式,使用白条可以享受先用后付,以及最长36期的分期还款.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class = "choose-btns clearfix">
+						<div class = "choose-amount">
+							<input class = "text" type = "text" value = "1">
+							<a class = "btn-reduce disabled" href = "javascript:;">-</a>
+							<a class = "btn-add" href = "javascript:;">+</a>
+						</div>
+						<a style = "display:none" class = "btn-spec1 btn-lg" href = "JavaScript:;">选择号码和套餐</a>
+						<a class = "btn-spec1 btn-lg" href = "JavaScript:;">加入购物车</a>
+						<a style = "display:none" class = "btn-spec2 dbt btn-lg" href = "JavaScript:;">打白条</a>
+						<a style = "display:none" class = "btn-spec2 btn-lg" href = "JavaScript:;">使用金采</a>
+						<a style = "display:none" class = "btn-spec3 btn-lg" href = "JavaScript:;">到货通知</a>
+					</div>
+					<div class = "local-tips">
+						<div class = "sum-zz">本地活动</div>
+						<div class = "sum-yw">
+							<ul class = "clearfix">
+								<li>· <a href = "">企采低至4折 >></a></li>
+								<li>· <a href = "">新家装主义 >></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class = "summary-tips">
+						<div class = "sum-zz">温馨提示</div>
+						<div class = "sum-yw">
+							<ul class = "clearfix">
+								<li>· 支持7天无理由退货(安装后不支持)</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+
+<script>
+	var ohidden = document.querySelectorAll(".hidden")
+	var omouseove = document.querySelectorAll(".mouseove")
+	var ulAreaText = document.querySelector(".ul-area-text")
+	var fStoped = document.querySelector(".f_stoped")
+	var uiWrap = document.querySelector(".ui-wrap")
+	var uiWrapS = document.querySelectorAll(".ui-wrap-s")
+	var pli = uiWrapS[0].querySelectorAll("li")
+	var qli = uiWrapS[1].querySelectorAll("li")
+	var wli = uiWrapS[2].querySelectorAll("li")
+	var uiWrapGszx = document.querySelector(".ui-wrap-gszx")
+	var uiWrapTp = document.querySelector(".ui-wrap-tp")
+	var oa = uiWrapTp.querySelectorAll("a")
+	var uiWrapXz = document.querySelector(".ui-wrap-xz")
+	var uiWrapDjs = document.querySelector(".ui-wrap-djs")
+	var uiwrapxs = document.querySelector(".ui-wrap-xs")
+	var uiWrapQ = document.querySelector(".ui-wrap-q")
+	var uiWrapDs = document.querySelector(".ui-wrap-ds")
+	var uiWrapXq = document.querySelector(".ui-wrap-xq")
+	var xzgb = false
+	var ppp = []
+	var moreService = document.querySelectorAll(".more-service")
+	var ybService = document.querySelectorAll(".yb-service")
+	var oxuxian = document.querySelectorAll(".xuxian")
+	var otitlecs = document.querySelectorAll(".titlecs")
+	var choosEJDbaitiao = document.querySelector(".choose-JDbaitiao")
+	var odbt = document.querySelector(".dbt")
+
+	var eli = moreService[0].querySelectorAll("li")
+	var oi = moreService[0].querySelectorAll(".sprit-checkbox")
+	var ali = moreService[1].querySelectorAll("li")
+	var pi = moreService[1].querySelectorAll(".sprit-checkbox")
+	var rli = moreService[2].querySelectorAll("li")
+	var ui = moreService[2].querySelectorAll(".sprit-checkbox")
+	var tli = moreService[3].querySelectorAll("li")
+	var yi = moreService[3].querySelectorAll(".sprit-checkbox")
+
+	for(var i=0;i<omouseove.length;i++){
+		omouseove[i].index = i
+		omouseove[i].onmouseover = function(){
+			ohidden[this.index].style.display = "block"
+		}
+		omouseove[i].onmouseout = function(){
+			ohidden[this.index].style.display = "none"
+		}
+	}
+
+	fStoped.onmouseenter = function(){
+		fStoped.classList.add("ui-area-hover")
+		xzgb = false
+		uiWrap.style.display = "block"
+		for(var i=0;i<oa.length;i++){
+			oa[i].index = i
+			oa[i].onclick = function(){
+				for(var i=0;i<oa.length;i++){
+					oa[i].className = ""
+					uiWrapS[i].style.display = "none"
+				}
+				oa[this.index].className = "ui-wrap-xz"
+				uiWrapS[this.index].style.display = "block"
+			}
+		}
+		for(var i=0;i<pli.length;i++){
+			pli[i].index = i
+			pli[i].onclick = function(){
+				for(var i=0;i<pli.length;i++){
+					pli[i].className = ""
+				}
+				pli[this.index].className = "ui-wrap-hs"
+				var pliin = pli[this.index].innerText
+				uiWrapDjs.title = pliin
+				uiWrapDjs.innerHTML = pliin + '<i></i>'
+				uiWrapGszx.style.display = "none"
+				uiwrapxs.style.display = "block"
+				uiWrapQ.style.display = "none"
+				uiWrapXq.style.display = "none"
+				uiWrapDs.innerHTML = '请选择'+'<i></i>'
+				uiWrapDjs.classList.remove("ui-wrap-xz")
+				uiWrapDs.classList.add("ui-wrap-xz")
+				xzgb = true
+			}
+		}
+		for(var i=0;i<qli.length;i++){
+			qli[i].index = i
+			qli[i].onclick = function(){
+				for(var i=0;i<qli.length;i++){
+					qli[i].className = ""
+				}
+				qli[this.index].className = "ui-wrap-hs"
+				var pliin = qli[this.index].innerText
+				uiWrapDs.title = pliin
+				uiWrapDs.innerHTML = pliin + '<i></i>'
+				uiWrapGszx.style.display = "none"
+				uiwrapxs.style.display = "none"
+				uiWrapQ.style.display = "block"
+				uiWrapXq.style.display = "block"
+				uiWrapDs.classList.remove("ui-wrap-xz")
+				uiWrapXq.classList.add("ui-wrap-xz")
+				xzgb = true
+			}
+		}
+		for(var i=0;i<wli.length;i++){
+			wli[i].index = i
+			wli[i].onclick = function(){
+				for(var i=0;i<wli.length;i++){
+					wli[i].className = ""
+				}
+				wli[this.index].className = "ui-wrap-hs"
+				var pliin = wli[this.index].innerText
+				uiWrapXq.title = pliin
+				uiWrapXq.innerHTML = pliin + '<i></i>'
+				fStoped.classList.remove("ui-area-hover")
+				uiWrap.style.display = "none"
+				console.log(uiWrapDjs.innerText+uiWrapDs.innerText+uiWrapXq.innerText)
+				ulAreaText.title = uiWrapDjs.innerText+uiWrapDs.innerText+uiWrapXq.innerText
+				ulAreaText.innerHTML = uiWrapDjs.innerText+uiWrapDs.innerText+uiWrapXq.innerText + '<i></i>'
+				xzgb = false
+			}
+		}
+	}
+	fStoped.onmouseleave = function(){
+		if(xzgb === false){
+			fStoped.classList.remove("ui-area-hover")
+			uiWrap.style.display = "none"
+		}
+	}
+	function xuanfw(obj,ojk,num,fnEnd){
+		for(var i=0;i<obj.length;i++){
+			obj[i].aaa = true
+			obj[i].index = i
+			obj[i].onclick = function(){
+				if(this.aaa === true){
+					for(var i=0;i<obj.length;i++){
+						obj[i].style.color = "#666"
+						ojk[i].style.backgroundPosition = "-16px 0px"
+						obj[i].aaa = true
+						//eee = []
+					}
+					this.style.color = "#e4393c"
+					ojk[this.index].style.backgroundPosition = "0px -16px"
+					this.aaa = false
+					ybService[num].classList.add("poliu")
+					moreService[num].style.display = "none"
+					ybService[num].firstElementChild.nextElementSibling.innerText = obj[this.index].childNodes[1].lastElementChild.previousElementSibling.innerText
+					ybService[num].firstElementChild.nextElementSibling.nextElementSibling.innerText = obj[this.index].childNodes[1].lastElementChild.innerText
+					ppp.push(obj[this.index].childNodes[1].lastElementChild.innerText)
+				}else{
+					this.style.color = "#666"
+					ojk[this.index].style.backgroundPosition = "-16px 0px"
+					this.aaa = true
+					ybService[num].classList.remove("poliu")
+					moreService[num].style.display = "none"
+					var ind = ppp.indexOf(obj[this.index].childNodes[1].lastElementChild.innerText)
+					ppp.splice(ind,1)	//然后删除数组中当前位置的字符串
+				}
+				if(fnEnd)fnEnd()
+			}
+		}
+	}
+	function lll(){
+		for(var i=0;i<oxuxian.length;i++){
+			if(ppp.length !== 0){
+				oxuxian[i].classList.add("uiyr-i")
+			}else{
+				oxuxian[i].classList.remove("uiyr-i")
+			}
+		}
+	}
+	xuanfw(eli,oi,0,function(){
+		lll()
+	})
+	xuanfw(ali,pi,1,function(){
+		lll()
+	})
+	xuanfw(rli,ui,2,function(){
+		lll()
+	})
+	xuanfw(tli,yi,3,function(){
+		lll()
+	})
+	for(var i=0;i<oxuxian.length;i++){
+		oxuxian[i].ooo = true
+		kkk = []
+		oxuxian[i].index = i
+		oxuxian[i].onclick = function(){
+			console.log(oxuxian[this.index].ooo === true)
+			if(oxuxian[this.index].ooo === true){
+				oxuxian[this.index].style.borderColor = "#e4393c"
+				odbt.style.display = "block"
+				oxuxian[this.index].ooo = false
+				kkk.push(oxuxian[this.index].innerText)
+			}else{
+				oxuxian[this.index].style.borderColor = "#ccc"
+				oxuxian[this.index].ooo = true
+				var inden = kkk.indexOf(oxuxian[this.index].innerText)
+				kkk.splice(inden,1)	//然后删除数组中当前位置的字符串
+			}
+			if(kkk.length === 0){
+				console.log(8)
+				odbt.style.display = "none"
+			}
+		}
+	}
+</script>
+</html>

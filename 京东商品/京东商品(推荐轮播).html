@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset = "utf-8">
+<title>京东商品(推荐轮播)</title>
+<style>
+*{margin:0;padding:0}
+ul{list-style:none}
+a{color:#666;text-decoration:none}
+i,em{font-style:normal}
+img{border:0;vertical-align:middle}
+body{font:12px/150% tahoma,arial,Microsoft YaHei,Hiragino Sans GB,"\5b8b\4f53",sans-serif;color:#666;
+-webkit-font-smoothing:antialiased}
+section,.cen{width:1210px;margin:0 auto}
+.clr{display:block;overflow:hidden;clear:both;height:0;line-height:0;font-size:0}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.p-price strong{color:#e4393c;font-size:14px;font-family:Verdana}
+.current{background:#e4393c;color:#fff;cursor:default}
+
+.track{width:210px;position:static;float:right;background:#fff;top:-10px;z-index:4}
+.track-tit{position:relative;line-height:50px;font-weight:400;text-align:center}
+.track-tit h3{position:relative;z-index:2;display:inline-block;background:#fff;padding:0 25px}
+.track-tit span{position:absolute;z-index:1;left:0;right:0;top:25px;height:1px;background:#f2f2f2}
+.track-con{position:relative;width:150px;height:376px;overflow:hidden;margin:0 auto}
+.track-con ul{position:absolute;width:150px;height:1128px;top:0;left:0;transition:1s}
+.track-con ul li{position:relative;float:left;padding:10px 0}
+.track-con ul li a{position:relative;display:inline-block}
+.track-con ul li a .con-name{position:absolute;left:0;right:0;top:126px;line-height:12px;padding:6px;
+background:rgba(255,255,255,.9);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.track-con ul li a .con-price{line-height:18px;text-align:center;color:#C81623}
+.track-more{padding-top:10px;text-align:center;clear:both}
+.track-more a{display:inline-block;width:28px;height:15px;margin:0 10px;overflow:hidden;
+background:url("imges/__sprites.png") no-repeat}
+.track-more .J-prev{background-position:-28px 0px}
+</style>
+<script type = "text/javascript" src = "js/Vue kaifa.js"></script>
+</head>
+<body>
+	<section>
+		<div class = "sectoes clearfix">
+			<div class = "track">
+				<div class = "brand-log">
+					<a href = ""><img width = "180" height = "60" :title = "titles" :src = "ktqjd"></a>
+				</div>
+				<div class = "track-tit">
+					<h3>店长推荐</h3>
+					<span></span>
+				</div>
+				<div class = "track-con">
+					<ul ref = "Jdyd">
+						<li v-for = "(tjs,index) in dztj" :key = 'index'>
+							<a :href = "tjs.hre" :title = "tjs.titl">
+								<img width = "150" height = "150" :alt = "tjs.titl" :src = "tjs.srcs">
+								<p class = "con-name">{{ tjs.titl }}</p>
+								<p class = "con-price">{{ tjs.price }}</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class = "track-more">
+					<a href = "JavaScript:;" class = "J-prev" @click = "Jprev"></a>
+					<a href = "JavaScript:;" class = "J-next" @click = "Jnext"></a>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+<script>
+	var sectoes = new Vue({
+		el : '.sectoes',
+		data : {
+			titles : '奥克斯空调京东自营旗舰店',
+			ktqjd : 'imges/5938fcbfN88055956.jpg',
+			dztj : [
+				{hre : '',titl : '奥克斯 (AUX) 正1.5匹 一级能效 变频冷暖 30秒速冷 窈窕智能壁挂式空调挂机(KFR-35GW/BpR3DYA1+1)',srcs : 'imges/5b61b89eN6ff816d0.jpg',price : '￥2888.00'},
+				{hre : '',titl : '奥克斯 (AUX) 2匹 二级能效 定速冷暖 节能 淑女立柜式智能空调柜机(KFR-51LW/R1PYA1+2)',srcs : 'imges/5b61b8ccN02e06074.jpg',price : '￥4599.00'},
+				{hre : '',titl : '奥克斯 (AUX) 3匹 一级能效 变频冷暖 智能 倾城空调柜机 京东微联APP控制(KFR-72LW/BpNHA2+1)',srcs : 'imges/5944c122N7d533d88.jpg',price : '￥6199.00'},
+				{hre : '',titl : '奥克斯 (AUX) 正1.5匹 一级能效 变频冷暖 黄金侠空调挂机 京东微联APP控制(KFR-35GW/BpTYC1+1)',srcs : 'imges/5b61b428N92d5a1c1.jpg',price : '￥2688.00'},
+				{hre : '',titl : '奥克斯 (AUX) 大1匹 一级能效 变频冷暖 30秒速冷 祥月智能壁挂式空调挂机(KFR-26GW/BpPYB1+1)',srcs : 'imges/5b61b4e9N40ea5d52.jpg',price : '￥3099.00'},
+				{hre : '',titl : '奥克斯 (AUX) 3匹 二级能效 变频冷暖 30秒速冷 淑女空调圆柱柜机 微信智控(KFR-72LW/BpPYA1+2)',srcs : 'imges/5b61b63cN2f79d49b.jpg',price : '￥5788.00'}
+			],
+			now : 0
+		},
+		methods : {
+			Jprev : function(){
+				var Jdyds = this.$refs.Jdyd
+				var oli = Jdyds.querySelectorAll('li')
+				var step = oli[0].offsetHeight*2
+				this.now ++
+				if(this.now >= this.dztj.length/2){
+					this.now = 0
+				}
+				Jdyds.style.top = -this.now*step + 'px'
+			},
+			Jnext : function(){
+				var Jdyds = this.$refs.Jdyd
+				var oli = Jdyds.querySelectorAll('li')
+				var step = oli[0].offsetHeight*2
+				this.now --
+				if(this.now < 0){
+					this.now = this.dztj.length/2-1
+				}
+				Jdyds.style.top = -this.now*step + 'px'
+			}
+		}
+	})
+</script>
+</html>

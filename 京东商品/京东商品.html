@@ -284,9 +284,9 @@ background:rgba(255,255,255,.9);overflow:hidden;white-space:nowrap;text-overflow
 .track-more a{display:inline-block;width:28px;height:15px;margin:0 10px;overflow:hidden;
 background:url("imges/__sprites.png") no-repeat}
 .track-more .J-prev{background-position:-28px 0px}
-.tab-min{position:relative;background:#f7f7f7;border:1px #eee solid;border-bottom:1px #e4393c solid}
-.tab-min ul li{position:relative;display:inline-block;font-family:"microsoft yahei";padding:10px 25px;
-font-size:14px;cursor:pointer}
+.tab-min,.detail .popbox-inner{position:relative;background:#f7f7f7;border:1px #eee solid;border-bottom:1px #e4393c solid}
+.tab-min ul li,.detail .popbox-inner ul li{position:relative;display:inline-block;
+font-family:"microsoft yahei";font-size:14px;padding:10px 25px;cursor:pointer}
 .tab-con{padding:20px 0 10px 0}
 .tab-con .master{float:left;width:134px;height:161px;padding:0 5px;position:relative}
 .tab-con .master .p-name,.suits .switchble .lh-wrap li .p-name{max-height:3em;min-height:36px;
@@ -315,7 +315,7 @@ padding:0 22px;background:#df3033;color:#fff}
 background:url("imges/equal.png") no-repeat}
 .aside{float:left;width:210px;margin-bottom:20px}
 .aside .popbox,.aside .sp-search,.aside .sp-categ,.aside .sp-popot,.aside .sp-gg{margin-bottom:15px}
-.popbox-fixed{position:fixed;top:0;z-index:30;width:210px}	/*控制置顶显示不随页面运动而消失*/
+.popbox-fixed,.detail .popbox-fixed{position:fixed;top:0;z-index:30;width:210px}	/*控制置顶显示不随页面运动而消失*/
 .aside .popbox .popbox-fixed .box-mc{display:none}
 .aside .popbox .popbox-fixed .box-mt .box-arrow{display:inline-block;width:7px;height:4px;
 background:url("imges/arr-close.png") no-repeat -3px -3px;float:right;margin-top:8px;margin-right:3px;
@@ -2077,7 +2077,7 @@ vertical-align:1px;background:url("imges/__spritees.png") no-repeat;background-p
 					</div>
 				</div>
 				<div class = "detail">
-					<div class = "tab-min">
+					<div class = "popbox-inner">
 						<ul>
 							<li class = "current">商品介绍</li>
 							<li>规格与包装</li>
@@ -2432,5 +2432,24 @@ vertical-align:1px;background:url("imges/__spritees.png") no-repeat;background-p
 			</div>
 		</div>
 	</section>
+<script>
+window.onscroll = function(){
+	var sectZt = document.querySelector(".sect-zt")
+	var popbox = document.querySelectorAll(".popbox-inner")
+	for(var i=0;i<popbox.length;i++){
+		var popboxTop = sectZt.offsetTop
+		var scrolls = document.documentElement.scrollTop || document.body.scrollTop
+		console.log(sectZt.offsetTop)
+		console.log(document.documentElement.scrollTop)
+		if(popboxTop <= scrolls){
+			popbox[i].classList.add("popbox-fixed")
+			console.log(1)
+		}else{
+			popbox[i].classList.remove("popbox-fixed")
+			console.log(2)
+		}
+	}
+}
+</script>
 </body>
 </html>

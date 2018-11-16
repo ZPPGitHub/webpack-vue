@@ -27,6 +27,7 @@ background:url("imges/loading.gif") no-repeat;overflow:hidden}
 .qu-img{position:absolute;top:0;left:0}
 .secoe-list{margin-bottom:18px;position:relative}
 .spec-list{position:relative;width:290px;height:54px;overflow:hidden;margin:0 auto}
+.secoe-list .spec-list .sp-lst{transform:translateX(-232px)}
 .spec-list ul{position:absolute;width:522px;height:54px;top:0;left:0;transition:1s}
 .spec-list ul li{margin:0 2px;float:left}
 .spec-list ul li img{border:2px #fff solid}
@@ -46,36 +47,29 @@ background:url("imges/prites.png") no-repeat}
 .info-fx{width:15px;height:14px;background-position:-45px -24px}
 .info-db{width:15px;height:16px;background-position:-30px -24px}
 </style>
+<script type = "text/javascript" src = "js/Vue kaifa.js"></script>
 </head>
 <body>
 	<section>
 		<div class = "sectoes clearfix">
 			<div class = "sect-tp">
-				<div class = "secoe-img">
-					<img width = "350" height = "350" alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" jqimg = "./imges/img-123/pokdjh/5ab48c55Na22e95ff.jpg" src = "./imges/img-123/hs21d/5ab48c55Na22e95ff.jpg"/>
-					<div class = "img-zzc" style = "display:none"></div>
+				<div @mousemove = coImg @mouseleave = seImg class = "secoe-img" ref = "id">
+					<img width = "350" height = "350" alt = "lbdt.jPnam" :jqimg = 'lbdt.jQMg' :src = 'lbdt.srcs'/>
+					<div class = "img-zzc" v-show = "showes"></div>
 				</div>
-				<div class = "quyu-img" style = "display:none">
-					<img class = "qu-img" src = "./imges/img-123/pokdjh/5ab48c55Na22e95ff.jpg"/>
+				<div class = "quyu-img" v-show = "showes" ref = "ids">
+					<img class = "qu-img" :src = "jQMg"/>
 				</div>
 				<div class = "secoe-list">
 					<div class = "spec-list">
-						<ul>
-							<li class = "img-hover"><img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" width = "50" height = "50" jqimg = "./imges/img-123/pokdjh/5ab48c55Na22e95ff.jpg" src = "./imges/img-123/hs21d/5ab48c55Na22e95ff.jpg"/></li>
-							<li><img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" width = "50" height = "50" jqimg = "./imges/img-123/pokdjh/5b84ddceNaefbc352.jpg" src = "./imges/img-123/hs21d/5b84ddceNaefbc352.jpg"/></li>
-							<li><img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" width = "50" height = "50" jqimg = "./imges/img-123/pokdjh/5b7f76d6N456fd6d2.jpg" src = "./imges/img-123/hs21d/5b7f76d6N456fd6d2.jpg"/></li>
-							<li><img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" width = "50" height = "50" jqimg = "./imges/img-123/pokdjh/5b7f7654N48e0911c.jpg" src = "./imges/img-123/hs21d/5b7f7654N48e0911c.jpg"/></li>
-							<li><img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" width = "50" height = "50" jqimg = "./imges/img-123/pokdjh/5b7f765aN74cdc7e3.jpg" src = "./imges/img-123/hs21d/5b7f765aN74cdc7e3.jpg"/></li>
-							<li><img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" width = "50" height = "50" jqimg = "./imges/img-123/pokdjh/5b7f76ffN2bd8f692.jpg" src = "./imges/img-123/hs21d/5b7f76ffN2bd8f692.jpg"/></li>
-							<li><img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" width = "50" height = "50" jqimg = "./imges/img-123/pokdjh/5b7f76e4N1d625128.jpg" src = "./imges/img-123/hs21d/5b7f76e4N1d625128.jpg"/></li>
-							<li><img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" width = "50" height = "50" jqimg = "./imges/img-123/pokdjh/5b7f7711N1bc0dae2.jpg" src = "./imges/img-123/hs21d/5b7f7711N1bc0dae2.jpg"/></li>
-							<li><img alt = "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)" width = "50" height = "50" jqimg = "./imges/img-123/pokdjh/5a619a48N644034da.jpg" src = "./imges/img-123/hs21d/5a619a48N644034da.jpg"/></li>
+						<ul :class = "{'sp-lst':ydxs === true}">
+							<li @mouseover = "changa(index,$event)" v-for = "(lat,index) in laste" :class = "{'img-hover' : cur === index}"><img :alt = "lat.pNames" width = "50" height = "50" :jqimg = "lat.jQmg" :src = "lat.pImgs"/></li>
 						</ul>
 					</div>
-					<a class = "arrow-prev" href = "javascript:;">
+					<a @click = ydycs class = "arrow-prev" href = "javascript:;">
 						<i class = "spec-prev"></i>
 					</a>
-					<a class = "arrow-next" href = "javascript:;">
+					<a @click = xyyd class = "arrow-next" href = "javascript:;">
 						<i class = "spec-next"></i>
 					</a>
 				</div>
@@ -103,80 +97,81 @@ background:url("imges/prites.png") no-repeat}
 	</section>
 
 <script>
-	var secoeImg = document.querySelector(".secoe-img")
-	var imgZzc = document.querySelector(".img-zzc")
-	var quyuImg = document.querySelector(".quyu-img")
-	var oimg = document.querySelector(".secoe-img img")
-	var specList = document.querySelector(".spec-list")
-	var oul = specList.getElementsByTagName("ul")[0]
-	var quImg = document.querySelector(".qu-img")
-	var oli = specList.querySelectorAll("li")
-	var arrowPrev = document.querySelector(".arrow-prev")
-	var arrowNext = document.querySelector(".arrow-next")
-	
-	specList.addEventListener('mousemove',function(e){		//更换图片及选项卡
-		if(e.target.tagName === "IMG"){
-			oli.forEach(function(item){
-				item.className = ''
-			})
-			e.target.parentNode.className = 'img-hover'
-			oimg.src = e.target.src;
-			oimg.setAttribute("jqimg",e.target.getAttribute("jqimg"))
-			quImg.src = e.target.getAttribute("jqimg")
+	var sectoes = new Vue({
+		el : ".sectoes",
+		data : {
+			laste : [
+				{pNames:"奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)",jQmg:"./imges/img-123/pokdjh/5ab48c55Na22e95ff.jpg",pImgs:"./imges/img-123/hs21d/5ab48c55Na22e95ff.jpg"},
+				{pNames:"奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)",jQmg:"./imges/img-123/pokdjh/5b84ddceNaefbc352.jpg",pImgs:"./imges/img-123/hs21d/5b84ddceNaefbc352.jpg"},
+				{pNames:"奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)",jQmg:"./imges/img-123/pokdjh/5b7f76d6N456fd6d2.jpg",pImgs:"./imges/img-123/hs21d/5b7f76d6N456fd6d2.jpg"},
+				{pNames:"奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)",jQmg:"./imges/img-123/pokdjh/5b7f7654N48e0911c.jpg",pImgs:"./imges/img-123/hs21d/5b7f7654N48e0911c.jpg"},
+				{pNames:"奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)",jQmg:"./imges/img-123/pokdjh/5b7f765aN74cdc7e3.jpg",pImgs:"./imges/img-123/hs21d/5b7f765aN74cdc7e3.jpg"},
+				{pNames:"奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)",jQmg:"./imges/img-123/pokdjh/5b7f76ffN2bd8f692.jpg",pImgs:"./imges/img-123/hs21d/5b7f76ffN2bd8f692.jpg"},
+				{pNames:"奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)",jQmg:"./imges/img-123/pokdjh/5b7f76e4N1d625128.jpg",pImgs:"./imges/img-123/hs21d/5b7f76e4N1d625128.jpg"},
+				{pNames:"奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)",jQmg:"./imges/img-123/pokdjh/5b7f7711N1bc0dae2.jpg",pImgs:"./imges/img-123/hs21d/5b7f7711N1bc0dae2.jpg"},
+				{pNames:"奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)",jQmg:"./imges/img-123/pokdjh/5a619a48N644034da.jpg",pImgs:"./imges/img-123/hs21d/5a619a48N644034da.jpg"}
+			],
+			cur : 0,
+			lbdt : jPnam : "奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)",srcs : "./imges/img-123/hs21d/5ab48c55Na22e95ff.jpg",jQmg : "./imges/img-123/pokdjh/5ab48c55Na22e95ff.jpg",
+			srcs:"./imges/img-123/hs21d/5ab48c55Na22e95ff.jpg",
+			jQMg:"./imges/img-123/pokdjh/5ab48c55Na22e95ff.jpg",
+			ydxs : false,
+			showes : false,
+			cover : null,
+			secoeImg : null,
+			quyuImg : null,
+			quImg : null
+		},
+		methods : {
+			changa : function(i,event){
+				this.srcs = event.target.src
+				this.jQMg = event.target.getAttribute("jqimg")
+				this.cur = i
+			},
+			xyyd : function(){
+				this.ydxs = true
+			},
+			ydycs : function(){
+				this.ydxs = false
+			},
+			coImg : function(e){
+				this.showes = true
+				let secoe = this.$refs.id		//鼠标哪个div里面运动  并以它为父元素
+					//$refs方法是vue用来找寻某个div的方法  与之对应的是template里面的ref属性
+				this.secoeImg = secoe			//传给data 变成值
+				this.cover = secoe.querySelector(".img-zzc")	//获取它的子元素
+				X = e.clientX - this.secoeImg.getBoundingClientRect().left - this.cover.offsetWidth/2
+					//鼠标到页边的距离 - 遮罩层到浏览器左边的距离 - 遮罩层宽的一半
+					//offsetleft和offsettop是以最近的给了position定位的div为父元素 得到的值也就是到父元素的值   getBoundingClientRect()方法是不管中间有多少个position直接以到body为父元素
+				Y = e.clientY - this.secoeImg.getBoundingClientRect().top - this.cover.offsetHeight/2
+				if(X<0){
+					X = 0
+				}else if(X>this.secoeImg.clientWidth - this.cover.clientWidth){
+					X = this.secoeImg.clientWidth - this.cover.clientWidth
+				}
+				if(Y<0){
+					Y = 0
+				}else if(Y>this.secoeImg.clientHeight - this.cover.clientHeight){
+					Y = this.secoeImg.clientHeight - this.cover.clientHeight
+				}
+				this.cover.style.left = X + 'px'
+				this.cover.style.top = Y + 'px'
+
+				var w = X / this.secoeImg.clientWidth		//获取大图和小图的宽高比例
+				var h = Y / this.secoeImg.clientHeight
+
+				let yuImg = this.$refs.ids 
+				this.quyuImg = yuImg
+				this.quImg = yuImg.querySelector(".qu-img")
+
+				this.quImg.style.left = -this.quImg.clientWidth*w + 'px'
+				this.quImg.style.top = -this.quImg.clientHeight*h + 'px'
+			},
+			seImg : function(){
+				this.showes = false
+			}
 		}
 	})
-
-	arrowPrev.onclick = function(){
-		if(oul.offsetLeft === 0){
-			return false
-		}else{
-			oul.style.left = 0 + "px"
-		}
-	}
-	arrowNext.onclick = function(){
-		if(oul.offsetLeft === -232){
-			return false
-		}else{
-			oul.style.left = -232 + "px"
-		}
-	}
-
-	secoeImg.onmousemove = function(e){
-		var e = e || window.event
-		imgZzc.style.display = "block"
-		quyuImg.style.display = "block"
-
-		console.log(e.clientY - (secoeImg.offsetTop+12))
-
-		var yycl = e.clientX - secoeImg.getBoundingCientRect().left - imgZzc.offsetWidth/2	//阴影层到secoeImg左边位置等于鼠标在X轴的位置减去阴影层的宽
-		var yyct = e.clientY - secoeImg.getBoundingCientRect().top - imgZzc.offsetHeight/2	//阴影层到secoeImg顶部位置等于鼠标在X轴的位置减去阴影层的高
-
-		if(yycl<0){		//如果阴影层到secoeImg左边位置小于0
-			yycl = 0
-		}else if(yycl>secoeImg.clientWidth - imgZzc.clientWidth){	//如果大于secoeImg宽-imgZzc宽
-			yycl = secoeImg.clientWidth - imgZzc.clientWidth
-		}
-		if(yyct<0){
-			yyct = 0
-		}else if(yyct>secoeImg.clientHeight - imgZzc.clientHeight){
-			yyct = secoeImg.clientHeight - imgZzc.clientHeight
-		}
-
-		imgZzc.style.left = yycl + 'px';
-		imgZzc.style.top = yyct + 'px'
-
-		//获取图片的比例
-		var w = yycl / secoeImg.clientWidth
-		var h = yyct / secoeImg.clientHeight
-
-		//获取大图的范围
-		quImg.style.left = -quImg.clientWidth*w + "px"
-		quImg.style.top = -quImg.clientHeight*h + "px"
-	}
-	secoeImg.onmouseout = function(){
-		imgZzc.style.display = 'none'
-		quyuImg.style.display = 'none'
-	}
 </script>
 </body>
 </html>

@@ -127,6 +127,8 @@ background:url("imges/prites.png") no-repeat}
 .info-gz{width:14px;height:13px;background-position:-44px -40px}
 .info-fx{width:15px;height:14px;background-position:-45px -24px}
 .info-db{width:15px;height:16px;background-position:-30px -24px}
+
+
 .dprn{width:590px;float:left;margin-left:30px;min-height:479px;margin-right:24px;}
 .dpsp-pm{padding:10px 0 5px 0}
 .dpsp-pm .pm-name{font-size:16px;font-weight:700;line-height:28px;margin-bottom:5px}
@@ -265,6 +267,8 @@ text-align:center;overflow:hidden;background:#f1f1f1;border:1px #ccc solid}
 .local-tips,.summary-tips{margin-bottom:5px}
 .local-tips li,.summary-tips li{float:left;margin-right:15px;font-family:simsun;color:#999}
 .local-tips li a{color:#005aa0}
+
+
 .track{width:210px;position:static;float:right;background:#fff;top:-10px;z-index:4}
 .track-tit{position:relative;line-height:50px;font-weight:400;text-align:center}
 .track-tit h3{position:relative;z-index:2;display:inline-block;background:#fff;padding:0 25px}
@@ -280,9 +284,9 @@ background:rgba(255,255,255,.9);overflow:hidden;white-space:nowrap;text-overflow
 .track-more a{display:inline-block;width:28px;height:15px;margin:0 10px;overflow:hidden;
 background:url("imges/__sprites.png") no-repeat}
 .track-more .J-prev{background-position:-28px 0px}
-.tab-min{position:relative;background:#f7f7f7;border:1px #eee solid;border-bottom:1px #e4393c solid}
-.tab-min ul li{position:relative;display:inline-block;font-family:"microsoft yahei";padding:10px 25px;
-font-size:14px;cursor:pointer}
+.tab-min,.detail .popbox-inner{position:relative;background:#f7f7f7;border:1px #eee solid;border-bottom:1px #e4393c solid}
+.tab-min ul li,.detail .popbox-inner ul li{position:relative;display:inline-block;
+font-family:"microsoft yahei";font-size:14px;padding:10px 25px;cursor:pointer}
 .tab-con{padding:20px 0 10px 0}
 .tab-con .master{float:left;width:134px;height:161px;padding:0 5px;position:relative}
 .tab-con .master .p-name,.suits .switchble .lh-wrap li .p-name{max-height:3em;min-height:36px;
@@ -2073,7 +2077,7 @@ vertical-align:1px;background:url("imges/__spritees.png") no-repeat;background-p
 					</div>
 				</div>
 				<div class = "detail">
-					<div class = "tab-min">
+					<div class = "popbox-inner">
 						<ul>
 							<li class = "current">商品介绍</li>
 							<li>规格与包装</li>
@@ -2428,5 +2432,24 @@ vertical-align:1px;background:url("imges/__spritees.png") no-repeat;background-p
 			</div>
 		</div>
 	</section>
+<script>
+window.onscroll = function(){
+	var sectZt = document.querySelector(".sect-zt")
+	var popbox = document.querySelectorAll(".popbox-inner")
+	for(var i=0;i<popbox.length;i++){
+		var popboxTop = sectZt.offsetTop
+		var scrolls = document.documentElement.scrollTop || document.body.scrollTop
+		console.log(sectZt.offsetTop)
+		console.log(document.documentElement.scrollTop)
+		if(popboxTop <= scrolls){
+			popbox[i].classList.add("popbox-fixed")
+			console.log(1)
+		}else{
+			popbox[i].classList.remove("popbox-fixed")
+			console.log(2)
+		}
+	}
+}
+</script>
 </body>
 </html>

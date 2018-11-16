@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>京东登录</title>
+<link type = "text/css" rel = "stylesheet" href = "font/iconfont.css"/>
+<style>
+*{margin:0;padding:0}
+body{font:12px Arial,Verdana,"\5b8b\4f53"}
+ul{list-style:none}
+a{color:#999;text-decoration:none;}
+#passport{position:relative}
+header{width:990px;margin:0 auto}
+.logo{width:300px;height:60px;position:relative;margin:10px 0}
+.logo b{display:block;width:110px;height:40px;background:url("imges/截图01.png") no-repeat -188px -14px;
+position:absolute;bottom:0;right:5px}
+header .quest:last-of-type{position:relative;float:right;bottom:30px;font-size:13px}
+.quest span{display:inline-block;width:18px;height:14px;background:url("imges/截图02.png") no-repeat -2px -2px;
+vertical-align:middle;margin:-1px 5px 0 5px}
+.quest:hover{text-decoration:underline;color:#e4393c}
+section{clear:both}
+.network{width:100%;background:#ffebd7;padding:10px 0;font-size:13px;color:#999;display:flex;justify-content:center}
+.network .icon{font-size:25px;line-height:18px}
+.policy{color:#000;}
+.policy:hover{text-decoration:underline;}
+.wrap{height:475px;background:#e52645}
+.wall{width:990px;height:475px;margin:0 auto;background:url("imges/截图03.png") no-repeat;position:relative}
+.forms{width:346px;background:#fff;position:absolute;right:0;top:10px}
+.lander{display:flex;height:54px;border-bottom:1px #ebebeb solid;font-size:18px;text-align:center;line-height:54px}
+.lander p{width:173px;}
+.lander p a{padding:0 49px;}
+.lander p:first-of-type a{border-right:1px #ebebeb solid;}
+.landing{color:#e4393c;font-weight:bold}
+.lander p a:hover{color:#e4393c;font-weight:bold}
+.landers{position:relative;border-bottom:1px #ebebeb solid;}
+.landers-code{height:284px;}
+.two-dimension{display:flex;position:relative;top:18px;height:165px}
+.dimension-zzc{width:173px;height:165px;position:absolute;left:90px}
+.zzc{width:170px;height:163px;background:rgba(0,0,0,.7);position:absolute;top:1px;left:1px;text-align:center;display:none}
+.zzc p{color:#fff;margin-top:50px}
+.refresh{display:inline-block;width:80px;height:30px;border:0;outline:0;background:#e4393c;color:#fff;font-size:16px;margin-top:20px;cursor:pointer;line-height:30px}
+.two-dimension .sj{position:absolute;width:152px;height:172px;background:url("imges/截图05.png") no-repeat 7px -2px;right:0;display:none}
+.account-code{width:100%;height:96px;position:absolute;bottom:0;font-size:13px;line-height:20px}
+.account-code p{text-align:center;margin-top:15px}
+.account-code p a{color:#e4393c}
+.account-icon{display:flex;justify-content:center;color:#919191;}
+.account-icon .icon{font-size:25px;color:#cdcdcd;vertical-align:sub;margin-left:15px}
+.masked-code{position:relative;padding-bottom:20px;display:none}
+.Error{width:304px;min-height:30px;background:rgba(200,0,0,.2);margin:5px auto;border:1px rgba(130,0,0,.3) solid;visibility:hidden;color:#e4393c}
+.masked-code ul{margin-top:5px;}
+.masked-code ul li{width:304px;height:38px;margin:0 auto;position:relative;border:1px #b3b3b3 solid;
+margin-bottom:20px;line-height:38px}
+.masked-code label{display:inline-block;width:38px;height:38px;background:#e0e0e0;position:absolute;border-right:1px  #b3b3b3 solid;text-align:center;color:#b3b3b3;}
+.masked-code .name{width:254px;position:absolute;overflow:hidden;font-size:15px;right:0;top:12px;border:0;outline:0}
+.forget{width:304px;text-align:right;margin:0 auto;font-size:12px;margin-bottom:20px}
+.forget a{color:#000}
+.forget a:hover{text-decoration:underline;color:#e52645}
+.masked-code .yan{width:306px;height:34px;text-align:center;background:#e72341;border:0;outline:0;font-size:23px;
+margin:0 0 10px 20px;color:#fff;cursor:pointer;line-height:34px}
+.other{padding:0 20px;display:flex;position:relative;line-height:50px;background:#fcfcfc}
+.other .Tencent{display:flex;font-size:12px}
+.Tencent .icon{font-size:17px;vertical-align:sub;}
+.Tencent a{color:#666}
+.Tencent a span:hover{text-decoration:underline;color:#e52645}
+.Tencent p{color:#b3b3b3;margin:0 10px}
+.registry{position:absolute;right:20px;font-size:14px}
+.registry a{color:#e72341}
+.registry .icon{font-size:20px;vertical-align:sub;margin-right:3px}
+.registry span:hover{text-decoration:underline}
+footer{position:relative;text-align:center;color:#666}
+.external ul{display:flex;justify-content:center;margin-top:22px;margin-bottom:15px}
+.external ul li{margin:0 7px}
+.external ul a{color:#666}
+.external ul a:hover{text-decoration:underline;;color:#e52645}
+</style>
+</head>
+<body>
+<div id = "passport">
+	<header>
+		<div class = "logo">
+			<a href = ""><img src = "imges/logo-201305-b.png"/></a>
+			<b></b>
+		</div>
+		<a class = "quest" href = ""><span></span>登录页面, 调查问卷</a>
+	</header>
+	<section>
+		<div class = "network">
+			<i class = "icon iconfont">&#xe8e5;</i>
+			<p>依据《网络安全法》, 为保障您的账户安全和正常使用, 请尽快完成手机号验证! 新版<a class = "policy" href = "">《京东隐私政策》</a>以上线, 将更有利于保护您的个人隐私.</p>
+		</div>
+		<div class = "wrap">
+			<div class = "wall">
+				<form action = " " method = "get" onsubmit = "return checkfrom()">
+					<div class = "forms">
+						<div class = "network">
+							<i class = "icon iconfont">&#xe8e5;</i>
+							<p>京东不会以任何理由要求您转账汇款, 谨防诈骗.</p>
+						</div>
+						<div class = "lander">
+							<p class = "code-landing"><a class = "landing" href = "javascript:void(0)">扫码登录</a></p>
+							<p class = "account-landing"><a href = "javascript:void(1)">账户登录</a></p>
+						</div>
+						<div class = "landers">
+							<div class = "landers-code">
+								<div class = "two-dimension">
+									<div class = "dimension-zzc">
+										<p><img src = "imges/截图04.png"/></p>
+										<div class = "zzc">
+											<p>二维码已失效</p>
+											<div class = "refresh">刷新</div>
+										</div>
+									</div>
+									<p class = "sj"></p>
+								</div>
+								<div class = "account-code">
+									<p>打开<a href = "">手机京东</a>&nbsp;&nbsp;&nbsp;&nbsp;扫描二维码</p>
+									<div class = "account-icon">
+										<p><i class = "icon iconfont">&#xe8cc;</i>&nbsp;&nbsp;免输入</p>
+										<p><i class = "icon iconfont">&#xe601;</i>&nbsp;&nbsp;更快</p>
+										<p><i class = "icon iconfont">&#xe65e;</i>&nbsp;&nbsp;更安全</p>
+									</div>
+								</div>
+							</div>
+							<div class = "masked-code">
+								<div class = "Error">
+									<i class = "icon iconfont"></i>
+									<p class = "shi"></p>
+								</div>
+								<ul>
+									<li>
+										<label for = "name"><i class = "icon iconfont">&#xe600;</i></label>
+										<input id = "name" class = "name" type = "text" placeholder = "邮箱/用户名/已验证手机" onblur = "blur()"/>
+										<span></span>
+									</li>
+									<li>
+										<label for = "password"><i class = "icon iconfont">&#xe640;</i></label>
+										<input id = "password" class = "name" type = "password" placeholder = "密码"/>
+										<span></span>
+									</li>
+								</ul>
+								<p class = "forget"><a href = "">忘记密码</a></p>
+								<button class = "yan" onclick = "checkfrom()">登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+							</div>
+						</div>
+						<div class = "other">
+							<div class = "Tencent">
+								<a href = ""><i class = "icon iconfont">&#xe61c;</i>&nbsp;&nbsp;<span>QQ</span></a>
+								<p> | </p>
+								<a href = ""><i class = "icon iconfont">&#xe652;</i>&nbsp;&nbsp;<span>微信</span></a>
+							</div>
+							<div class = "registry">
+								<a href = ""><i class = "icon iconfont">&#xe717;</i><span>立即注册</span></a>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class = "external">
+			<ul>
+				<li><a href = "">关于我们</a></li>
+				<li>|</li>
+				<li><a href = "">联系我们</a></li>
+				<li>|</li>
+				<li><a href = "">人才招聘</a></li>
+				<li>|</li>
+				<li><a href = "">商家入驻</a></li>
+				<li>|</li>
+				<li><a href = "">广告服务</a></li>
+				<li>|</li>
+				<li><a href = "">手机京东</a></li>
+				<li>|</li>
+				<li><a href = "">友情链接</a></li>
+				<li>|</li>
+				<li><a href = "">销售联盟</a></li>
+				<li>|</li>
+				<li><a href = "">京东社区</a></li>
+				<li>|</li>
+				<li><a href = "">京东公益</a></li>
+				<li>|</li>
+				<li><a href = "">English Site</a></li>
+			</ul>
+		</div>
+		<p>Copyright@2004-2018 京东JD.com版权所有</p>
+	</footer>
+</div>
+
+<script>
+var olandersCode = document.querySelector(".landers-code")
+var twoDimension = olandersCode.querySelector(".two-dimension")
+var odimensionZzc = document.querySelector(".dimension-zzc")
+var osj = document.querySelector(".sj")
+var maskedCode = document.querySelector(".masked-code")
+var oa = document.querySelector(".lander").querySelectorAll("a")
+var op = document.querySelector(".lander").querySelectorAll("p")
+var ozzc = document.querySelector(".zzc")
+var orefresh = ozzc.querySelector(".refresh")
+var codeLanding = document.querySelector(".code-landing")
+var accountLanding = document.querySelector(".account-landing")
+var oError = document.querySelector(".Error")
+var oshi = document.querySelector(".shi")
+var oyan = document.querySelector(".yan")
+var oname = document.getElementById("name")
+var opassword = document.getElementById("password")
+
+for(var i=0;i<op.length;i++){
+	for(var i=0;i<oa.length;i++){
+		op[0].onclick = function(){
+			for(var i=0;i<oa.length;i++){
+				oa[i].className = '';//先清空所有类名
+			}
+			olandersCode.style.display = "block"
+			maskedCode.style.display = "none"
+			oa[0].className = 'landing';//先清空所有类名
+		}
+		op[1].onclick = function(){
+			for(var i=0;i<oa.length;i++){
+				oa[i].className = '';//先清空所有类名
+			}
+			maskedCode.style.display = "block"
+			olandersCode.style.display = "none"
+			oa[1].className = 'landing';//先清空所有类名
+		}
+	}
+}
+
+function startMove(obj,attr,iTarget, fnEnd){		//简单的运动框架
+	clearInterval(obj.timer);
+	obj.timer=setInterval(function (){
+		var cur=0;
+		cur=parseInt(getComputedStyle(obj, false)[attr]);
+		var speed=(iTarget-cur)/6;
+		speed=speed>0?Math.ceil(speed):Math.floor(speed);
+		obj.style[attr]=cur+speed+'px';
+		if(cur === iTarget){
+			clearInterval(obj.timer);
+			if(fnEnd)fnEnd();
+		}
+	},20)
+}
+
+window.onload = function(){
+	startMove(odimensionZzc,"left",25,function(){
+		osj.style.display = "block"
+
+	})
+	function gb(){
+			osj.style.display = "none"
+			startMove(odimensionZzc,"left",90,function(){
+		})
+	}
+	setTimeout(gb,5000)
+}
+twoDimension.onmouseenter = function(){
+	startMove(odimensionZzc,"left",25,function(){
+		osj.style.display = "block";
+	})
+}
+twoDimension.onmouseleave = function(){
+	osj.style.display = "none";
+	startMove(odimensionZzc,"left",90)
+}
+
+timer = setInterval(function (){
+	ozzc.style.display = "block"
+	twoDimension.onmouseenter = function(){
+		return false
+	}
+},10000)
+orefresh.onclick = function(){
+	ozzc.style.display = "none"
+	twoDimension.onmouseenter = function(){
+		startMove(odimensionZzc,"left",25,function(){
+			osj.style.display = "block"
+		})
+	}
+	twoDimension.onmouseleave = function(){
+		osj.style.display = "none"
+		startMove(odimensionZzc,"left",90)
+	}
+}
+
+
+function checkfrom(){
+	var re = /^[a-zA-Z]\w{3,15}$/;
+	var reg = /^1\d{10}$/;
+	var regs = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/
+	if(re.test(oname.value)||reg.test(oname.value)||regs.test(oname.value)){
+		if(opassword.value == ""){
+			oError.style.visibility = "visible";
+			oshi.innerHTML = "请输入密码";
+			return false;
+		}
+	}else if(oname.value == ""&&opassword.value == ""){
+		oError.style.visibility = "visible";
+		oshi.innerHTML = "请输入账户名和密码";
+		return false
+	}else{
+		oError.style.visibility = "visible";
+		oshi.innerHTML = "请输入正确的用户名";
+		return false;
+	}
+
+	return true;
+}
+</script>
+</body>
+</html>

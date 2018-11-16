@@ -1,0 +1,118 @@
+{
+	"listed" :[
+		{"width" : "419.9px","height" : "91px","left" : "373.7px","top" : "3.3px","hre" : "#"},
+		{"width" : "378.3px","height" : "96px","left" : "842.1px","top" : "3.3px","hre" : "#"},
+		{"width" : "311.9px","height" : "96px","left" : "1245.7px","top" : "6.6px","hre" : "#"}
+	],
+	"list" : [
+		{"opl" : "首页","opi" : []},
+		{"opl" : "全部分类","opi" : [{"sp" : "变频空调","pishu" : ["1匹","1.5匹","2匹","3匹"]},{"sp" : "定速空调","pishu" : ["1匹","1.5匹","2匹","3匹"]},{"sp" : "一级能效","pishu" : ["挂机","柜机"]},{"sp" : "二级能效","pishu" : ["挂机","柜机"]},{"sp" : "智能空调","pishu" : ["挂机","柜机"]},{"sp" : "艺术化空调","pishu" : []},{"sp" : "单冷空调","pishu" : []}]},
+		{"opl" : "活动专区","opi" : []},
+		{"opl" : "镇店单品","opi" : []},
+		{"opl" : "企业采购","opi" : []},
+		{"opl" : "品牌故事","opi" : []},
+		{"opl" : "售后","opi" : []},
+		{"opl" : "获奖名单","opi" : []},
+		{"opl" : "购物指南","opi" : []}
+	],
+	"listesd" : [
+		{"jdlj" : "家用电器","jdtjlj" : ""},
+		{"jdlj" : "大家电","jdtjlj" : ""},
+		{"jdlj" : "空调","jdtjlj" : ""},
+		{"jdlj" : "","jdtjlj" : [{"sp" : "奥克斯 ( AUX )","tjsp":[],"qtpp" : []},{"sp" : "","tjsp": [{"pimg" : "../static/jd-head-lj/5ab48ea4N4368d115.jpg","pname" : "奥克斯 (AUX) 正1.5匹 一级能效 变频冷暖 黄金侠壁挂式空调挂机 微联控制 (KFR-35GW/BpTYC1+1)","pprice" : "¥2799.00"},{"pimg" : "../static/jd-head-lj/5944c122N7d533d88.jpg","pname" : "奥克斯 (AUX) 正1.5匹 一级能效 变频冷暖 黄金侠壁挂式空调挂机 微联控制 (KFR-35GW/BpTYC1+1)","pprice" : "¥6399.00"},{"pimg" : "../static/jd-head-lj/5b61b3c7N3400c60e.jpg","pname" : "奥克斯 (AUX) 正1.5匹 一级能效 变频冷暖 黄金侠壁挂式空调挂机 微联控制 (KFR-35GW/BpTYC1+1)","pprice" : "¥2299.00"}],"qtpp" : ["奥克斯 ( AUX )","美的 ( Midea )","格力 ( GREE )","TCL","科龙 ( KELON )","长虹 ( CHANGHONG )","志高 ( CHIGO )","YAIR","海尔 ( Haier )","更多>>"]}]},
+		{"jdlj" : "奥克斯KFR-25GW/NFW+3","jdtjlj" : ""}
+	],
+	"pmie" : [
+		{"jdqj" : "奥克斯空调自营旗舰店","dperm" : ""},
+		{"jdqj" : "联系客服","dperm" : ""},
+		{"jdqj" : "关注店铺","dperm" : ""},
+		{"jdqj" : "","dperm" : "../static/jd-head-lj/截图04.png"}
+	],
+	"laste" : [
+		{"pNames":"奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)","jQmg":"../static/img-123/pokdjh/5ab48c55Na22e95ff.jpg","pImgs":"../static/img-123/hs21d/5ab48c55Na22e95ff.jpg"},
+		{"pNames":"奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)","jQmg":"../static/img-123/pokdjh/5b84ddceNaefbc352.jpg","pImgs":"../static/img-123/hs21d/5b84ddceNaefbc352.jpg"},
+		{"pNames":"奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)","jQmg":"../static/img-123/pokdjh/5b7f76d6N456fd6d2.jpg","pImgs":"../static/img-123/hs21d/5b7f76d6N456fd6d2.jpg"},
+		{"pNames":"奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)","jQmg":"../static/img-123/pokdjh/5b7f7654N48e0911c.jpg","pImgs":"../static/img-123/hs21d/5b7f7654N48e0911c.jpg"},
+		{"pNames":"奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)","jQmg":"../static/img-123/pokdjh/5b7f765aN74cdc7e3.jpg","pImgs":"../static/img-123/hs21d/5b7f765aN74cdc7e3.jpg"},
+		{"pNames":"奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)","jQmg":"../static/img-123/pokdjh/5b7f76ffN2bd8f692.jpg","pImgs":"../static/img-123/hs21d/5b7f76ffN2bd8f692.jpg"},
+		{"pNames":"奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)","jQmg":"../static/img-123/pokdjh/5b7f76e4N1d625128.jpg","pImgs":"../static/img-123/hs21d/5b7f76e4N1d625128.jpg"},
+		{"pNames":"奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)","jQmg":"../static/img-123/pokdjh/5b7f7711N1bc0dae2.jpg","pImgs":"../static/img-123/hs21d/5b7f7711N1bc0dae2.jpg"},
+		{"pNames":"奥克斯 (AUX) 正1匹 冷暖 定速 制冷 壁挂式空调挂机(KFR-25GW/NFW+3)","jQmg":"../static/img-123/pokdjh/5a619a48N644034da.jpg","pImgs":"../static/img-123/hs21d/5a619a48N644034da.jpg"}
+	],
+	"ktps": [
+		{"pImg" : "../static/img-123/hs21d/5ab48c55Na22e95ff.jpg","pName" : "正1匹","daFl" : "01"},
+		{"pImg" : "../static/img-123/hs21d/5ab48c55Na22e95ff.jpg","pName" : "小1.5匹","daFl" : "02"},
+		{"pImg" : "../static/img-123/hs21d/5ab48c55Na22e95ff.jpg","pName" : "正1.5匹","daFl" : "03"}
+	],
+	"zzyw" : [
+		{"bq" : true,"zznr" : "家电回收,以旧换新","bqsm" : "免费提供旧机回收服务,完成回收服务后获得京东E卡或京东钱包现金再次用于京东消费."}
+	],
+	"ppp" : ["京东安装","家电净洗","99元免基础运费"],
+	"fhf" : "京东",
+	"sdm" : "奥克斯空调京东自营旗舰店",
+	"hpzl" : "不计重量",
+	"ktqjd" : "../static/jd-tjlb/5938fcbfN88055956.jpg",
+	"dztj" : [
+		{"hre" : "","titl" : "奥克斯 (AUX) 正1.5匹 一级能效 变频冷暖 30秒速冷 窈窕智能壁挂式空调挂机(KFR-35GW/BpR3DYA1+1)","srcs" : "../static/jd-tjlb/5b61b89eN6ff816d0.jpg","price" : "￥2888.00"},
+		{"hre" : "","titl" : "奥克斯 (AUX) 2匹 二级能效 定速冷暖 节能 淑女立柜式智能空调柜机(KFR-51LW/R1PYA1+2)","srcs" : "../static/jd-tjlb/5b61b8ccN02e06074.jpg","price" : "￥4599.00"},
+		{"hre" : "","titl" : "奥克斯 (AUX) 3匹 一级能效 变频冷暖 智能 倾城空调柜机 京东微联APP控制(KFR-72LW/BpNHA2+1)","srcs" : "../static/jd-tjlb/5944c122N7d533d88.jpg","price" : "￥6199.00"},
+		{"hre" : "","titl" : "奥克斯 (AUX) 正1.5匹 一级能效 变频冷暖 黄金侠空调挂机 京东微联APP控制(KFR-35GW/BpTYC1+1)","srcs" : "../static/jd-tjlb/5b61b428N92d5a1c1.jpg","price" : "￥2688.00"},
+		{"hre" : "","titl" : "奥克斯 (AUX) 大1匹 一级能效 变频冷暖 30秒速冷 祥月智能壁挂式空调挂机(KFR-26GW/BpPYB1+1)","srcs" : "../static/jd-tjlb/5b61b4e9N40ea5d52.jpg","price" : "￥3099.00"},
+		{"hre" : "","titl" : "奥克斯 (AUX) 3匹 二级能效 变频冷暖 30秒速冷 淑女空调圆柱柜机 微信智控(KFR-72LW/BpPYA1+2)","srcs" : "../static/jd-tjlb/5b61b63cN2f79d49b.jpg","price" : "￥5788.00"}
+	],
+	"tabMin" : ["人气配件","空调挡板","空调罩","空调底座","空调外机架","空调其他配件"],
+	"ktpjs" : [
+		{
+			"tjpj" : [
+				{"srces" : "","pImgs" : "../static/img-pj/img-df/5b502abeNe54e0f42.jpg","pNames" : "七角板 空调挡风板 空调出风口挡风罩 风向长度可调导风板挡板 防直吹空调挡风板 适用70-80cm 北欧风 灰色","pRices" : "59.00","labs" : "labA"},
+				{"srces" : "","pImgs" : "../static/img-pj/img-df/5b502abeNe54e0f42.jpg","pNames" : "七角板 Q-L6006 欧式田园风空调罩蕾丝小清新防尘罩简洁挡灰家用空调帘 适用1-1.5p 蓝白色","pRices" : "69.00","labs" : "labB"},
+				{"srces" : "","pImgs" : "../static/img-pj/img-dizuo/5b26077bN5887fb1d.jpg","pNames" : "贝石 (beishi) 柜式圆柱形空调底座托美的格力科龙志高海尔奥克斯扬子变频空调托架防潮DY-8J (8大地脚)","pRices" : "99.00","labs" : "labC"},
+				{"srces" : "","pImgs" : "../static/img-pj/img-waijijia/5b18e8dbN5d3ac4af.jpg","pNames" : "嘉沛 AC-15PRO 空调架子外机架 加厚不锈钢室外空调支架托架配件 1p-1.5匹 送膨胀螺丝 海尔格力奥克斯等适用","pRices" : "99.00","labs" : "labD"},
+				{"srces" : "","pImgs" : "../static/img-pj/img-qtpj/5b0f8df6N42aaaec3.jpg","pNames" : "美的 (Midea) 空调辅材费","pRices" : "9.90","labs" : "labE"}
+			]
+		},
+		{
+			"tjpj" : [
+				{"srces" : "","pImgs" : "../static/img-pj/img-df/5b502abeNe54e0f42.jpg","pNames" : "七角板 空调挡风板 空调出风口挡风罩 风向长度可调导风板挡板 防直吹空调挡风板 适用70-80cm 北欧风 灰色","pRices" : "59.00","labs" : "labF"},
+				{"srces" : "","pImgs" : "../static/img-pj/img-df/5b457822N8bfb12d3.jpg","pNames" : "科锐迩 空调挡风板 防直吹 海尔 美的 奥克斯 格力空调通用","pRices" : "47.90","labs" : "labG"},
+				{"srces" : "","pImgs" : "../static/img-pj/img-df/5b285c9bN43eae262.jpg","pNames" : "嘉沛 AC-1352Pro 空调挡风罩 防直吹 美的格力科龙志高海尔奥克斯扬子变频空调","pRices" : "79.00","labs" : "labH"},
+				{"srces" : "","pImgs" : "../static/img-pj/img-df/5b10e314N6215d618.jpg","pNames" : "IT-CEO C503 空调挡风板 加厚不锈钢室外空调支架托架配件  海尔格力奥克斯等适用","pRices" : "79.00","labs" : "labI"},
+				{"srces" : "","pImgs" : "../static/img-pj/img-df/5b45d339N0e1da737.jpg","pNames" : "宜白丽 (Yeebarle) 空调挡风板 防直吹 空调挡板 90cm内空调适用 纯白","pRices" : "59.00","labs" : "labJ"}
+			]
+		},
+		{
+			"tjpj" : [
+				{"srces" : "","pImgs" : "../static/img-pj/img-ktz/5b5845b4N5f9f94c4.jpg","pNames" : "七角板 Q-L6006 欧式田园风空调罩蕾丝小清新防尘罩简洁挡灰家用空调帘 适用1-1.5p 蓝白色","pRices" : "69.00","labs" : "labK"},
+				{"srces" : "","pImgs" : "../static/img-pj/img-ktz/59fffb50Nce4c219e.jpg","pNames" : "安美饰 空调罩格力挂机防尘罩套  布艺全包空调罩 海尔 美的 奥克斯 格力空调通用","pRices" : "25.00","labs" : "labL"},
+				{"srces" : "","pImgs" : "../static/img-pj/img-ktz/5b459a62N7f4f9462.jpg","pNames" : "科锐迩Kerier 空调防尘罩卧室挂机防尘罩套 防直吹 美的格力科龙志高海尔奥克斯扬子变频空调","pRices" : "39.90","labs" : "labM"},
+				{"srces" : "","pImgs" : "../static/img-pj/img-ktz/5b1f7124Nface8861.jpg","pNames" : "威视朗DF-B9(总长60厘米) 双翼调节2+1防直吹 海尔格力奥克斯等适用","pRices" : "99.00","labs" : "labN"},
+				{"srces" : "","pImgs" : "../static/img-pj/img-ktz/5b3c600bNb5d70fb6.jpg","pNames" : "贝石 (beishi) 升级版空调挡风板 防直吹 空调挡板 90cm内空调适用 纯白","pRices" : "79.00","labs" : "labO"}
+			]
+		},
+		{
+			"tjpj" : [
+				{"srces" : "","pImgs" : "../static/img-pj/img-dizuo/5b26077bN5887fb1d.jpg","pNames" : "贝石 (beishi) 柜式圆柱形空调底座托美的格力科龙志高海尔奥克斯扬子变频空调托架防潮DY-8J (8大地脚)","pRices" : "99.00","labs" : "labP"},
+				{"srces" : "","pImgs" : "../static/img-pj/img-dizuo/5b6548d0N47bec6bb.jpg","pNames" : "七角板 Q-HC-04 柜式圆柱形空调底座托 滚筒洗衣机也可使用 通用美的格力科龙志高海尔奥克斯","pRices" : "89.00","labs" : "labQ"},
+				{"srces" : "","pImgs" : "../static/img-pj/img-dizuo/5b67d0d3N60ae4510.jpg","pNames" : "Brateck洗衣机底座 冰箱底座托盘架 美的格力科龙志高海尔奥克斯扬子变频空调托架防潮","pRices" : "138.00","labs" : "labR"},
+				{"srces" : "","pImgs" : "../static/img-pj/img-dizuo/5b8c9688Naa806c8b.jpg","pNames" : "贝石 (beishi) 柜式圆柱形空调底座托美的格力科龙志高海尔奥克斯扬子变频空调托架防潮","pRices" : "69.00","labs" : "labS"},
+				{"srces" : "","pImgs" : "../static/img-pj/img-dizuo/5b4da641Nb674bfa5.jpg","pNames" : "Brateck洗衣机底座 冰箱底座托盘架 美的格力科龙志高海尔奥克斯扬子变频空调托架防潮","pRices" : "109.00","labs" : "labT"}
+			]
+		},
+		{
+			"tjpj" : [
+				{"srces" : "","pImgs" : "../static/img-pj/img-waijijia/5b18e8dbN5d3ac4af.jpg","pNames" : "嘉沛 AC-15PRO 空调架子外机架 加厚不锈钢室外空调支架托架配件 1p-1.5匹 送膨胀螺丝 海尔格力奥克斯等适用","pRices" : "99.00","labs" : "labU"},
+				{"srces" : "","pImgs" : "../static/img-pj/img-waijijia/5b344883Ne099a77e.jpg","pNames" : "沛瑞 AC-15PRO 空调外机架 不锈钢室外空调支架托架配件 1p-1.5匹 送膨胀螺丝 海尔格力奥克斯等适用","pRices" : "69.00","labs" : "labV"},
+				{"srces" : "","pImgs" : "../static/img-pj/img-waijijia/5a9f7ae2Nc46f3174.jpg","pNames" : "IT-CEO 空调外机架 空气能热水器外机不锈钢室外空调支架托架配件 海尔格力奥克斯等适用","pRices" : "69.00","labs" : "labW"}
+			]
+		},
+		{
+			"tjpj" : [
+				{"srces" : "","pImgs" : "../static/img-pj/img-qtpj/5b0f8df6N42aaaec3.jpg","pNames" : "美的 (Midea) 空调辅材费","pRices" : "9.90","labs" : "labX"},
+				{"srces" : "","pImgs" : "../static/img-pj/img-qtpj/5b0f8df6N42aaaec3.jpg","pNames" : "美的 (Midea) 空调辅材费","pRices" : "99.00","labs" : "labY"},
+				{"srces" : "","pImgs" : "../static/img-pj/img-qtpj/5b2653e7N63aadb23.jpg","pNames" : "净主义 AC-201W 空调遥控器 适用美的格力科龙志高海尔奥克斯扬子空调","pRices" : "35.00","labs" : "labZ"},
+				{"srces" : "","pImgs" : "../static/img-pj/img-qtpj/5a5f2695Na54d6c22.jpg","pNames" : "IT-CEO J03402 空调遥控器 适用美的格力科龙志高海尔奥克斯扬子空调","pRices" : "19.00","labs" : "labAA"},
+				{"srces" : "","pImgs" : "../static/img-pj/img-qtpj/5b28a0a8N555962fa.jpg","pNames" : "净主义 K-209W 空调遥控器 适用美的格力科龙志高海尔奥克斯扬子空调","pRices" : "29.00","labs" : "labBB"}
+			]
+		}
+	]
+}
